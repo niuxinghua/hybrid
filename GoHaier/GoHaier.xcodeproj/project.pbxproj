@@ -1,0 +1,750 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E080EEDF21AAE3A8006F2080 /* BarCodeRecongnizerHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = E080EEDE21AAE3A8006F2080 /* BarCodeRecongnizerHandler.m */; };
+		E080EEE321AAE55B006F2080 /* HaierQRScanView.m in Sources */ = {isa = PBXBuildFile; fileRef = E080EEE121AAE55B006F2080 /* HaierQRScanView.m */; };
+		E080EEE721AAE69D006F2080 /* HaierQRScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E080EEE521AAE69D006F2080 /* HaierQRScanViewController.m */; };
+		E0A9D1A121A7EC9A00FEA58D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E0A9D1A021A7EC9A00FEA58D /* AppDelegate.m */; };
+		E0A9D1A421A7EC9A00FEA58D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0A9D1A321A7EC9A00FEA58D /* ViewController.m */; };
+		E0A9D1A721A7EC9A00FEA58D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0A9D1A521A7EC9A00FEA58D /* Main.storyboard */; };
+		E0A9D1A921A7EC9D00FEA58D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0A9D1A821A7EC9D00FEA58D /* Assets.xcassets */; };
+		E0A9D1AC21A7EC9D00FEA58D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0A9D1AA21A7EC9D00FEA58D /* LaunchScreen.storyboard */; };
+		E0A9D1AF21A7EC9D00FEA58D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E0A9D1AE21A7EC9D00FEA58D /* main.m */; };
+		E0A9D1B921A7EC9D00FEA58D /* GoHaierTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E0A9D1B821A7EC9D00FEA58D /* GoHaierTests.m */; };
+		E0A9D1C421A7EC9D00FEA58D /* GoHaierUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = E0A9D1C321A7EC9D00FEA58D /* GoHaierUITests.m */; };
+		E0F6C53121AB9EA2008AF5C0 /* BaseHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = E0F6C53021AB9EA2008AF5C0 /* BaseHandler.m */; };
+		E0FC614A21AABBD10018AA61 /* WebViewJavascriptBridgeBase.m in Sources */ = {isa = PBXBuildFile; fileRef = E0FC614321AABBD10018AA61 /* WebViewJavascriptBridgeBase.m */; };
+		E0FC614B21AABBD10018AA61 /* WKWebViewJavascriptBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = E0FC614421AABBD10018AA61 /* WKWebViewJavascriptBridge.m */; };
+		E0FC614C21AABBD10018AA61 /* WebViewJavascriptBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = E0FC614521AABBD10018AA61 /* WebViewJavascriptBridge.m */; };
+		E0FC614D21AABBD10018AA61 /* WebViewJavascriptBridge.js.txt in Resources */ = {isa = PBXBuildFile; fileRef = E0FC614721AABBD10018AA61 /* WebViewJavascriptBridge.js.txt */; };
+		E0FC615121AABC5D0018AA61 /* GoHaierWebviewjavaScriptUtill.m in Sources */ = {isa = PBXBuildFile; fileRef = E0FC615021AABC5D0018AA61 /* GoHaierWebviewjavaScriptUtill.m */; };
+		E0FC615521AABE1E0018AA61 /* HaierCoreWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = E0FC615421AABE1E0018AA61 /* HaierCoreWebView.m */; };
+		E0FC615C21AACFB00018AA61 /* ImagePickerHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = E0FC615B21AACFB00018AA61 /* ImagePickerHandler.m */; };
+		E0FC616021AAD2030018AA61 /* ViewControllerUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = E0FC615F21AAD2030018AA61 /* ViewControllerUtil.m */; };
+		E0FC616221AAD4220018AA61 /* test.html in Resources */ = {isa = PBXBuildFile; fileRef = E0FC616121AAD4220018AA61 /* test.html */; };
+		E0FC616621AADB350018AA61 /* PhotoTakerHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = E0FC616521AADB350018AA61 /* PhotoTakerHandler.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E0A9D1B521A7EC9D00FEA58D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E0A9D19421A7EC9A00FEA58D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E0A9D19B21A7EC9A00FEA58D;
+			remoteInfo = GoHaier;
+		};
+		E0A9D1C021A7EC9D00FEA58D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E0A9D19421A7EC9A00FEA58D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E0A9D19B21A7EC9A00FEA58D;
+			remoteInfo = GoHaier;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		E080EEDD21AAE3A8006F2080 /* BarCodeRecongnizerHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BarCodeRecongnizerHandler.h; sourceTree = "<group>"; };
+		E080EEDE21AAE3A8006F2080 /* BarCodeRecongnizerHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BarCodeRecongnizerHandler.m; sourceTree = "<group>"; };
+		E080EEE121AAE55B006F2080 /* HaierQRScanView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HaierQRScanView.m; sourceTree = "<group>"; };
+		E080EEE221AAE55B006F2080 /* HaierQRScanView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HaierQRScanView.h; sourceTree = "<group>"; };
+		E080EEE521AAE69D006F2080 /* HaierQRScanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HaierQRScanViewController.m; sourceTree = "<group>"; };
+		E080EEE621AAE69D006F2080 /* HaierQRScanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HaierQRScanViewController.h; sourceTree = "<group>"; };
+		E0A9D19C21A7EC9A00FEA58D /* GoHaier.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoHaier.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E0A9D19F21A7EC9A00FEA58D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		E0A9D1A021A7EC9A00FEA58D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		E0A9D1A221A7EC9A00FEA58D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		E0A9D1A321A7EC9A00FEA58D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		E0A9D1A621A7EC9A00FEA58D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E0A9D1A821A7EC9D00FEA58D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E0A9D1AB21A7EC9D00FEA58D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E0A9D1AD21A7EC9D00FEA58D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E0A9D1AE21A7EC9D00FEA58D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E0A9D1B421A7EC9D00FEA58D /* GoHaierTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoHaierTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E0A9D1B821A7EC9D00FEA58D /* GoHaierTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GoHaierTests.m; sourceTree = "<group>"; };
+		E0A9D1BA21A7EC9D00FEA58D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E0A9D1BF21A7EC9D00FEA58D /* GoHaierUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoHaierUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E0A9D1C321A7EC9D00FEA58D /* GoHaierUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GoHaierUITests.m; sourceTree = "<group>"; };
+		E0A9D1C521A7EC9D00FEA58D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E0F6C52F21AB9EA2008AF5C0 /* BaseHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseHandler.h; sourceTree = "<group>"; };
+		E0F6C53021AB9EA2008AF5C0 /* BaseHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseHandler.m; sourceTree = "<group>"; };
+		E0FC614321AABBD10018AA61 /* WebViewJavascriptBridgeBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewJavascriptBridgeBase.m; sourceTree = "<group>"; };
+		E0FC614421AABBD10018AA61 /* WKWebViewJavascriptBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKWebViewJavascriptBridge.m; sourceTree = "<group>"; };
+		E0FC614521AABBD10018AA61 /* WebViewJavascriptBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewJavascriptBridge.m; sourceTree = "<group>"; };
+		E0FC614621AABBD10018AA61 /* WebViewJavascriptBridgeBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewJavascriptBridgeBase.h; sourceTree = "<group>"; };
+		E0FC614721AABBD10018AA61 /* WebViewJavascriptBridge.js.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = WebViewJavascriptBridge.js.txt; sourceTree = "<group>"; };
+		E0FC614821AABBD10018AA61 /* WebViewJavascriptBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewJavascriptBridge.h; sourceTree = "<group>"; };
+		E0FC614921AABBD10018AA61 /* WKWebViewJavascriptBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKWebViewJavascriptBridge.h; sourceTree = "<group>"; };
+		E0FC614F21AABC5D0018AA61 /* GoHaierWebviewjavaScriptUtill.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GoHaierWebviewjavaScriptUtill.h; sourceTree = "<group>"; };
+		E0FC615021AABC5D0018AA61 /* GoHaierWebviewjavaScriptUtill.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GoHaierWebviewjavaScriptUtill.m; sourceTree = "<group>"; };
+		E0FC615321AABE1E0018AA61 /* HaierCoreWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HaierCoreWebView.h; sourceTree = "<group>"; };
+		E0FC615421AABE1E0018AA61 /* HaierCoreWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HaierCoreWebView.m; sourceTree = "<group>"; };
+		E0FC615721AAC98C0018AA61 /* ConstDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConstDefine.h; sourceTree = "<group>"; };
+		E0FC615A21AACFB00018AA61 /* ImagePickerHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImagePickerHandler.h; sourceTree = "<group>"; };
+		E0FC615B21AACFB00018AA61 /* ImagePickerHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImagePickerHandler.m; sourceTree = "<group>"; };
+		E0FC615E21AAD2030018AA61 /* ViewControllerUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewControllerUtil.h; sourceTree = "<group>"; };
+		E0FC615F21AAD2030018AA61 /* ViewControllerUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewControllerUtil.m; sourceTree = "<group>"; };
+		E0FC616121AAD4220018AA61 /* test.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = test.html; sourceTree = "<group>"; };
+		E0FC616421AADB350018AA61 /* PhotoTakerHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoTakerHandler.h; sourceTree = "<group>"; };
+		E0FC616521AADB350018AA61 /* PhotoTakerHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotoTakerHandler.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E0A9D19921A7EC9A00FEA58D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E0A9D1B121A7EC9D00FEA58D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E0A9D1BC21A7EC9D00FEA58D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E080EEE021AAE540006F2080 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				E080EEE221AAE55B006F2080 /* HaierQRScanView.h */,
+				E080EEE121AAE55B006F2080 /* HaierQRScanView.m */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		E080EEE421AAE686006F2080 /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E080EEE621AAE69D006F2080 /* HaierQRScanViewController.h */,
+				E080EEE521AAE69D006F2080 /* HaierQRScanViewController.m */,
+			);
+			path = controllers;
+			sourceTree = "<group>";
+		};
+		E0A9D19321A7EC9A00FEA58D = {
+			isa = PBXGroup;
+			children = (
+				E0A9D19E21A7EC9A00FEA58D /* GoHaier */,
+				E0A9D1B721A7EC9D00FEA58D /* GoHaierTests */,
+				E0A9D1C221A7EC9D00FEA58D /* GoHaierUITests */,
+				E0A9D19D21A7EC9A00FEA58D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E0A9D19D21A7EC9A00FEA58D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E0A9D19C21A7EC9A00FEA58D /* GoHaier.app */,
+				E0A9D1B421A7EC9D00FEA58D /* GoHaierTests.xctest */,
+				E0A9D1BF21A7EC9D00FEA58D /* GoHaierUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E0A9D19E21A7EC9A00FEA58D /* GoHaier */ = {
+			isa = PBXGroup;
+			children = (
+				E0FC615D21AAD1DE0018AA61 /* CoreUtil */,
+				E0FC615621AAC92B0018AA61 /* Const */,
+				E0FC615221AABE030018AA61 /* CoreModule */,
+				E0FC614E21AABBE40018AA61 /* Middleware */,
+				E0A9D1D121A7ECB800FEA58D /* vendors */,
+				E0A9D19F21A7EC9A00FEA58D /* AppDelegate.h */,
+				E0A9D1A021A7EC9A00FEA58D /* AppDelegate.m */,
+				E0A9D1A221A7EC9A00FEA58D /* ViewController.h */,
+				E0A9D1A321A7EC9A00FEA58D /* ViewController.m */,
+				E0FC616121AAD4220018AA61 /* test.html */,
+				E0A9D1A521A7EC9A00FEA58D /* Main.storyboard */,
+				E0A9D1A821A7EC9D00FEA58D /* Assets.xcassets */,
+				E0A9D1AA21A7EC9D00FEA58D /* LaunchScreen.storyboard */,
+				E0A9D1AD21A7EC9D00FEA58D /* Info.plist */,
+				E0A9D1AE21A7EC9D00FEA58D /* main.m */,
+			);
+			path = GoHaier;
+			sourceTree = "<group>";
+		};
+		E0A9D1B721A7EC9D00FEA58D /* GoHaierTests */ = {
+			isa = PBXGroup;
+			children = (
+				E0A9D1B821A7EC9D00FEA58D /* GoHaierTests.m */,
+				E0A9D1BA21A7EC9D00FEA58D /* Info.plist */,
+			);
+			path = GoHaierTests;
+			sourceTree = "<group>";
+		};
+		E0A9D1C221A7EC9D00FEA58D /* GoHaierUITests */ = {
+			isa = PBXGroup;
+			children = (
+				E0A9D1C321A7EC9D00FEA58D /* GoHaierUITests.m */,
+				E0A9D1C521A7EC9D00FEA58D /* Info.plist */,
+			);
+			path = GoHaierUITests;
+			sourceTree = "<group>";
+		};
+		E0A9D1D121A7ECB800FEA58D /* vendors */ = {
+			isa = PBXGroup;
+			children = (
+				E0FC614221AABBD10018AA61 /* WebViewJavascriptBridge */,
+			);
+			path = vendors;
+			sourceTree = "<group>";
+		};
+		E0FC614221AABBD10018AA61 /* WebViewJavascriptBridge */ = {
+			isa = PBXGroup;
+			children = (
+				E0FC614321AABBD10018AA61 /* WebViewJavascriptBridgeBase.m */,
+				E0FC614421AABBD10018AA61 /* WKWebViewJavascriptBridge.m */,
+				E0FC614521AABBD10018AA61 /* WebViewJavascriptBridge.m */,
+				E0FC614621AABBD10018AA61 /* WebViewJavascriptBridgeBase.h */,
+				E0FC614721AABBD10018AA61 /* WebViewJavascriptBridge.js.txt */,
+				E0FC614821AABBD10018AA61 /* WebViewJavascriptBridge.h */,
+				E0FC614921AABBD10018AA61 /* WKWebViewJavascriptBridge.h */,
+			);
+			path = WebViewJavascriptBridge;
+			sourceTree = "<group>";
+		};
+		E0FC614E21AABBE40018AA61 /* Middleware */ = {
+			isa = PBXGroup;
+			children = (
+				E0FC614F21AABC5D0018AA61 /* GoHaierWebviewjavaScriptUtill.h */,
+				E0FC615021AABC5D0018AA61 /* GoHaierWebviewjavaScriptUtill.m */,
+			);
+			path = Middleware;
+			sourceTree = "<group>";
+		};
+		E0FC615221AABE030018AA61 /* CoreModule */ = {
+			isa = PBXGroup;
+			children = (
+				E0FC615821AACF100018AA61 /* WebView */,
+			);
+			path = CoreModule;
+			sourceTree = "<group>";
+		};
+		E0FC615621AAC92B0018AA61 /* Const */ = {
+			isa = PBXGroup;
+			children = (
+				E0FC615721AAC98C0018AA61 /* ConstDefine.h */,
+			);
+			path = Const;
+			sourceTree = "<group>";
+		};
+		E0FC615821AACF100018AA61 /* WebView */ = {
+			isa = PBXGroup;
+			children = (
+				E080EEE421AAE686006F2080 /* controllers */,
+				E080EEE021AAE540006F2080 /* views */,
+				E0FC615921AACF250018AA61 /* handlermethods */,
+				E0FC615321AABE1E0018AA61 /* HaierCoreWebView.h */,
+				E0FC615421AABE1E0018AA61 /* HaierCoreWebView.m */,
+				E0F6C52F21AB9EA2008AF5C0 /* BaseHandler.h */,
+				E0F6C53021AB9EA2008AF5C0 /* BaseHandler.m */,
+			);
+			path = WebView;
+			sourceTree = "<group>";
+		};
+		E0FC615921AACF250018AA61 /* handlermethods */ = {
+			isa = PBXGroup;
+			children = (
+				E0FC615A21AACFB00018AA61 /* ImagePickerHandler.h */,
+				E0FC615B21AACFB00018AA61 /* ImagePickerHandler.m */,
+				E0FC616421AADB350018AA61 /* PhotoTakerHandler.h */,
+				E0FC616521AADB350018AA61 /* PhotoTakerHandler.m */,
+				E080EEDD21AAE3A8006F2080 /* BarCodeRecongnizerHandler.h */,
+				E080EEDE21AAE3A8006F2080 /* BarCodeRecongnizerHandler.m */,
+			);
+			path = handlermethods;
+			sourceTree = "<group>";
+		};
+		E0FC615D21AAD1DE0018AA61 /* CoreUtil */ = {
+			isa = PBXGroup;
+			children = (
+				E0FC615E21AAD2030018AA61 /* ViewControllerUtil.h */,
+				E0FC615F21AAD2030018AA61 /* ViewControllerUtil.m */,
+			);
+			path = CoreUtil;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E0A9D19B21A7EC9A00FEA58D /* GoHaier */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E0A9D1C821A7EC9D00FEA58D /* Build configuration list for PBXNativeTarget "GoHaier" */;
+			buildPhases = (
+				E0A9D19821A7EC9A00FEA58D /* Sources */,
+				E0A9D19921A7EC9A00FEA58D /* Frameworks */,
+				E0A9D19A21A7EC9A00FEA58D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GoHaier;
+			productName = GoHaier;
+			productReference = E0A9D19C21A7EC9A00FEA58D /* GoHaier.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E0A9D1B321A7EC9D00FEA58D /* GoHaierTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E0A9D1CB21A7EC9D00FEA58D /* Build configuration list for PBXNativeTarget "GoHaierTests" */;
+			buildPhases = (
+				E0A9D1B021A7EC9D00FEA58D /* Sources */,
+				E0A9D1B121A7EC9D00FEA58D /* Frameworks */,
+				E0A9D1B221A7EC9D00FEA58D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E0A9D1B621A7EC9D00FEA58D /* PBXTargetDependency */,
+			);
+			name = GoHaierTests;
+			productName = GoHaierTests;
+			productReference = E0A9D1B421A7EC9D00FEA58D /* GoHaierTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		E0A9D1BE21A7EC9D00FEA58D /* GoHaierUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E0A9D1CE21A7EC9D00FEA58D /* Build configuration list for PBXNativeTarget "GoHaierUITests" */;
+			buildPhases = (
+				E0A9D1BB21A7EC9D00FEA58D /* Sources */,
+				E0A9D1BC21A7EC9D00FEA58D /* Frameworks */,
+				E0A9D1BD21A7EC9D00FEA58D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E0A9D1C121A7EC9D00FEA58D /* PBXTargetDependency */,
+			);
+			name = GoHaierUITests;
+			productName = GoHaierUITests;
+			productReference = E0A9D1BF21A7EC9D00FEA58D /* GoHaierUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E0A9D19421A7EC9A00FEA58D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0940;
+				ORGANIZATIONNAME = com.haier;
+				TargetAttributes = {
+					E0A9D19B21A7EC9A00FEA58D = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
+					E0A9D1B321A7EC9D00FEA58D = {
+						CreatedOnToolsVersion = 9.4.1;
+						TestTargetID = E0A9D19B21A7EC9A00FEA58D;
+					};
+					E0A9D1BE21A7EC9D00FEA58D = {
+						CreatedOnToolsVersion = 9.4.1;
+						TestTargetID = E0A9D19B21A7EC9A00FEA58D;
+					};
+				};
+			};
+			buildConfigurationList = E0A9D19721A7EC9A00FEA58D /* Build configuration list for PBXProject "GoHaier" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E0A9D19321A7EC9A00FEA58D;
+			productRefGroup = E0A9D19D21A7EC9A00FEA58D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E0A9D19B21A7EC9A00FEA58D /* GoHaier */,
+				E0A9D1B321A7EC9D00FEA58D /* GoHaierTests */,
+				E0A9D1BE21A7EC9D00FEA58D /* GoHaierUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E0A9D19A21A7EC9A00FEA58D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E0FC614D21AABBD10018AA61 /* WebViewJavascriptBridge.js.txt in Resources */,
+				E0A9D1AC21A7EC9D00FEA58D /* LaunchScreen.storyboard in Resources */,
+				E0A9D1A921A7EC9D00FEA58D /* Assets.xcassets in Resources */,
+				E0FC616221AAD4220018AA61 /* test.html in Resources */,
+				E0A9D1A721A7EC9A00FEA58D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E0A9D1B221A7EC9D00FEA58D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E0A9D1BD21A7EC9D00FEA58D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E0A9D19821A7EC9A00FEA58D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E080EEE321AAE55B006F2080 /* HaierQRScanView.m in Sources */,
+				E0FC615521AABE1E0018AA61 /* HaierCoreWebView.m in Sources */,
+				E080EEE721AAE69D006F2080 /* HaierQRScanViewController.m in Sources */,
+				E0F6C53121AB9EA2008AF5C0 /* BaseHandler.m in Sources */,
+				E0FC614A21AABBD10018AA61 /* WebViewJavascriptBridgeBase.m in Sources */,
+				E0FC616021AAD2030018AA61 /* ViewControllerUtil.m in Sources */,
+				E0FC614C21AABBD10018AA61 /* WebViewJavascriptBridge.m in Sources */,
+				E0FC615C21AACFB00018AA61 /* ImagePickerHandler.m in Sources */,
+				E0FC614B21AABBD10018AA61 /* WKWebViewJavascriptBridge.m in Sources */,
+				E080EEDF21AAE3A8006F2080 /* BarCodeRecongnizerHandler.m in Sources */,
+				E0FC616621AADB350018AA61 /* PhotoTakerHandler.m in Sources */,
+				E0FC615121AABC5D0018AA61 /* GoHaierWebviewjavaScriptUtill.m in Sources */,
+				E0A9D1A421A7EC9A00FEA58D /* ViewController.m in Sources */,
+				E0A9D1AF21A7EC9D00FEA58D /* main.m in Sources */,
+				E0A9D1A121A7EC9A00FEA58D /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E0A9D1B021A7EC9D00FEA58D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E0A9D1B921A7EC9D00FEA58D /* GoHaierTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E0A9D1BB21A7EC9D00FEA58D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E0A9D1C421A7EC9D00FEA58D /* GoHaierUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E0A9D1B621A7EC9D00FEA58D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E0A9D19B21A7EC9A00FEA58D /* GoHaier */;
+			targetProxy = E0A9D1B521A7EC9D00FEA58D /* PBXContainerItemProxy */;
+		};
+		E0A9D1C121A7EC9D00FEA58D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E0A9D19B21A7EC9A00FEA58D /* GoHaier */;
+			targetProxy = E0A9D1C021A7EC9D00FEA58D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E0A9D1A521A7EC9A00FEA58D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E0A9D1A621A7EC9A00FEA58D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E0A9D1AA21A7EC9D00FEA58D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E0A9D1AB21A7EC9D00FEA58D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E0A9D1C621A7EC9D00FEA58D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		E0A9D1C721A7EC9D00FEA58D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E0A9D1C921A7EC9D00FEA58D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 5YMLXQ5HEE;
+				INFOPLIST_FILE = GoHaier/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.haier.imapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "95bff849-f2ef-4999-93d1-6401b9d53cbf";
+				PROVISIONING_PROFILE_SPECIFIER = COSMOIM;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E0A9D1CA21A7EC9D00FEA58D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 5YMLXQ5HEE;
+				INFOPLIST_FILE = GoHaier/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.haier.imapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "95bff849-f2ef-4999-93d1-6401b9d53cbf";
+				PROVISIONING_PROFILE_SPECIFIER = COSMOIM;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		E0A9D1CC21A7EC9D00FEA58D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = AZFKV3S428;
+				INFOPLIST_FILE = GoHaierTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = estorescanreport.GoHaierTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GoHaier.app/GoHaier";
+			};
+			name = Debug;
+		};
+		E0A9D1CD21A7EC9D00FEA58D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = AZFKV3S428;
+				INFOPLIST_FILE = GoHaierTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = estorescanreport.GoHaierTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GoHaier.app/GoHaier";
+			};
+			name = Release;
+		};
+		E0A9D1CF21A7EC9D00FEA58D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = AZFKV3S428;
+				INFOPLIST_FILE = GoHaierUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = estorescanreport.GoHaierUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = GoHaier;
+			};
+			name = Debug;
+		};
+		E0A9D1D021A7EC9D00FEA58D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = AZFKV3S428;
+				INFOPLIST_FILE = GoHaierUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = estorescanreport.GoHaierUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = GoHaier;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E0A9D19721A7EC9A00FEA58D /* Build configuration list for PBXProject "GoHaier" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E0A9D1C621A7EC9D00FEA58D /* Debug */,
+				E0A9D1C721A7EC9D00FEA58D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E0A9D1C821A7EC9D00FEA58D /* Build configuration list for PBXNativeTarget "GoHaier" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E0A9D1C921A7EC9D00FEA58D /* Debug */,
+				E0A9D1CA21A7EC9D00FEA58D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E0A9D1CB21A7EC9D00FEA58D /* Build configuration list for PBXNativeTarget "GoHaierTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E0A9D1CC21A7EC9D00FEA58D /* Debug */,
+				E0A9D1CD21A7EC9D00FEA58D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E0A9D1CE21A7EC9D00FEA58D /* Build configuration list for PBXNativeTarget "GoHaierUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E0A9D1CF21A7EC9D00FEA58D /* Debug */,
+				E0A9D1D021A7EC9D00FEA58D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E0A9D19421A7EC9A00FEA58D /* Project object */;
+}
