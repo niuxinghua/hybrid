@@ -8,9 +8,6 @@
 
 #import "ViewController.h"
 #import "HaierCoreWebView.h"
-#import "ImagePickerHandler.h"
-#import "PhotoTakerHandler.h"
-#import "BarCodeRecongnizerHandler.h"
 #import "H5Downloader.h"
 #import "GHaierH5Context.h"
 @interface ViewController ()<UIWebViewDelegate>
@@ -27,9 +24,8 @@
     [self.view addSubview:_webView];
     
     [self loadHtml];
-    [_webView registerNativeHandlers:[ImagePickerHandler sharedInstance]];
-    [_webView registerNativeHandlers:[PhotoTakerHandler sharedInstance]];
-    [_webView registerNativeHandlers:[BarCodeRecongnizerHandler sharedInstance]];
+
+    
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleH5downLoad) name:DidDownloadH5Success object:nil];
     
 }
