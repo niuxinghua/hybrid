@@ -88,7 +88,6 @@ NSString* const H5ContextKey = @"H5ContextKey";
             NSLog(@"该文件不是目录");
         }
     }else{
-        NSLog(@"文件不存在");
         BOOL bCreateDir = [fileManager createDirectoryAtPath:targetPath withIntermediateDirectories:YES attributes:nil error:nil];
         if(!bCreateDir){
             NSLog(@"Create Audio Directory Failed.");
@@ -103,7 +102,6 @@ NSString* const H5ContextKey = @"H5ContextKey";
     BOOL isDirExist = [fileManager fileExistsAtPath:targetPath isDirectory:&isDir];
     
     if (isDirExist) {
-        NSLog(@"文件存在");
         [fileManager removeItemAtPath:targetPath error:nil];
     }
 }
