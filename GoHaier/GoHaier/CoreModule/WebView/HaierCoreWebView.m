@@ -19,8 +19,6 @@
         self.bridge = [WebViewJavascriptBridge bridgeForWebView:self handler:^(id data, WVJBResponseCallback responseCallback) {
             
         }];
-        //self.delegate = self;
-       // self.scalesPageToFit = YES;//自动对网页进行缩放以适应屏幕;
         self.dataDetectorTypes = UIDataDetectorTypeAll;//自动检测网页上的电话号码,网页链接,邮箱;
         [self initweblogToNative];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleH5downLoad) name:DidDownloadH5Success object:nil];
@@ -36,8 +34,6 @@
         self.bridge = [WebViewJavascriptBridge bridgeForWebView:self webViewDelegate:self handler:^(id data, WVJBResponseCallback responseCallback) {
             
         }];
-        // self.delegate = self;
-       // self.scalesPageToFit = YES;//自动对网页进行缩放以适应屏幕;
         self.dataDetectorTypes = UIDataDetectorTypeAll;//自动检测网页上的电话号码,网页链接,邮箱;
         [self initweblogToNative];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleH5downLoad) name:DidDownloadH5Success object:nil];
