@@ -12,6 +12,7 @@
 #import "ImagePickerHandler.h"
 #import "PhotoTakerHandler.h"
 #import "BarCodeRecongnizerHandler.h"
+#import "LocationHandler.h"
 @interface HaierCoreWebView()
 @end
 @implementation HaierCoreWebView
@@ -86,6 +87,7 @@
     [self registerNativeHandlers:[ImagePickerHandler sharedInstance]];
     [self registerNativeHandlers:[PhotoTakerHandler sharedInstance]];
     [self registerNativeHandlers:[BarCodeRecongnizerHandler sharedInstance]];
+    [self registerNativeHandlers:[LocationHandler sharedInstance]];
 }
 - (void)dealloc
 {

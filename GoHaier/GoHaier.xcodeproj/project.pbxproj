@@ -40,6 +40,21 @@
 		E0B8C99221BF5DB7004CD6CC /* SSZipArchive.m in Sources */ = {isa = PBXBuildFile; fileRef = E0B8C98021BF5DB7004CD6CC /* SSZipArchive.m */; };
 		E0B8C99621BF73DB004CD6CC /* GHaierH5Context.m in Sources */ = {isa = PBXBuildFile; fileRef = E0B8C99521BF73DB004CD6CC /* GHaierH5Context.m */; };
 		E0B8C99921BF8C16004CD6CC /* LocationHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = E0B8C99821BF8C16004CD6CC /* LocationHandler.m */; };
+		E0B8C9AE21BFA736004CD6CC /* randtable.c in Sources */ = {isa = PBXBuildFile; fileRef = E0B8C99C21BFA736004CD6CC /* randtable.c */; };
+		E0B8C9AF21BFA736004CD6CC /* mk251.c in Sources */ = {isa = PBXBuildFile; fileRef = E0B8C99D21BFA736004CD6CC /* mk251.c */; };
+		E0B8C9B021BFA736004CD6CC /* compress.c in Sources */ = {isa = PBXBuildFile; fileRef = E0B8C99E21BFA736004CD6CC /* compress.c */; };
+		E0B8C9B121BFA736004CD6CC /* decompress.c in Sources */ = {isa = PBXBuildFile; fileRef = E0B8C99F21BFA736004CD6CC /* decompress.c */; };
+		E0B8C9B221BFA736004CD6CC /* blocksort.c in Sources */ = {isa = PBXBuildFile; fileRef = E0B8C9A221BFA736004CD6CC /* blocksort.c */; };
+		E0B8C9B321BFA736004CD6CC /* huffman.c in Sources */ = {isa = PBXBuildFile; fileRef = E0B8C9A321BFA736004CD6CC /* huffman.c */; };
+		E0B8C9B421BFA736004CD6CC /* spewG.c in Sources */ = {isa = PBXBuildFile; fileRef = E0B8C9A421BFA736004CD6CC /* spewG.c */; };
+		E0B8C9B521BFA736004CD6CC /* dlltest.c in Sources */ = {isa = PBXBuildFile; fileRef = E0B8C9A521BFA736004CD6CC /* dlltest.c */; };
+		E0B8C9B621BFA736004CD6CC /* bzip2recover.c in Sources */ = {isa = PBXBuildFile; fileRef = E0B8C9A621BFA736004CD6CC /* bzip2recover.c */; };
+		E0B8C9B721BFA736004CD6CC /* crctable.c in Sources */ = {isa = PBXBuildFile; fileRef = E0B8C9A721BFA736004CD6CC /* crctable.c */; };
+		E0B8C9B821BFA736004CD6CC /* unzcrash.c in Sources */ = {isa = PBXBuildFile; fileRef = E0B8C9A821BFA736004CD6CC /* unzcrash.c */; };
+		E0B8C9B921BFA736004CD6CC /* bzlib.c in Sources */ = {isa = PBXBuildFile; fileRef = E0B8C9A921BFA736004CD6CC /* bzlib.c */; };
+		E0B8C9BA21BFA736004CD6CC /* bzip2.c in Sources */ = {isa = PBXBuildFile; fileRef = E0B8C9AA21BFA736004CD6CC /* bzip2.c */; };
+		E0B8C9BB21BFA736004CD6CC /* bspatch.c in Sources */ = {isa = PBXBuildFile; fileRef = E0B8C9AC21BFA736004CD6CC /* bspatch.c */; };
+		E0B8C9BC21BFA736004CD6CC /* bsdiff.c in Sources */ = {isa = PBXBuildFile; fileRef = E0B8C9AD21BFA736004CD6CC /* bsdiff.c */; };
 		E0F6C53121AB9EA2008AF5C0 /* BaseHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = E0F6C53021AB9EA2008AF5C0 /* BaseHandler.m */; };
 		E0FC614A21AABBD10018AA61 /* WebViewJavascriptBridgeBase.m in Sources */ = {isa = PBXBuildFile; fileRef = E0FC614321AABBD10018AA61 /* WebViewJavascriptBridgeBase.m */; };
 		E0FC614B21AABBD10018AA61 /* WKWebViewJavascriptBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = E0FC614421AABBD10018AA61 /* WKWebViewJavascriptBridge.m */; };
@@ -139,6 +154,24 @@
 		E0B8C99521BF73DB004CD6CC /* GHaierH5Context.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GHaierH5Context.m; sourceTree = "<group>"; };
 		E0B8C99721BF8C16004CD6CC /* LocationHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocationHandler.h; sourceTree = "<group>"; };
 		E0B8C99821BF8C16004CD6CC /* LocationHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocationHandler.m; sourceTree = "<group>"; };
+		E0B8C99C21BFA736004CD6CC /* randtable.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = randtable.c; sourceTree = "<group>"; };
+		E0B8C99D21BFA736004CD6CC /* mk251.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mk251.c; sourceTree = "<group>"; };
+		E0B8C99E21BFA736004CD6CC /* compress.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = compress.c; sourceTree = "<group>"; };
+		E0B8C99F21BFA736004CD6CC /* decompress.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = decompress.c; sourceTree = "<group>"; };
+		E0B8C9A021BFA736004CD6CC /* bzlib_private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bzlib_private.h; sourceTree = "<group>"; };
+		E0B8C9A121BFA736004CD6CC /* bzlib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bzlib.h; sourceTree = "<group>"; };
+		E0B8C9A221BFA736004CD6CC /* blocksort.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = blocksort.c; sourceTree = "<group>"; };
+		E0B8C9A321BFA736004CD6CC /* huffman.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = huffman.c; sourceTree = "<group>"; };
+		E0B8C9A421BFA736004CD6CC /* spewG.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = spewG.c; sourceTree = "<group>"; };
+		E0B8C9A521BFA736004CD6CC /* dlltest.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = dlltest.c; sourceTree = "<group>"; };
+		E0B8C9A621BFA736004CD6CC /* bzip2recover.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = bzip2recover.c; sourceTree = "<group>"; };
+		E0B8C9A721BFA736004CD6CC /* crctable.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = crctable.c; sourceTree = "<group>"; };
+		E0B8C9A821BFA736004CD6CC /* unzcrash.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = unzcrash.c; sourceTree = "<group>"; };
+		E0B8C9A921BFA736004CD6CC /* bzlib.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = bzlib.c; sourceTree = "<group>"; };
+		E0B8C9AA21BFA736004CD6CC /* bzip2.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = bzip2.c; sourceTree = "<group>"; };
+		E0B8C9AC21BFA736004CD6CC /* bspatch.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = bspatch.c; sourceTree = "<group>"; };
+		E0B8C9AD21BFA736004CD6CC /* bsdiff.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = bsdiff.c; sourceTree = "<group>"; };
+		E0B8C9BD21BFA7BF004CD6CC /* Haier_Bsdiff.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Haier_Bsdiff.h; sourceTree = "<group>"; };
 		E0F6C52F21AB9EA2008AF5C0 /* BaseHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseHandler.h; sourceTree = "<group>"; };
 		E0F6C53021AB9EA2008AF5C0 /* BaseHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseHandler.m; sourceTree = "<group>"; };
 		E0FC614321AABBD10018AA61 /* WebViewJavascriptBridgeBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewJavascriptBridgeBase.m; sourceTree = "<group>"; };
@@ -379,6 +412,47 @@
 			path = aes;
 			sourceTree = "<group>";
 		};
+		E0B8C99A21BFA717004CD6CC /* BSDiff */ = {
+			isa = PBXGroup;
+			children = (
+				E0B8C9BD21BFA7BF004CD6CC /* Haier_Bsdiff.h */,
+				E0B8C9AB21BFA736004CD6CC /* bsdiff-4.3 */,
+				E0B8C99B21BFA736004CD6CC /* bzip2-1.0.6 */,
+			);
+			path = BSDiff;
+			sourceTree = "<group>";
+		};
+		E0B8C99B21BFA736004CD6CC /* bzip2-1.0.6 */ = {
+			isa = PBXGroup;
+			children = (
+				E0B8C99C21BFA736004CD6CC /* randtable.c */,
+				E0B8C99D21BFA736004CD6CC /* mk251.c */,
+				E0B8C99E21BFA736004CD6CC /* compress.c */,
+				E0B8C99F21BFA736004CD6CC /* decompress.c */,
+				E0B8C9A021BFA736004CD6CC /* bzlib_private.h */,
+				E0B8C9A121BFA736004CD6CC /* bzlib.h */,
+				E0B8C9A221BFA736004CD6CC /* blocksort.c */,
+				E0B8C9A321BFA736004CD6CC /* huffman.c */,
+				E0B8C9A421BFA736004CD6CC /* spewG.c */,
+				E0B8C9A521BFA736004CD6CC /* dlltest.c */,
+				E0B8C9A621BFA736004CD6CC /* bzip2recover.c */,
+				E0B8C9A721BFA736004CD6CC /* crctable.c */,
+				E0B8C9A821BFA736004CD6CC /* unzcrash.c */,
+				E0B8C9A921BFA736004CD6CC /* bzlib.c */,
+				E0B8C9AA21BFA736004CD6CC /* bzip2.c */,
+			);
+			path = "bzip2-1.0.6";
+			sourceTree = "<group>";
+		};
+		E0B8C9AB21BFA736004CD6CC /* bsdiff-4.3 */ = {
+			isa = PBXGroup;
+			children = (
+				E0B8C9AC21BFA736004CD6CC /* bspatch.c */,
+				E0B8C9AD21BFA736004CD6CC /* bsdiff.c */,
+			);
+			path = "bsdiff-4.3";
+			sourceTree = "<group>";
+		};
 		E0FC614221AABBD10018AA61 /* WebViewJavascriptBridge */ = {
 			isa = PBXGroup;
 			children = (
@@ -405,6 +479,7 @@
 		E0FC615221AABE030018AA61 /* CoreModule */ = {
 			isa = PBXGroup;
 			children = (
+				E0B8C99A21BFA717004CD6CC /* BSDiff */,
 				E0B8C93821BF470D004CD6CC /* H5Downloader */,
 				E0FC615821AACF100018AA61 /* WebView */,
 			);
@@ -589,30 +664,43 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0B8C9B421BFA736004CD6CC /* spewG.c in Sources */,
 				E0B8C99021BF5DB7004CD6CC /* pwd2key.c in Sources */,
+				E0B8C9B321BFA736004CD6CC /* huffman.c in Sources */,
+				E0B8C9AE21BFA736004CD6CC /* randtable.c in Sources */,
 				E0B8C98A21BF5DB7004CD6CC /* hmac.c in Sources */,
 				E0B8C98621BF5DB7004CD6CC /* ioapi_buf.c in Sources */,
+				E0B8C9B221BFA736004CD6CC /* blocksort.c in Sources */,
 				E0B8C98821BF5DB7004CD6CC /* minishared.c in Sources */,
 				E080EEE321AAE55B006F2080 /* HaierQRScanView.m in Sources */,
 				E0B8C95221BF596F004CD6CC /* PAirSandbox.m in Sources */,
 				E0B8C98721BF5DB7004CD6CC /* ioapi_mem.c in Sources */,
+				E0B8C9BC21BFA736004CD6CC /* bsdiff.c in Sources */,
+				E0B8C9BB21BFA736004CD6CC /* bspatch.c in Sources */,
 				E0B8C99921BF8C16004CD6CC /* LocationHandler.m in Sources */,
 				E0FC615521AABE1E0018AA61 /* HaierCoreWebView.m in Sources */,
 				E080EEE721AAE69D006F2080 /* HaierQRScanViewController.m in Sources */,
 				E0B8C98D21BF5DB7004CD6CC /* sha1.c in Sources */,
 				E0B8C99621BF73DB004CD6CC /* GHaierH5Context.m in Sources */,
 				E0F6C53121AB9EA2008AF5C0 /* BaseHandler.m in Sources */,
+				E0B8C9B721BFA736004CD6CC /* crctable.c in Sources */,
 				E0B8C98E21BF5DB7004CD6CC /* aes_ni.c in Sources */,
 				E0FC614A21AABBD10018AA61 /* WebViewJavascriptBridgeBase.m in Sources */,
+				E0B8C9B021BFA736004CD6CC /* compress.c in Sources */,
 				E0B8C98521BF5DB7004CD6CC /* ioapi.c in Sources */,
 				E0FC616021AAD2030018AA61 /* ViewControllerUtil.m in Sources */,
 				E0B8C98C21BF5DB7004CD6CC /* fileenc.c in Sources */,
 				E0B8C98F21BF5DB7004CD6CC /* prng.c in Sources */,
+				E0B8C9B821BFA736004CD6CC /* unzcrash.c in Sources */,
 				E0FC614C21AABBD10018AA61 /* WebViewJavascriptBridge.m in Sources */,
+				E0B8C9B921BFA736004CD6CC /* bzlib.c in Sources */,
 				E0FC615C21AACFB00018AA61 /* ImagePickerHandler.m in Sources */,
+				E0B8C9B521BFA736004CD6CC /* dlltest.c in Sources */,
 				E0FC614B21AABBD10018AA61 /* WKWebViewJavascriptBridge.m in Sources */,
 				E0B8C99221BF5DB7004CD6CC /* SSZipArchive.m in Sources */,
+				E0B8C9BA21BFA736004CD6CC /* bzip2.c in Sources */,
 				E0B8C98921BF5DB7004CD6CC /* aeskey.c in Sources */,
+				E0B8C9B121BFA736004CD6CC /* decompress.c in Sources */,
 				E080EEDF21AAE3A8006F2080 /* BarCodeRecongnizerHandler.m in Sources */,
 				E0B8C99121BF5DB7004CD6CC /* aestab.c in Sources */,
 				E0FC616621AADB350018AA61 /* PhotoTakerHandler.m in Sources */,
@@ -620,11 +708,13 @@
 				E0B8C98421BF5DB7004CD6CC /* zip.c in Sources */,
 				E0B8C98221BF5DB7004CD6CC /* crypt.c in Sources */,
 				E0FC615121AABC5D0018AA61 /* GoHaierWebviewjavaScriptUtill.m in Sources */,
+				E0B8C9AF21BFA736004CD6CC /* mk251.c in Sources */,
 				E0A9D1A421A7EC9A00FEA58D /* ViewController.m in Sources */,
 				E0B8C94E21BF4B59004CD6CC /* H5Downloader.m in Sources */,
 				E0A9D1AF21A7EC9D00FEA58D /* main.m in Sources */,
 				E0B8C98B21BF5DB7004CD6CC /* aescrypt.c in Sources */,
 				E0A9D1A121A7EC9A00FEA58D /* AppDelegate.m in Sources */,
+				E0B8C9B621BFA736004CD6CC /* bzip2recover.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
