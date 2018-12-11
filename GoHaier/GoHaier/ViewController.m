@@ -38,8 +38,6 @@
 - (void)loadHtml
 {
     if ([GHaierH5Context isExitResource:@"GoHaier" appVersion:@"v0.0.1"]) {
-        NSString *currentUrl = [[GHaierH5Context sharedContext] getBaseZipSavePath:@"GoHaier" versionName:@"v0.0.1"];
-        [[GHaierH5Context sharedContext].h5Mapper setValue:currentUrl forKey:[NSString stringWithFormat:@"%@%@",@"GoHaier",@"v0.0.1"]];
         [self handleH5downLoad];
     }
     else
@@ -62,7 +60,7 @@
 - (void)handleH5downLoad
 {
     __weak ViewController *weakSelf = self;
-    NSString *urlPath = [[GHaierH5Context sharedContext].h5Mapper objectForKey:[NSString stringWithFormat:@"GoHaierv0.0.1"]];
+    NSString *urlPath = [[GHaierH5Context sharedContext] getBaseZipSavePath:@"GoHaier" versionName:@"v0.0.1"];
     NSLog(@"%@",urlPath);
     NSString *indexhtml = [NSString stringWithFormat:@"%@/demo.html",urlPath];
     NSURL* url = [NSURL  URLWithString:indexhtml];//创建URL
