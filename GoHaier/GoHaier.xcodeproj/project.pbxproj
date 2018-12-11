@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E02EF2F821ACD98E00CC58F4 /* ghaier.js in Resources */ = {isa = PBXBuildFile; fileRef = E02EF2F721ACD98E00CC58F4 /* ghaier.js */; };
-		E02EF2FA21ACD9A700CC58F4 /* demo.html in Resources */ = {isa = PBXBuildFile; fileRef = E02EF2F921ACD9A700CC58F4 /* demo.html */; };
 		E04FBE2121AEA87600D2EAD3 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E04FBE1F21AEA85A00D2EAD3 /* JavaScriptCore.framework */; };
 		E080EEDF21AAE3A8006F2080 /* BarCodeRecongnizerHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = E080EEDE21AAE3A8006F2080 /* BarCodeRecongnizerHandler.m */; };
 		E080EEE321AAE55B006F2080 /* HaierQRScanView.m in Sources */ = {isa = PBXBuildFile; fileRef = E080EEE121AAE55B006F2080 /* HaierQRScanView.m */; };
@@ -50,7 +48,6 @@
 		E0FC615521AABE1E0018AA61 /* HaierCoreWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = E0FC615421AABE1E0018AA61 /* HaierCoreWebView.m */; };
 		E0FC615C21AACFB00018AA61 /* ImagePickerHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = E0FC615B21AACFB00018AA61 /* ImagePickerHandler.m */; };
 		E0FC616021AAD2030018AA61 /* ViewControllerUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = E0FC615F21AAD2030018AA61 /* ViewControllerUtil.m */; };
-		E0FC616221AAD4220018AA61 /* test.html in Resources */ = {isa = PBXBuildFile; fileRef = E0FC616121AAD4220018AA61 /* test.html */; };
 		E0FC616621AADB350018AA61 /* PhotoTakerHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = E0FC616521AADB350018AA61 /* PhotoTakerHandler.m */; };
 /* End PBXBuildFile section */
 
@@ -72,8 +69,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		E02EF2F721ACD98E00CC58F4 /* ghaier.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = ghaier.js; sourceTree = "<group>"; };
-		E02EF2F921ACD9A700CC58F4 /* demo.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = demo.html; sourceTree = "<group>"; };
 		E04FBE1F21AEA85A00D2EAD3 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		E080EEDD21AAE3A8006F2080 /* BarCodeRecongnizerHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BarCodeRecongnizerHandler.h; sourceTree = "<group>"; };
 		E080EEDE21AAE3A8006F2080 /* BarCodeRecongnizerHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BarCodeRecongnizerHandler.m; sourceTree = "<group>"; };
@@ -159,7 +154,6 @@
 		E0FC615B21AACFB00018AA61 /* ImagePickerHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImagePickerHandler.m; sourceTree = "<group>"; };
 		E0FC615E21AAD2030018AA61 /* ViewControllerUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewControllerUtil.h; sourceTree = "<group>"; };
 		E0FC615F21AAD2030018AA61 /* ViewControllerUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewControllerUtil.m; sourceTree = "<group>"; };
-		E0FC616121AAD4220018AA61 /* test.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = test.html; sourceTree = "<group>"; };
 		E0FC616421AADB350018AA61 /* PhotoTakerHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoTakerHandler.h; sourceTree = "<group>"; };
 		E0FC616521AADB350018AA61 /* PhotoTakerHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotoTakerHandler.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -249,9 +243,6 @@
 				E0A9D1A021A7EC9A00FEA58D /* AppDelegate.m */,
 				E0A9D1A221A7EC9A00FEA58D /* ViewController.h */,
 				E0A9D1A321A7EC9A00FEA58D /* ViewController.m */,
-				E02EF2F721ACD98E00CC58F4 /* ghaier.js */,
-				E02EF2F921ACD9A700CC58F4 /* demo.html */,
-				E0FC616121AAD4220018AA61 /* test.html */,
 				E0A9D1A521A7EC9A00FEA58D /* Main.storyboard */,
 				E0A9D1A821A7EC9D00FEA58D /* Assets.xcassets */,
 				E0A9D1AA21A7EC9D00FEA58D /* LaunchScreen.storyboard */,
@@ -568,9 +559,6 @@
 				E0FC614D21AABBD10018AA61 /* WebViewJavascriptBridge.js.txt in Resources */,
 				E0A9D1AC21A7EC9D00FEA58D /* LaunchScreen.storyboard in Resources */,
 				E0A9D1A921A7EC9D00FEA58D /* Assets.xcassets in Resources */,
-				E0FC616221AAD4220018AA61 /* test.html in Resources */,
-				E02EF2F821ACD98E00CC58F4 /* ghaier.js in Resources */,
-				E02EF2FA21ACD9A700CC58F4 /* demo.html in Resources */,
 				E0A9D1A721A7EC9A00FEA58D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
