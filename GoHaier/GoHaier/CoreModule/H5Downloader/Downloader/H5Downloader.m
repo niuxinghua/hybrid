@@ -34,9 +34,7 @@ NSString* const H5ContextKey = @"H5ContextKey";
     
     dispatch_queue_t queue = dispatch_get_global_queue(
                                                        DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-    __weak __typeof(self)weakSelf = self;
     dispatch_async(queue, ^{
-        __strong __typeof(weakSelf)strongSelf = weakSelf;
         NSURL *url = [NSURL URLWithString:zipUrl];
         NSError *error = nil;
         // 2
@@ -54,7 +52,7 @@ NSString* const H5ContextKey = @"H5ContextKey";
                 //解压zip文件
                 [SSZipArchive unzipFileAtPath:zipFileName toDestination:zipPath];
                 [self removeFile:zipFileName];
-                [[GHaierH5Context sharedContext].h5Mapper setValue:zipPath forKey:[NSString stringWithFormat:@"%@%@",appName,versionName]];
+                [[GHaierH5Context sharedContext].h5Mapper setValue:@"1" forKey:[NSString stringWithFormat:@"%@%@",appName,versionName]];
                 [self saveH5Context];
                 [[NSNotificationCenter defaultCenter] postNotificationName:DidDownloadH5Success object:nil];
             }
@@ -107,7 +105,6 @@ NSString* const H5ContextKey = @"H5ContextKey";
     if (isDirExist) {
         NSLog(@"文件存在");
         [fileManager removeItemAtPath:targetPath error:nil];
-        
     }
 }
 
