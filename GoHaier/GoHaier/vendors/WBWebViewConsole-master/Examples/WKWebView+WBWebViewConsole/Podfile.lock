@@ -1,0 +1,16 @@
+PODS:
+  - WBWebViewConsole (1.0.2)
+
+DEPENDENCIES:
+  - WBWebViewConsole (from `../..`)
+
+EXTERNAL SOURCES:
+  WBWebViewConsole:
+    :path: "../.."
+
+SPEC CHECKSUMS:
+  WBWebViewConsole: 1288737d136b44a281cc654828339127f959e21c
+
+PODFILE CHECKSUM: 664a31577dd723d8b22983608cc4c78e6c668e8d
+
+COCOAPODS: 1.1.1

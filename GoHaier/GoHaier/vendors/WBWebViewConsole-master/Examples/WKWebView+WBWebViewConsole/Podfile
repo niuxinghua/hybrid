@@ -1,0 +1,9 @@
+source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '8.0'
+
+# also demostrates when use as a dynamic framework
+use_frameworks!
+
+target 'WKWebView+WBWebViewConsole' do
+	pod 'WBWebViewConsole', :path => '../..'
+end

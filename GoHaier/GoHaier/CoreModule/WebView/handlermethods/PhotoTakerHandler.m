@@ -20,7 +20,7 @@ static PhotoTakerHandler* sharedInstance;
 }
 - (NSString *)handlerKey
 {
-    return @"haier_take_photo";
+    return @"ghaier_takePhoto";
 }
 
 - (void)handlerMethod

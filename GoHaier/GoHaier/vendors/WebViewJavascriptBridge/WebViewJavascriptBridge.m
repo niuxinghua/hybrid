@@ -7,7 +7,7 @@
 //
 
 #import "WebViewJavascriptBridge.h"
-
+#import "HaierCoreWebView.h"
 #if __has_feature(objc_arc_weak)
     #define WVJB_WEAK __weak
 #else
@@ -15,7 +15,7 @@
 #endif
 
 @implementation WebViewJavascriptBridge {
-    WVJB_WEAK WVJB_WEBVIEW_TYPE* _webView;
+    HaierCoreWebView* _webView;
     WVJB_WEAK id _webViewDelegate;
     long _uniqueId;
     WebViewJavascriptBridgeBase *_base;
@@ -109,7 +109,7 @@
 - (void)webView:(WebView *)webView didFinishLoadForFrame:(WebFrame *)frame
 {
     if (webView != _webView) { return; }
-    
+    [_webView ]
     if (![[webView stringByEvaluatingJavaScriptFromString:[_base webViewJavascriptCheckCommand]] isEqualToString:@"true"]) {
         [_base injectJavascriptFile:YES];
     }
@@ -123,7 +123,6 @@
 
 - (void)webView:(WebView *)webView didFailLoadWithError:(NSError *)error forFrame:(WebFrame *)frame {
     if (webView != _webView) { return; }
-    
     if (_webViewDelegate && [_webViewDelegate respondsToSelector:@selector(webView:didFailLoadWithError:forFrame:)]) {
         [_webViewDelegate webView:webView didFailLoadWithError:error forFrame:frame];
     }
@@ -134,6 +133,8 @@
     if (webView != _webView) { return; }
     
     NSURL *url = [request URL];
+    //将web加载的url信息打印到控制台
+    [_webView weblogToNative:[url absoluteString]];
     if ([_base isCorrectProcotocolScheme:url]) {
         if ([_base isCorrectHost:url]) {
             NSString *messageQueueString = [self _evaluateJavascript:[_base webViewJavascriptFetchQueyCommand]];
@@ -159,7 +160,6 @@
 
 - (NSURLRequest *)webView:(WebView *)webView resource:(id)identifier willSendRequest:(NSURLRequest *)request redirectResponse:(NSURLResponse *)redirectResponse fromDataSource:(WebDataSource *)dataSource {
     if (webView != _webView) { return request; }
-    
     if (_webViewDelegate && [_webViewDelegate respondsToSelector:@selector(webView:resource:willSendRequest:redirectResponse:fromDataSource:)]) {
         return [_webViewDelegate webView:webView resource:identifier willSendRequest:request redirectResponse:redirectResponse fromDataSource:dataSource];
     }
@@ -187,7 +187,7 @@
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
     if (webView != _webView) { return; }
-    
+    [_webView weblogToNative:@"webViewDidFinishLoad"];
     _numRequestsLoading--;
     
     if (_numRequestsLoading == 0 && ![[webView stringByEvaluatingJavaScriptFromString:[_base webViewJavascriptCheckCommand]] isEqualToString:@"true"]) {
@@ -204,7 +204,9 @@
 
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
     if (webView != _webView) { return; }
-    
+    [_webView weblogToNative:@"didFailLoadWithError"];
+    [_webView weblogToNative:error.description];
+
     _numRequestsLoading--;
     
     __strong WVJB_WEBVIEW_DELEGATE_TYPE* strongDelegate = _webViewDelegate;
@@ -215,6 +217,8 @@
 
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
     if (webView != _webView) { return YES; }
+    [_webView weblogToNative:[request.URL absoluteString]];
+
     NSURL *url = [request URL];
     __strong WVJB_WEBVIEW_DELEGATE_TYPE* strongDelegate = _webViewDelegate;
     if ([_base isCorrectProcotocolScheme:url]) {
@@ -234,7 +238,7 @@
 
 - (void)webViewDidStartLoad:(UIWebView *)webView {
     if (webView != _webView) { return; }
-    
+    [_webView weblogToNative:@"webViewDidStartLoad"];
     _numRequestsLoading++;
     
     __strong WVJB_WEBVIEW_DELEGATE_TYPE* strongDelegate = _webViewDelegate;

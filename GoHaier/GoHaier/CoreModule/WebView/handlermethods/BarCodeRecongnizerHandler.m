@@ -24,13 +24,20 @@ static BarCodeRecongnizerHandler* sharedInstance;
 }
 - (NSString *)handlerKey
 {
-    return @"haier_scan_qrcode";
+    return @"ghaier_scanQrcode";
 }
+
 
 - (void)handlerMethod
 {
     NSLog(@"handler key %@ method called",[self handlerKey]);
-    UIViewController *controller = [[HaierQRScanViewController alloc]init];
+    HaierQRScanViewController *controller = [[HaierQRScanViewController alloc]init];
+    __weak typeof (BarCodeRecongnizerHandler)*weakSelf = self;
+    controller.resultBlock = ^(NSString * result) {
+        if (weakSelf.webCallBack) {
+            weakSelf.webCallBack(result);
+        }
+    };
     [[[ViewControllerUtil sharedInstance] topViewController] presentViewController:controller animated:NO completion:^{
         
     }];

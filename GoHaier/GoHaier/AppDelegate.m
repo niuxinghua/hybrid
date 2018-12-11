@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "PAirSandbox.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +18,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+#ifdef DEBUG
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [[PAirSandbox sharedInstance] enableSwipe];
+    });
+#endif
     return YES;
 }
 

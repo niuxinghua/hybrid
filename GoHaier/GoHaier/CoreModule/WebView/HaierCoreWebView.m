@@ -7,6 +7,10 @@
 //
 
 #import "HaierCoreWebView.h"
+#import <JavaScriptCore/JavaScriptCore.h>
+#import "H5Downloader.h"
+@interface HaierCoreWebView()
+@end
 @implementation HaierCoreWebView
 - (instancetype)init
 {
@@ -15,7 +19,12 @@
         self.bridge = [WebViewJavascriptBridge bridgeForWebView:self handler:^(id data, WVJBResponseCallback responseCallback) {
             
         }];
-
+        //self.delegate = self;
+       // self.scalesPageToFit = YES;//自动对网页进行缩放以适应屏幕;
+        self.dataDetectorTypes = UIDataDetectorTypeAll;//自动检测网页上的电话号码,网页链接,邮箱;
+        [self initweblogToNative];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleH5downLoad) name:DidDownloadH5Success object:nil];
+        
     }
     
     return self;
@@ -24,12 +33,37 @@
 {
     if (self = [super initWithFrame:frame])
     {
-        self.bridge = [WebViewJavascriptBridge bridgeForWebView:self handler:^(id data, WVJBResponseCallback responseCallback) {
-           
+        self.bridge = [WebViewJavascriptBridge bridgeForWebView:self webViewDelegate:self handler:^(id data, WVJBResponseCallback responseCallback) {
+            
         }];
-       
+        // self.delegate = self;
+       // self.scalesPageToFit = YES;//自动对网页进行缩放以适应屏幕;
+        self.dataDetectorTypes = UIDataDetectorTypeAll;//自动检测网页上的电话号码,网页链接,邮箱;
+        [self initweblogToNative];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleH5downLoad) name:DidDownloadH5Success object:nil];
     }
     return self;
+}
+- (void)weblogToNative:(NSString *)showlog
+{
+    NSLog(@">>>> webview log : %@ <<<<", showlog);
+    
+}
+
+- (void)initweblogToNative
+{
+    JSContext *ctx = [self valueForKeyPath:@"documentView.webView.mainFrame.javaScriptContext"];
+    ctx[@"console"][@"log"] = ^(JSValue * msg) {
+        NSLog(@">>>> webview log : %@ <<<<", msg);
+    };
+    ctx[@"console"][@"warn"] = ^(JSValue * msg) {
+        NSLog(@">>>> webview warn : %@ <<<<", msg);
+    };
+    ctx[@"console"][@"error"] = ^(JSValue * msg) {
+        NSLog(@">>>> webview error : %@ <<<<", msg);
+    };
+    
+    
 }
 #pragma mark getters
 - (NSArray *)handlerKeys
@@ -46,6 +80,11 @@
     }
     return _handlerCallBacks;
 }
+
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
 #pragma mark - methods
 - (BOOL)registerNativeHandlers:(BaseHandler *) handler;
 {
@@ -58,11 +97,11 @@
         NSLog(@"handlerkey error repeated");
         return NO;
     }
+    __weak typeof(self) weakSelf = self;
     [self.bridge registerHandler:handlerKey handler:^(id data, WVJBResponseCallback responseCallback) {
-        [self.handlerCallBacks setObject:responseCallback forKey:handlerKey];
+        [weakSelf.handlerCallBacks setObject:responseCallback forKey:handlerKey];
         [handler handlerMethod];
     }];
-    __weak typeof(HaierCoreWebView) *weakSelf = self;
     handler.webCallBack = ^(id data) {
         [weakSelf respondToWeb:data withHandlerKey:handlerKey];
     };
@@ -77,5 +116,11 @@
     }
     return NO;
 }
+- (void)handleH5downLoad
+{
+ //h5下载完成
+    
+}
+
 
 @end

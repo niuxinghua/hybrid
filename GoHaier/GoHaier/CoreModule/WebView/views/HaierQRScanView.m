@@ -19,7 +19,6 @@ static NSString *const scanLineAnimationName = @"scanLineAnimation";
 @property (nonatomic, strong) AVCaptureVideoPreviewLayer *previewLayer;
 @property (nonatomic,strong) UIButton *closeButton;
 @end
-
 @implementation HaierQRScanView
 - (instancetype)initWithFrame:(CGRect)frame{
     if (self = [super initWithFrame:frame]) {

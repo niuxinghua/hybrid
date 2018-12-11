@@ -21,7 +21,7 @@ static ImagePickerHandler* sharedInstance;
 }
 - (NSString *)handlerKey
 {
-    return @"haier_choose_photo";
+    return @"ghaier_choosePhoto";
 }
 - (void)handlerMethod
 {
@@ -46,11 +46,11 @@ static ImagePickerHandler* sharedInstance;
 #pragma mark - UIImagePickerControllerDelegate
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
-//    UIImage *newImage = [info objectForKey:UIImagePickerControllerOriginalImage];
-//    NSData *imageData = UIImageJPEGRepresentation(newImage, 1);
-//    NSString *base64=[imageData base64EncodedStringWithOptions:NSUTF8StringEncoding];
-//    [picker dismissViewControllerAnimated:YES completion:nil];
-//    [self.bridge callHandler:@"imageData" data:@{@"image":base64}];
+    UIImage *newImage = [info objectForKey:UIImagePickerControllerOriginalImage];
+    NSData *imageData = UIImageJPEGRepresentation(newImage, 1);
+    NSString *base64=[imageData base64EncodedStringWithOptions:NSUTF8StringEncoding];
+    [picker dismissViewControllerAnimated:YES completion:nil];
+    [self respondToWeb:base64];
     
     
     
@@ -61,6 +61,6 @@ static ImagePickerHandler* sharedInstance;
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
     
     [picker dismissViewControllerAnimated:YES completion:nil];
-    [self respondToWeb:@"test"];
+    
 }
 @end

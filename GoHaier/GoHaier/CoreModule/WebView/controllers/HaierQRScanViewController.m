@@ -29,7 +29,6 @@
 
 - (void)openLibary{
     if (![self isLibaryAuthStatusCorrect]) {
-        [self showAlert:@"需要相册权限" action:nil];
         return;
     }
     [self presentViewController:self.imagePicker animated:YES completion:nil];
@@ -61,12 +60,7 @@
 }
 
 
-- (void)showAlert:(NSString *)message action:(void(^)())action{
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:message preferredStyle:UIAlertControllerStyleAlert];
-    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"好" style:UIAlertActionStyleCancel handler:action];
-    [alert addAction:cancelAction];
-    [self presentViewController:alert animated:YES completion:nil];
-}
+
 
 
 #pragma mark - imagePickerDelegate
@@ -76,19 +70,19 @@
     UIImage *image = info[UIImagePickerControllerOriginalImage];
     NSString *result = [self messageFromQRCodeImage:image];
     if (result.length == 0) {
-        [self showAlert:@"未识别到二维码" action:nil];
-        return;
+       
     }
-    [self showAlert:result action:nil];
+    
 }
 
 
 #pragma mark - scanViewDelegate
 - (void)scanView:(HaierQRScanView *)scanView pickUpMessage:(NSString *)message{
     [scanView stopScanning];
-    [self showAlert:message action:^{
-        [scanView startScanning];
-    }];
+    if (self.resultBlock) {
+        self.resultBlock(message);
+    }
+    [self scanViewDidTouchCloseButton];
 }
 
 - (void)scanViewDidTouchCloseButton

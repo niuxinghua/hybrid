@@ -1,0 +1,65 @@
+<html>
+
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type">
+    <title>
+        js调用java
+    </title>
+</head>
+
+<body>
+
+    <p>
+        <input type="button" id="enter" value="扫描二维码" onclick="scanQrcode()" />
+    </p>
+    <p>
+        <input type="button" id="enter1" value="打开相册" onclick="choosePhoto()" />
+    </p>
+
+    <p>
+        <input type="button" id="enter2" value="打开相机" onclick="takePhoto()" />
+    </p>
+    <p>
+        <input type="file" value="打开文件" />
+    </p>
+</body>
+
+<script src="ghaier.js"></script>
+<script >
+
+    function testClick() {
+        window.WebViewJavascriptBridge.send("this is js data", function (responseData) {
+            document.getElementById("show").innerHTML = "repsonseData from java, data = " + responseData
+        })
+
+    }
+
+    function scanQrcode() {
+        window.ghaier.scanQrcode({
+            success: function(data) {
+                console.log(data);
+            }
+            });
+    }
+
+
+
+    function choosePhoto() {
+        window.ghaier.choosePhoto({
+            success: function(data) {
+                                  console.log(data);
+
+                                  }
+            });
+    }
+    function takePhoto() {
+        window.ghaier.takePhoto({
+            success: function(data) {
+                console.log(data);
+            }
+            });
+    }
+
+</script>
+
+</html>
