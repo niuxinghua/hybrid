@@ -51,10 +51,9 @@ NSString* const H5ContextKey = @"H5ContextKey";
             {
                 //解压zip文件
                 [SSZipArchive unzipFileAtPath:zipFileName toDestination:zipPath];
-                [self removeFile:zipFileName];
                 [[GHaierH5Context sharedContext].h5Mapper setValue:@"1" forKey:[NSString stringWithFormat:@"%@%@",appName,versionName]];
                 [self saveH5Context];
-                [[NSNotificationCenter defaultCenter] postNotificationName:DidDownloadH5Success object:nil];
+                [[NSNotificationCenter defaultCenter] postNotificationName:DidDownloadH5Success object:zipUrl];
             }
         }
         
@@ -77,7 +76,6 @@ NSString* const H5ContextKey = @"H5ContextKey";
 
 - (void)createFileDirectories:(NSString *)targetPath
 {
-    // 判断存放音频、视频的文件夹是否存在，不存在则创建对应文件夹
     NSFileManager *fileManager = [NSFileManager defaultManager];
     BOOL isDir = FALSE;
     BOOL isDirExist = [fileManager fileExistsAtPath:targetPath isDirectory:&isDir];

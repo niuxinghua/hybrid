@@ -43,4 +43,11 @@ static GHaierH5Context *sharedContext = nil;
     zipPath =  [zipPath stringByAppendingPathComponent:versionName];
     return zipPath;
 }
+- (NSString*)getBaseZipSavePath:(NSString*)appName
+{
+    NSString *sandboxPath = NSHomeDirectory();
+    NSString *path = [sandboxPath  stringByAppendingPathComponent:@"Library/Caches"];//将Documents
+    NSString *zipPath = [path stringByAppendingPathComponent:appName];
+    return zipPath;
+}
 @end

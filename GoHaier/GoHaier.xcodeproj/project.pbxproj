@@ -55,6 +55,7 @@
 		E0B8C9BA21BFA736004CD6CC /* bzip2.c in Sources */ = {isa = PBXBuildFile; fileRef = E0B8C9AA21BFA736004CD6CC /* bzip2.c */; };
 		E0B8C9BB21BFA736004CD6CC /* bspatch.c in Sources */ = {isa = PBXBuildFile; fileRef = E0B8C9AC21BFA736004CD6CC /* bspatch.c */; };
 		E0B8C9BC21BFA736004CD6CC /* bsdiff.c in Sources */ = {isa = PBXBuildFile; fileRef = E0B8C9AD21BFA736004CD6CC /* bsdiff.c */; };
+		E0B8C9C421BFD5F0004CD6CC /* PatchManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E0B8C9C321BFD5F0004CD6CC /* PatchManager.m */; };
 		E0F6C53121AB9EA2008AF5C0 /* BaseHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = E0F6C53021AB9EA2008AF5C0 /* BaseHandler.m */; };
 		E0FC614A21AABBD10018AA61 /* WebViewJavascriptBridgeBase.m in Sources */ = {isa = PBXBuildFile; fileRef = E0FC614321AABBD10018AA61 /* WebViewJavascriptBridgeBase.m */; };
 		E0FC614B21AABBD10018AA61 /* WKWebViewJavascriptBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = E0FC614421AABBD10018AA61 /* WKWebViewJavascriptBridge.m */; };
@@ -172,6 +173,8 @@
 		E0B8C9AC21BFA736004CD6CC /* bspatch.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = bspatch.c; sourceTree = "<group>"; };
 		E0B8C9AD21BFA736004CD6CC /* bsdiff.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = bsdiff.c; sourceTree = "<group>"; };
 		E0B8C9BD21BFA7BF004CD6CC /* Haier_Bsdiff.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Haier_Bsdiff.h; sourceTree = "<group>"; };
+		E0B8C9C221BFD5F0004CD6CC /* PatchManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PatchManager.h; sourceTree = "<group>"; };
+		E0B8C9C321BFD5F0004CD6CC /* PatchManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PatchManager.m; sourceTree = "<group>"; };
 		E0F6C52F21AB9EA2008AF5C0 /* BaseHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseHandler.h; sourceTree = "<group>"; };
 		E0F6C53021AB9EA2008AF5C0 /* BaseHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseHandler.m; sourceTree = "<group>"; };
 		E0FC614321AABBD10018AA61 /* WebViewJavascriptBridgeBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewJavascriptBridgeBase.m; sourceTree = "<group>"; };
@@ -418,6 +421,8 @@
 				E0B8C9BD21BFA7BF004CD6CC /* Haier_Bsdiff.h */,
 				E0B8C9AB21BFA736004CD6CC /* bsdiff-4.3 */,
 				E0B8C99B21BFA736004CD6CC /* bzip2-1.0.6 */,
+				E0B8C9C221BFD5F0004CD6CC /* PatchManager.h */,
+				E0B8C9C321BFD5F0004CD6CC /* PatchManager.m */,
 			);
 			path = BSDiff;
 			sourceTree = "<group>";
@@ -680,6 +685,7 @@
 				E0B8C99921BF8C16004CD6CC /* LocationHandler.m in Sources */,
 				E0FC615521AABE1E0018AA61 /* HaierCoreWebView.m in Sources */,
 				E080EEE721AAE69D006F2080 /* HaierQRScanViewController.m in Sources */,
+				E0B8C9C421BFD5F0004CD6CC /* PatchManager.m in Sources */,
 				E0B8C98D21BF5DB7004CD6CC /* sha1.c in Sources */,
 				E0B8C99621BF73DB004CD6CC /* GHaierH5Context.m in Sources */,
 				E0F6C53121AB9EA2008AF5C0 /* BaseHandler.m in Sources */,
