@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import "BaseHandler.h"
+#import <Foundation/Foundation.h>
+#import <CoreLocation/CoreLocation.h>
 @interface LocationHandler : BaseHandler
 + (instancetype)sharedInstance;
 @end
