@@ -7,7 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-extern NSString* const DidDownloadH5Success;
+extern NSString* const DidDownloadH5BaseZipSuccess;
+extern NSString* const DidDownloadH5PatchSuccess;
+
 extern NSString* const H5ContextKey;
 
 @interface H5Downloader : NSObject

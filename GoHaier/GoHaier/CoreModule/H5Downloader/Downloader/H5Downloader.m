@@ -11,7 +11,9 @@
 #import "GHaierH5Context.h"
 #import "H5FilePathManager.h"
 static H5Downloader *sharedInstance = nil;
-NSString* const DidDownloadH5Success = @"DidDownloadH5Success";
+NSString* const DidDownloadH5BaseZipSuccess = @"DidDownloadH5BaseZipSuccess";
+NSString* const DidDownloadH5PatchSuccess = @"DidDownloadH5PatchSuccess";
+
 NSString* const H5ContextKey = @"H5ContextKey";
 @implementation H5Downloader
 + (instancetype)sharedInstance
@@ -68,6 +70,7 @@ NSString* const H5ContextKey = @"H5ContextKey";
             NSString *zipFileName = [zipPath stringByAppendingPathComponent:appName];
             [data writeToFile:zipFileName options:0 error:&error];
             //解压zip到另外的目录
+            [[NSNotificationCenter defaultCenter] postNotificationName:DidDownloadH5PatchSuccess object:nil];
         }
         else
         {
