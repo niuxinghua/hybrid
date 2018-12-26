@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (instancetype)sharedInstance;
 - (NSString *)baseZipSavePathwithappName:(NSString*)appName andAppversion:(NSString*)appVersion;
 - (NSString *)baseSavePathwithappName:(NSString*)appName andAppversion:(NSString*)appVersion;
-- (NSString *)baseSavePathwithappName:(NSString*)appName andCurrentversion:(NSString*)appVersion targetVersion:(NSString *)targetVersion;
+- (NSString *)basePatchSavePathwithappName:(NSString*)appName andCurrentversion:(NSString*)appVersion targetVersion:(NSString *)targetVersion;
 - (void)createFileDirectories:(NSString *)targetPath isRedo:(BOOL)redo;
 @end
 

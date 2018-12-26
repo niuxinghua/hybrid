@@ -102,7 +102,7 @@ static H5FilePathManager *instance = nil;
 {
     return [self getBaseSavePath:appName versionName:appVersion];
 }
-- (NSString *)baseSavePathwithappName:(NSString*)appName andCurrentversion:(NSString*)appVersion targetVersion:(NSString *)targetVersion
+- (NSString *)basePatchSavePathwithappName:(NSString*)appName andCurrentversion:(NSString*)appVersion targetVersion:(NSString *)targetVersion
 {
     return [self getPatchSavePath:appName currentversionName:appVersion targetVersionName:targetVersion];
 }

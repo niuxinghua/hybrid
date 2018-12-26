@@ -36,7 +36,8 @@
 - (void)downLoadPatch
 {
     _patchUrl = @"https://github.com/niuxinghua/GOHaierHTMLResource/blob/master/diff_GoHaier?raw=true";
-    // [[H5Downloader sharedInstance] downLoadZipFile:_patchUrl fileName:@"GoHaierPatch" unZipToPathwithVersion:@"v0.0.1"];
+    NSString *path = [[H5FilePathManager sharedInstance] basePatchSavePathwithappName:@"Hwork" andCurrentversion:@"v0.0.1" targetVersion:@"v0.0.2"];
+    [[H5Downloader sharedInstance] downLoadPatchFile:_patchUrl toPath:path withPatchName:@"Hwork" CurrentVersion:@"v0.0.1" targetVersion:@"v0.0.2"];
     
 }
 - (void)loadHtml
