@@ -74,7 +74,6 @@ static H5FilePathManager *instance = nil;
         if (isDir) {
             NSLog(@"该文件是一个目录");
             if (redo) {
-                
                 NSArray *contents = [fileManager contentsOfDirectoryAtPath:targetPath error:NULL];
                 NSEnumerator *e = [contents objectEnumerator];
                 NSString *filename;
@@ -117,7 +116,7 @@ static H5FilePathManager *instance = nil;
         }
     }
     return @"";
-
+    
 }
 
 - (BOOL)removeFile:(NSString *)targetPath
