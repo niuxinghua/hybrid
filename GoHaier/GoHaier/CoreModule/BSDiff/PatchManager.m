@@ -48,13 +48,7 @@ static PatchManager * sharedInstance = nil;
     [self saveH5Context];
 }
 
-//-(NSString *)createFileWithFileName:(NSString *)fileName appName:(NSString*)appName versionName:(NSString*)versionName
-//{
-// NSString* filePath = [[GHaierH5Context sharedContext] getBaseZipSavePath:appName versionName:versionName];
-//    filePath = [filePath stringByAppendingPathComponent:fileName];
-//    [[NSFileManager defaultManager] createFileAtPath:filePath contents:nil attributes:nil];
-//    return filePath;
-//}
+
 - (void)deleteFolder:(NSString *)filePath
 {
     NSError *error;
