@@ -38,10 +38,7 @@ static PatchManager * sharedInstance = nil;
     // patchPath
     argv[3] = [differFilePath UTF8String];
     int result = BsdiffUntils_bspatch(4, argv);
-//   [self deleteFolder:[[H5Downloader sharedInstance] getBaseZipSavePath:appName]];
-//    NSString *patchLastZIPFile = [NSString stringWithFormat:@"%@/%@",[[GHaierH5Context sharedContext] getBaseZipSavePath:@"GoHaierPatch" versionName:versionName],@"Haier_Result.zip"];
-//    [self doSaveAndUnzipLastPatchToPath:[[GHaierH5Context sharedContext] getBaseZipSavePath:appName versionName:versionName] appName:appName zipUrl:patchLastZIPFile versionName:versionName];
-
+//result为0 表明merge成功
     return result == 0;
 }
 - (void)doSaveAndUnzipLastPatchToPath:(NSString *)path appName:(NSString *)appName zipUrl:(NSString *)zipUrl versionName:(NSString *)versionName

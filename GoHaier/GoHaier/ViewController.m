@@ -111,8 +111,13 @@
     
       NSString *patchPath = [[H5FilePathManager sharedInstance] basePatchSavePathwithappName:@"Hwork" andCurrentversion:@"v0.0.1" targetVersion:@"v0.0.2"];
     patchPath = [patchPath stringByAppendingPathComponent:@"Hwork"];
-   [[PatchManager sharedInstance] mergePatch:currentZipPath differFilePath:patchPath appName:@"Hwork" versionName:@"v0.0.1" targetVersion:@"v0.0.2"];
-    
+  BOOL isSuccess  = [[PatchManager sharedInstance] mergePatch:currentZipPath differFilePath:patchPath appName:@"Hwork" versionName:@"v0.0.1" targetVersion:@"v0.0.2"];
+    if (isSuccess) {
+        //需要将merge的zip替换到新的目录，覆盖这个目录，并将这个zip解压到新的目录更新界面
+        
+        
+        
+    }
     
 }
 
