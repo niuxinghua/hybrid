@@ -45,31 +45,6 @@
 }
 - (void)loadHtml
 {
-//    if ([GHaierH5Context isExitResource:@"GoHaier" appVersion:@"v0.0.1PATCHVERSIONDIDAPPLY"]) {
-//        __weak ViewController *weakSelf = self;
-//        NSString *urlPath = [[GHaierH5Context sharedContext] getBaseZipSavePath:@"GoHaier" versionName:@"v0.0.1"];
-//        NSLog(@"%@",urlPath);
-//        NSString *indexhtml = [NSString stringWithFormat:@"%@/%@/demo.html",urlPath,@"GoHaier"];
-//        NSURL* url = [NSURL  URLWithString:indexhtml];//创建URL
-//        NSURLRequest* request = [NSURLRequest requestWithURL:url];//创建NSURLRequest
-//        dispatch_async(dispatch_get_main_queue(), ^{
-//            [weakSelf.webView loadRequest:request];
-//        });
-//    }
-//   else if ([GHaierH5Context isExitResource:@"GoHaier" appVersion:@"v0.0.1"]) {
-//        __weak ViewController *weakSelf = self;
-//        NSString *urlPath = [[GHaierH5Context sharedContext] getBaseZipSavePath:@"GoHaier" versionName:@"v0.0.1"];
-//        NSLog(@"%@",urlPath);
-//        NSString *indexhtml = [NSString stringWithFormat:@"%@/demo.html",urlPath];
-//        NSURL* url = [NSURL  URLWithString:indexhtml];//创建URL
-//        NSURLRequest* request = [NSURLRequest requestWithURL:url];//创建NSURLRequest
-//        dispatch_async(dispatch_get_main_queue(), ^{
-//            [weakSelf.webView loadRequest:request];
-//        });
-//        [self downLoadPatch];
-//    }
-//    else
-//    {
     if ([[[GHaierH5Context sharedContext] valueForKey:[NSString stringWithFormat:@"%@-currentVersion",@"Hwork"]] isEqualToString:@"v0.0.2"]) {
         NSString *finalPath = [[H5FilePathManager sharedInstance] baseSavePathwithappName:@"Hwork" andAppversion:@"v0.0.2"];
         NSString *index = [[H5FilePathManager sharedInstance] pathForIndexHtmlinFolder:finalPath];
@@ -87,16 +62,6 @@
         [[H5Downloader sharedInstance] downLoadZipFile:_zipUrl toPath:savePath withZipName:@"Hwork" versionName:@"v0.0.1"];
     }
     
-    //}
-
-    
-    
-    
-//        NSString *onlineurl = @"http://10.138.40.223:8081/test/";
-//        NSString *path = [[NSBundle mainBundle] pathForResource:@"demo" ofType:@"html"];
-//        NSURL* url = [NSURL  URLWithString:path];//创建URL
-//        NSURLRequest* request = [NSURLRequest requestWithURL:url];//创建NSURLRequest
-//        [_webView loadRequest:request];
     
 }
 
