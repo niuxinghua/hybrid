@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		E04FBE2121AEA87600D2EAD3 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E04FBE1F21AEA85A00D2EAD3 /* JavaScriptCore.framework */; };
 		E079618B21D3212B00564F83 /* H5FilePathManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E079618A21D3212B00564F83 /* H5FilePathManager.m */; };
+		E079618F21D378B500564F83 /* VersionController.m in Sources */ = {isa = PBXBuildFile; fileRef = E079618E21D378B500564F83 /* VersionController.m */; };
 		E080EEDF21AAE3A8006F2080 /* BarCodeRecongnizerHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = E080EEDE21AAE3A8006F2080 /* BarCodeRecongnizerHandler.m */; };
 		E080EEE321AAE55B006F2080 /* HaierQRScanView.m in Sources */ = {isa = PBXBuildFile; fileRef = E080EEE121AAE55B006F2080 /* HaierQRScanView.m */; };
 		E080EEE721AAE69D006F2080 /* HaierQRScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E080EEE521AAE69D006F2080 /* HaierQRScanViewController.m */; };
@@ -90,6 +91,8 @@
 		E04FBE1F21AEA85A00D2EAD3 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		E079618921D3212B00564F83 /* H5FilePathManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = H5FilePathManager.h; sourceTree = "<group>"; };
 		E079618A21D3212B00564F83 /* H5FilePathManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = H5FilePathManager.m; sourceTree = "<group>"; };
+		E079618D21D378B500564F83 /* VersionController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VersionController.h; sourceTree = "<group>"; };
+		E079618E21D378B500564F83 /* VersionController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VersionController.m; sourceTree = "<group>"; };
 		E080EEDD21AAE3A8006F2080 /* BarCodeRecongnizerHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BarCodeRecongnizerHandler.h; sourceTree = "<group>"; };
 		E080EEDE21AAE3A8006F2080 /* BarCodeRecongnizerHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BarCodeRecongnizerHandler.m; sourceTree = "<group>"; };
 		E080EEE121AAE55B006F2080 /* HaierQRScanView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HaierQRScanView.m; sourceTree = "<group>"; };
@@ -247,6 +250,15 @@
 			children = (
 			);
 			path = GoHaier;
+			sourceTree = "<group>";
+		};
+		E079618C21D3783400564F83 /* VersionController */ = {
+			isa = PBXGroup;
+			children = (
+				E079618D21D378B500564F83 /* VersionController.h */,
+				E079618E21D378B500564F83 /* VersionController.m */,
+			);
+			path = VersionController;
 			sourceTree = "<group>";
 		};
 		E080EEE021AAE540006F2080 /* views */ = {
@@ -505,6 +517,7 @@
 		E0FC615221AABE030018AA61 /* CoreModule */ = {
 			isa = PBXGroup;
 			children = (
+				E079618C21D3783400564F83 /* VersionController */,
 				E0B8C99A21BFA717004CD6CC /* BSDiff */,
 				E0B8C93821BF470D004CD6CC /* H5Downloader */,
 				E0FC615821AACF100018AA61 /* WebView */,
@@ -704,6 +717,7 @@
 				E0B8C9BC21BFA736004CD6CC /* bsdiff.c in Sources */,
 				E0B8C9BB21BFA736004CD6CC /* bspatch.c in Sources */,
 				E0B8C99921BF8C16004CD6CC /* LocationHandler.m in Sources */,
+				E079618F21D378B500564F83 /* VersionController.m in Sources */,
 				E0FC615521AABE1E0018AA61 /* HaierCoreWebView.m in Sources */,
 				E080EEE721AAE69D006F2080 /* HaierQRScanViewController.m in Sources */,
 				E0B8C9C421BFD5F0004CD6CC /* PatchManager.m in Sources */,
