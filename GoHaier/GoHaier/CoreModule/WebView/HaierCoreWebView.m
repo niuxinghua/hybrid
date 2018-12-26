@@ -25,7 +25,7 @@
         }];
         self.dataDetectorTypes = UIDataDetectorTypeAll;//自动检测网页上的电话号码,网页链接,邮箱;
         [self initweblogToNative];
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleH5downLoad) name:DidDownloadH5Success object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleH5downLoad) name:DidDownloadH5BaseZipSuccess object:nil];
         [self registerHandlers];
     }
     
@@ -40,7 +40,7 @@
         }];
         self.dataDetectorTypes = UIDataDetectorTypeAll;//自动检测网页上的电话号码,网页链接,邮箱;
         [self initweblogToNative];
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleH5downLoad) name:DidDownloadH5Success object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleH5downLoad) name:DidDownloadH5BaseZipSuccess object:nil];
         [self registerHandlers];
 
     }

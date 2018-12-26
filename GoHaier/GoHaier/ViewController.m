@@ -29,7 +29,9 @@
     [self.view addSubview:_webView];
     
     [self loadHtml];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleH5downLoad:) name:DidDownloadH5Success object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleH5downLoad:) name:DidDownloadH5BaseZipSuccess object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleH5PatchdownLoad:) name:DidDownloadH5PatchSuccess object:nil];
+
     
 }
 
@@ -97,6 +99,12 @@
         [self downLoadPatch];
    
 
+}
+- (void)handleH5PatchdownLoad:(NSNotification *)notification
+{
+    //merge Patch
+    
+    
 }
 
 
