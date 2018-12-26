@@ -25,7 +25,8 @@ static H5FilePathManager *instance = nil;
     NSString *path = [sandboxPath  stringByAppendingPathComponent:@"Library/Caches"];//将Documents
     NSString *zipPath = [path stringByAppendingPathComponent:@"GoHaier"];
     zipPath = [zipPath stringByAppendingPathComponent:@"zips"];
-    zipPath = [zipPath stringByAppendingPathComponent:appName];
+    NSString *prefix = [NSString stringWithFormat:@"%@-prefix",appName];
+    zipPath = [zipPath stringByAppendingPathComponent:prefix];
     zipPath =  [zipPath stringByAppendingPathComponent:versionName];
     return zipPath;
 }
@@ -34,7 +35,8 @@ static H5FilePathManager *instance = nil;
     NSString *sandboxPath = NSHomeDirectory();
     NSString *path = [sandboxPath  stringByAppendingPathComponent:@"Library/Caches"];//将Documents
     NSString *zipPath = [path stringByAppendingPathComponent:@"GoHaier"];
-    zipPath = [zipPath stringByAppendingPathComponent:appName];
+    NSString *prefix = [NSString stringWithFormat:@"%@-prefix",appName];
+    zipPath = [zipPath stringByAppendingPathComponent:prefix];
     zipPath =  [zipPath stringByAppendingPathComponent:versionName];
     return zipPath;
 }
@@ -44,7 +46,8 @@ static H5FilePathManager *instance = nil;
     NSString *path = [sandboxPath  stringByAppendingPathComponent:@"Library/Caches"];//将Documents
     NSString *zipPath = [path stringByAppendingPathComponent:@"GoHaier"];
     zipPath = [zipPath stringByAppendingPathComponent:@"Patchs"];
-    zipPath = [zipPath stringByAppendingPathComponent:appName];
+    NSString *prefix = [NSString stringWithFormat:@"%@-prefix",appName];
+    zipPath = [zipPath stringByAppendingPathComponent:prefix];
     NSString *patchFolder = [NSString stringWithFormat:@"%@-%@",versionName,targetVersion];
     zipPath =  [zipPath stringByAppendingPathComponent:patchFolder];
     return zipPath;
@@ -55,7 +58,8 @@ static H5FilePathManager *instance = nil;
     NSString *path = [sandboxPath  stringByAppendingPathComponent:@"Library/Caches"];//将Documents
     NSString *zipPath = [path stringByAppendingPathComponent:@"GoHaier"];
     zipPath = [zipPath stringByAppendingPathComponent:@"MergedZips"];
-    zipPath = [zipPath stringByAppendingPathComponent:appName];
+    NSString *prefix = [NSString stringWithFormat:@"%@-prefix",appName];
+    zipPath = [zipPath stringByAppendingPathComponent:prefix];
     NSString *patchFolder = [NSString stringWithFormat:@"%@",targetVersion];
     zipPath =  [zipPath stringByAppendingPathComponent:patchFolder];
     return zipPath;
@@ -92,16 +96,59 @@ static H5FilePathManager *instance = nil;
         }
     }
 }
-- (void)removeFile:(NSString *)targetPath
+- (NSString *)pathForIndexHtmlinFolder:(NSString *)folderPath
 {
-    // 判断存放音频、视频的文件夹是否存在，不存在则创建对应文件夹
+    NSFileManager *myFileManager = [NSFileManager defaultManager];
+    NSDirectoryEnumerator *myDirectoryEnumerator = [myFileManager enumeratorAtPath:folderPath];
+    
+    BOOL isDir = NO;
+    BOOL isExist = NO;
+    
+    //列举目录内容，可以遍历子目录
+    for (NSString *path in myDirectoryEnumerator.allObjects) {
+        
+        isExist = [myFileManager fileExistsAtPath:[NSString stringWithFormat:@"%@/%@", folderPath, path] isDirectory:&isDir];
+        if (isDir) {
+        } else {
+            NSLog(@"%@", path.lastPathComponent);    // 文件路径
+            if ([path.lastPathComponent isEqualToString:@"demo.html"]) {
+                return [NSString stringWithFormat:@"%@/%@", folderPath, path];
+            }
+        }
+    }
+    return @"";
+
+}
+
+- (BOOL)removeFile:(NSString *)targetPath
+{
     NSFileManager *fileManager = [NSFileManager defaultManager];
     BOOL isDir = FALSE;
     BOOL isDirExist = [fileManager fileExistsAtPath:targetPath isDirectory:&isDir];
     
-    if (isDirExist) {
+    if (isDirExist && !isDir) {
         [fileManager removeItemAtPath:targetPath error:nil];
+    }else if(isDirExist && isDir)
+    {
+        NSArray *contents = [fileManager contentsOfDirectoryAtPath:targetPath error:NULL];
+        NSEnumerator *e = [contents objectEnumerator];
+        NSString *filename;
+        while ((filename = [e nextObject])) {
+            [fileManager removeItemAtPath:[targetPath stringByAppendingPathComponent:filename] error:NULL];
+        }
     }
+    return YES;
+}
+
+- (BOOL)moveFile:(NSString *)filepath toNewPath:(NSString *)newFilePath recreate:(BOOL)redo
+{
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    NSError *error;
+    [fileManager copyItemAtPath:filepath toPath:newFilePath error:&error];
+    if (!error) {
+        return YES;
+    }
+    return NO;
 }
 
 

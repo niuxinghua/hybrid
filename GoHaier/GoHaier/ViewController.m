@@ -12,6 +12,7 @@
 #import "GHaierH5Context.h"
 #import "PatchManager.h"
 #import "H5FilePathManager.h"
+#import "SSZipArchive.h"
 @interface ViewController ()<UIWebViewDelegate>
 @property(nonatomic,strong)HaierCoreWebView *webView;
 @property(nonatomic,copy)NSString * patchUrl;
@@ -69,9 +70,23 @@
 //    }
 //    else
 //    {
+    if ([[[GHaierH5Context sharedContext] valueForKey:[NSString stringWithFormat:@"%@-currentVersion",@"Hwork"]] isEqualToString:@"v0.0.2"]) {
+        NSString *finalPath = [[H5FilePathManager sharedInstance] baseSavePathwithappName:@"Hwork" andAppversion:@"v0.0.2"];
+        NSString *index = [[H5FilePathManager sharedInstance] pathForIndexHtmlinFolder:finalPath];
+        NSLog(@"%@",index);
+        __weak typeof(self)weakSelf = self;
+        NSURL* url = [NSURL  URLWithString:index];//创建URL
+        NSURLRequest* request = [NSURLRequest requestWithURL:url];//创建NSURLRequest
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [weakSelf.webView loadRequest:request];
+        });
+    }else
+    {
         _zipUrl = @"https://github.com/niuxinghua/GOHaierHTMLResource/blob/master/GoHaier.zip?raw=true";
         NSString *savePath = [[H5FilePathManager sharedInstance] baseZipSavePathwithappName:@"Hwork" andAppversion:@"v0.0.1"];
         [[H5Downloader sharedInstance] downLoadZipFile:_zipUrl toPath:savePath withZipName:@"Hwork" versionName:@"v0.0.1"];
+    }
+    
     //}
 
     
@@ -90,7 +105,7 @@
     __weak typeof(self)weakSelf = self;
         NSString *urlPath = [[H5FilePathManager sharedInstance] baseSavePathwithappName:@"Hwork" andAppversion:@"v0.0.1"];
         NSLog(@"%@",urlPath);
-        NSString *indexhtml = [NSString stringWithFormat:@"%@/demo.html",urlPath];
+        NSString *indexhtml = [[H5FilePathManager sharedInstance] pathForIndexHtmlinFolder:urlPath];
         NSURL* url = [NSURL  URLWithString:indexhtml];//创建URL
         NSURLRequest* request = [NSURLRequest requestWithURL:url];//创建NSURLRequest
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -105,7 +120,6 @@
     //merge Patch
     NSString *currentV = [[GHaierH5Context sharedContext] valueForKey:@"Hwork-currentVersion"];
     NSLog(@"%@",currentV);
-    NSString *targetVersion = @"v0.0.2";
     NSString *currentZipPath = [[H5FilePathManager sharedInstance] baseZipSavePathwithappName:@"Hwork" andAppversion:@"v0.0.1"];
     currentZipPath = [currentZipPath stringByAppendingPathComponent:@"Hwork"];
     
@@ -114,9 +128,23 @@
   BOOL isSuccess  = [[PatchManager sharedInstance] mergePatch:currentZipPath differFilePath:patchPath appName:@"Hwork" versionName:@"v0.0.1" targetVersion:@"v0.0.2"];
     if (isSuccess) {
         //需要将merge的zip替换到新的目录，覆盖这个目录，并将这个zip解压到新的目录更新界面
-        
-        
-        
+        NSString *newPath = [[H5FilePathManager sharedInstance] baseZipSavePathwithappName:@"Hwork" andAppversion:@"v0.0.2"];
+        [[H5FilePathManager sharedInstance]createFileDirectories:newPath isRedo:YES];
+        newPath = [newPath stringByAppendingPathComponent:@"Hwork"];
+        NSString *mergedPath = [[H5FilePathManager sharedInstance] baseMergedZipSavePathwithappName:@"Hwork" andCurrentversion:@"v0.0.1" targetVersion:@"v0.0.2"];
+        [[H5FilePathManager sharedInstance] moveFile:[mergedPath stringByAppendingPathComponent:@"Hwork"] toNewPath:newPath recreate:YES];
+        //已经移到zip新的目录，需要解压
+        NSString *finalPath = [[H5FilePathManager sharedInstance] baseSavePathwithappName:@"Hwork" andAppversion:@"v0.0.2"];
+        [SSZipArchive unzipFileAtPath:newPath toDestination:finalPath overwrite:YES password:@"" error:NULL];
+      NSString *index = [[H5FilePathManager sharedInstance] pathForIndexHtmlinFolder:finalPath];
+        NSLog(@"%@",index);
+        __weak typeof(self)weakSelf = self;
+        NSURL* url = [NSURL  URLWithString:index];//创建URL
+        NSURLRequest* request = [NSURLRequest requestWithURL:url];//创建NSURLRequest
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [weakSelf.webView loadRequest:request];
+        });
+        [[GHaierH5Context sharedContext] setObject:@"v0.0.2" forKey:[NSString stringWithFormat:@"%@-currentVersion",@"Hwork"]];
     }
     
 }

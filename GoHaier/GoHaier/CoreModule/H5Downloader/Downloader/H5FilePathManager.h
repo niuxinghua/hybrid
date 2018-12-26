@@ -17,6 +17,9 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSString *)basePatchSavePathwithappName:(NSString*)appName andCurrentversion:(NSString*)appVersion targetVersion:(NSString *)targetVersion;
 - (NSString *)baseMergedZipSavePathwithappName:(NSString*)appName andCurrentversion:(NSString*)appVersion targetVersion:(NSString *)targetVersion;
 - (void)createFileDirectories:(NSString *)targetPath isRedo:(BOOL)redo;
+- (BOOL)moveFile:(NSString *)filepath toNewPath:(NSString *)newFilePath recreate:(BOOL)redo;
+- (BOOL)removeFile:(NSString *)targetPath;
+- (NSString *)pathForIndexHtmlinFolder:(NSString *)folderPath;
 @end
 
 NS_ASSUME_NONNULL_END
