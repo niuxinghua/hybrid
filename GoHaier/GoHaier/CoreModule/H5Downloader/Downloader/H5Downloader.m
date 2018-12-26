@@ -44,6 +44,8 @@ NSString* const H5ContextKey = @"H5ContextKey";
            [data writeToFile:zipFileName options:0 error:&error];
           //解压zip到另外的目录
             [self uncompressZipfile:zipFileName toPath:[[H5FilePathManager sharedInstance] baseSavePathwithappName:appName andAppversion:versionName]];
+            NSString *currentV = [NSString stringWithFormat:@"%@-currentVersion",appName];
+            [[GHaierH5Context sharedContext]setObject:versionName forKey:currentV];
             [[NSNotificationCenter defaultCenter] postNotificationName:DidDownloadH5BaseZipSuccess object:nil];
         }
         else

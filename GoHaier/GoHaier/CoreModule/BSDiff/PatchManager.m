@@ -23,7 +23,7 @@ static PatchManager * sharedInstance = nil;
     });
     return sharedInstance;
 }
-- (BOOL)mergePatch:(NSString *)oldFilePath differFilePath:(NSString*)differFilePath appName:(NSString*)appName versionName:(NSString*)versionName
+- (BOOL)mergePatch:(NSString *)oldFilePath differFilePath:(NSString*)differFilePath appName:(NSString*)appName versionName:(NSString*)versionName targetVersion:(NSString *)targetVersion
 {
     
     const char *argv[4];
@@ -31,10 +31,13 @@ static PatchManager * sharedInstance = nil;
     // oldPath
     argv[1] = [oldFilePath UTF8String];
     // newPath
-//    argv[2] = [[[H5FilePathManager sharedInstance] createFileWithFileName:@"Haier_Result.zip" appName:@"GoHaierPatch" versionName:versionName] UTF8String];
-//    // patchPath
-//    argv[3] = [differFilePath UTF8String];
-//    int result = BsdiffUntils_bspatch(4, argv);
+    NSString *baseMergedPath = [[H5FilePathManager sharedInstance] baseMergedZipSavePathwithappName:appName andCurrentversion:versionName targetVersion:targetVersion];
+    [[H5FilePathManager sharedInstance] createFileDirectories:baseMergedPath isRedo:YES];
+    baseMergedPath = [baseMergedPath stringByAppendingPathComponent:appName];
+    argv[2] = [baseMergedPath UTF8String];
+    // patchPath
+    argv[3] = [differFilePath UTF8String];
+    int result = BsdiffUntils_bspatch(4, argv);
 //   [self deleteFolder:[[H5Downloader sharedInstance] getBaseZipSavePath:appName]];
 //    NSString *patchLastZIPFile = [NSString stringWithFormat:@"%@/%@",[[GHaierH5Context sharedContext] getBaseZipSavePath:@"GoHaierPatch" versionName:versionName],@"Haier_Result.zip"];
 //    [self doSaveAndUnzipLastPatchToPath:[[GHaierH5Context sharedContext] getBaseZipSavePath:appName versionName:versionName] appName:appName zipUrl:patchLastZIPFile versionName:versionName];

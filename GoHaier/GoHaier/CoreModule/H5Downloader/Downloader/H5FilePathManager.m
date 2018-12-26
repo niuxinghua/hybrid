@@ -49,6 +49,17 @@ static H5FilePathManager *instance = nil;
     zipPath =  [zipPath stringByAppendingPathComponent:patchFolder];
     return zipPath;
 }
+- (NSString*)getMergedZipSavePath:(NSString*)appName currentversionName:(NSString *)versionName targetVersionName:(NSString *)targetVersion
+{
+    NSString *sandboxPath = NSHomeDirectory();
+    NSString *path = [sandboxPath  stringByAppendingPathComponent:@"Library/Caches"];//将Documents
+    NSString *zipPath = [path stringByAppendingPathComponent:@"GoHaier"];
+    zipPath = [zipPath stringByAppendingPathComponent:@"MergedZips"];
+    zipPath = [zipPath stringByAppendingPathComponent:appName];
+    NSString *patchFolder = [NSString stringWithFormat:@"%@",targetVersion];
+    zipPath =  [zipPath stringByAppendingPathComponent:patchFolder];
+    return zipPath;
+}
 
 - (void)createFileDirectories:(NSString *)targetPath isRedo:(BOOL)redo
 {
@@ -105,6 +116,10 @@ static H5FilePathManager *instance = nil;
 - (NSString *)basePatchSavePathwithappName:(NSString*)appName andCurrentversion:(NSString*)appVersion targetVersion:(NSString *)targetVersion
 {
     return [self getPatchSavePath:appName currentversionName:appVersion targetVersionName:targetVersion];
+}
+- (NSString *)baseMergedZipSavePathwithappName:(NSString*)appName andCurrentversion:(NSString*)appVersion targetVersion:(NSString *)targetVersion
+{
+    return [self getMergedZipSavePath:appName currentversionName:appVersion targetVersionName:targetVersion];
 }
 
 @end

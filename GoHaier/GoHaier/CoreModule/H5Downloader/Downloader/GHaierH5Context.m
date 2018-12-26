@@ -9,6 +9,7 @@
 #import "GHaierH5Context.h"
 #import "H5Downloader.h"
 static GHaierH5Context *sharedContext = nil;
+
 @implementation GHaierH5Context
 + (instancetype)sharedContext
 {
@@ -34,5 +35,40 @@ static GHaierH5Context *sharedContext = nil;
     }
     
     return NO;
+}
+- (NSString *)currentVersion
+{
+    if ([self.h5Mapper objectForKey:@"currentVersion"]) {
+        return [self.h5Mapper objectForKey:@"currentVersion"];
+    }
+    return @"";
+}
+- (NSString *)targetVersion
+{
+    if ([self.h5Mapper objectForKey:@"targetVersion"]) {
+        return [self.h5Mapper objectForKey:@"targetVersion"];
+    }
+    return @"";
+}
+- (void)syncToLocal
+{
+    @synchronized (self) {
+        [[NSUserDefaults standardUserDefaults] setObject:self.h5Mapper forKey:H5ContextKey];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+    }
+}
+- (void)setObject:(id)object forKey:(NSString *)key
+{
+    @synchronized (self) {
+        [self.h5Mapper setValue:object forKey:key];
+        [self syncToLocal];
+    }
+}
+- (NSString *)valueForKey:(NSString *)key
+{
+    if ([self.h5Mapper valueForKey:key]) {
+        return [self.h5Mapper valueForKey:key];
+    }
+    return @"";
 }
 @end

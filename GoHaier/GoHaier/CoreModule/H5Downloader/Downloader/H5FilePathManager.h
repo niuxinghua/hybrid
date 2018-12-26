@@ -15,6 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSString *)baseZipSavePathwithappName:(NSString*)appName andAppversion:(NSString*)appVersion;
 - (NSString *)baseSavePathwithappName:(NSString*)appName andAppversion:(NSString*)appVersion;
 - (NSString *)basePatchSavePathwithappName:(NSString*)appName andCurrentversion:(NSString*)appVersion targetVersion:(NSString *)targetVersion;
+- (NSString *)baseMergedZipSavePathwithappName:(NSString*)appName andCurrentversion:(NSString*)appVersion targetVersion:(NSString *)targetVersion;
 - (void)createFileDirectories:(NSString *)targetPath isRedo:(BOOL)redo;
 @end
 

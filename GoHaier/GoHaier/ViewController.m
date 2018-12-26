@@ -103,6 +103,15 @@
 - (void)handleH5PatchdownLoad:(NSNotification *)notification
 {
     //merge Patch
+    NSString *currentV = [[GHaierH5Context sharedContext] valueForKey:@"Hwork-currentVersion"];
+    NSLog(@"%@",currentV);
+    NSString *targetVersion = @"v0.0.2";
+    NSString *currentZipPath = [[H5FilePathManager sharedInstance] baseZipSavePathwithappName:@"Hwork" andAppversion:@"v0.0.1"];
+    currentZipPath = [currentZipPath stringByAppendingPathComponent:@"Hwork"];
+    
+      NSString *patchPath = [[H5FilePathManager sharedInstance] basePatchSavePathwithappName:@"Hwork" andCurrentversion:@"v0.0.1" targetVersion:@"v0.0.2"];
+    patchPath = [patchPath stringByAppendingPathComponent:@"Hwork"];
+   [[PatchManager sharedInstance] mergePatch:currentZipPath differFilePath:patchPath appName:@"Hwork" versionName:@"v0.0.1" targetVersion:@"v0.0.2"];
     
     
 }

@@ -10,5 +10,5 @@
 
 @interface PatchManager : NSObject
 + (instancetype)sharedInstance;
-- (BOOL)mergePatch:(NSString *)oldFilePath differFilePath:(NSString*)differFilePath appName:(NSString*)appName versionName:(NSString*)versionName;
+- (BOOL)mergePatch:(NSString *)oldFilePath differFilePath:(NSString*)differFilePath appName:(NSString*)appName versionName:(NSString*)versionName targetVersion:(NSString *)targetVersion;
 @end
