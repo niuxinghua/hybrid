@@ -42,7 +42,7 @@ static PatchManager * sharedInstance = nil;
 //    NSString *patchLastZIPFile = [NSString stringWithFormat:@"%@/%@",[[GHaierH5Context sharedContext] getBaseZipSavePath:@"GoHaierPatch" versionName:versionName],@"Haier_Result.zip"];
 //    [self doSaveAndUnzipLastPatchToPath:[[GHaierH5Context sharedContext] getBaseZipSavePath:appName versionName:versionName] appName:appName zipUrl:patchLastZIPFile versionName:versionName];
 
-    return YES;
+    return result == 0;
 }
 - (void)doSaveAndUnzipLastPatchToPath:(NSString *)path appName:(NSString *)appName zipUrl:(NSString *)zipUrl versionName:(NSString *)versionName
 {
