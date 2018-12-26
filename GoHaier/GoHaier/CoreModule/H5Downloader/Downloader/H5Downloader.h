@@ -12,5 +12,6 @@ extern NSString* const H5ContextKey;
 
 @interface H5Downloader : NSObject
 +(instancetype)sharedInstance;
-- (BOOL)downLoadZipFile:(NSString*)filePath fileName:(NSString*)appName unZipToPathwithVersion:(NSString*)version;
+- (void)downLoadZipFile:(NSString*)fileUrl toPath:(NSString *)savePath withZipName:(NSString *)appName versionName:(NSString *)versionName;
+
 @end

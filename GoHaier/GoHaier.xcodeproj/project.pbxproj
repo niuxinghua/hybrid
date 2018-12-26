@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E04FBE2121AEA87600D2EAD3 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E04FBE1F21AEA85A00D2EAD3 /* JavaScriptCore.framework */; };
+		E079618B21D3212B00564F83 /* H5FilePathManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E079618A21D3212B00564F83 /* H5FilePathManager.m */; };
 		E080EEDF21AAE3A8006F2080 /* BarCodeRecongnizerHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = E080EEDE21AAE3A8006F2080 /* BarCodeRecongnizerHandler.m */; };
 		E080EEE321AAE55B006F2080 /* HaierQRScanView.m in Sources */ = {isa = PBXBuildFile; fileRef = E080EEE121AAE55B006F2080 /* HaierQRScanView.m */; };
 		E080EEE721AAE69D006F2080 /* HaierQRScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E080EEE521AAE69D006F2080 /* HaierQRScanViewController.m */; };
@@ -87,6 +88,8 @@
 
 /* Begin PBXFileReference section */
 		E04FBE1F21AEA85A00D2EAD3 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		E079618921D3212B00564F83 /* H5FilePathManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = H5FilePathManager.h; sourceTree = "<group>"; };
+		E079618A21D3212B00564F83 /* H5FilePathManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = H5FilePathManager.m; sourceTree = "<group>"; };
 		E080EEDD21AAE3A8006F2080 /* BarCodeRecongnizerHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BarCodeRecongnizerHandler.h; sourceTree = "<group>"; };
 		E080EEDE21AAE3A8006F2080 /* BarCodeRecongnizerHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BarCodeRecongnizerHandler.m; sourceTree = "<group>"; };
 		E080EEE121AAE55B006F2080 /* HaierQRScanView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HaierQRScanView.m; sourceTree = "<group>"; };
@@ -231,6 +234,21 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		E056B39221C0A059006C6232 /* H5 */ = {
+			isa = PBXGroup;
+			children = (
+				E056B39321C0A067006C6232 /* GoHaier */,
+			);
+			path = H5;
+			sourceTree = "<group>";
+		};
+		E056B39321C0A067006C6232 /* GoHaier */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = GoHaier;
+			sourceTree = "<group>";
+		};
 		E080EEE021AAE540006F2080 /* views */ = {
 			isa = PBXGroup;
 			children = (
@@ -273,6 +291,7 @@
 		E0A9D19E21A7EC9A00FEA58D /* GoHaier */ = {
 			isa = PBXGroup;
 			children = (
+				E056B39221C0A059006C6232 /* H5 */,
 				E0FC615D21AAD1DE0018AA61 /* CoreUtil */,
 				E0FC615621AAC92B0018AA61 /* Const */,
 				E0FC615221AABE030018AA61 /* CoreModule */,
@@ -341,6 +360,8 @@
 				E0B8C94D21BF4B59004CD6CC /* H5Downloader.m */,
 				E0B8C99421BF73DB004CD6CC /* GHaierH5Context.h */,
 				E0B8C99521BF73DB004CD6CC /* GHaierH5Context.m */,
+				E079618921D3212B00564F83 /* H5FilePathManager.h */,
+				E079618A21D3212B00564F83 /* H5FilePathManager.m */,
 			);
 			path = Downloader;
 			sourceTree = "<group>";
@@ -716,6 +737,7 @@
 				E0FC615121AABC5D0018AA61 /* GoHaierWebviewjavaScriptUtill.m in Sources */,
 				E0B8C9AF21BFA736004CD6CC /* mk251.c in Sources */,
 				E0A9D1A421A7EC9A00FEA58D /* ViewController.m in Sources */,
+				E079618B21D3212B00564F83 /* H5FilePathManager.m in Sources */,
 				E0B8C94E21BF4B59004CD6CC /* H5Downloader.m in Sources */,
 				E0A9D1AF21A7EC9D00FEA58D /* main.m in Sources */,
 				E0B8C98B21BF5DB7004CD6CC /* aescrypt.c in Sources */,
@@ -889,18 +911,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = 5YMLXQ5HEE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = AZFKV3S428;
 				INFOPLIST_FILE = GoHaier/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.haier.imapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.haier.gohaier;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "95bff849-f2ef-4999-93d1-6401b9d53cbf";
-				PROVISIONING_PROFILE_SPECIFIER = COSMOIM;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -909,18 +931,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = 5YMLXQ5HEE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = AZFKV3S428;
 				INFOPLIST_FILE = GoHaier/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.haier.imapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.haier.gohaier;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "95bff849-f2ef-4999-93d1-6401b9d53cbf";
-				PROVISIONING_PROFILE_SPECIFIER = COSMOIM;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

@@ -12,6 +12,4 @@
 + (instancetype)sharedContext;
 @property(atomic,strong)NSDictionary *h5Mapper;
 + (BOOL)isExitResource:(NSString *)appName appVersion:(NSString *)appversion;
-- (NSString*)getBaseZipSavePath:(NSString*)appName versionName:(NSString *)versionName;
-- (NSString*)getBaseZipSavePath:(NSString*)appName;
 @end

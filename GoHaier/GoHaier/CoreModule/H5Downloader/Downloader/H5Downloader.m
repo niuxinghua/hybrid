@@ -9,6 +9,7 @@
 #import "H5Downloader.h"
 #import "SSZipArchive.h"
 #import "GHaierH5Context.h"
+#import "H5FilePathManager.h"
 static H5Downloader *sharedInstance = nil;
 NSString* const DidDownloadH5Success = @"DidDownloadH5Success";
 NSString* const H5ContextKey = @"H5ContextKey";
@@ -21,42 +22,28 @@ NSString* const H5ContextKey = @"H5ContextKey";
     });
     return sharedInstance;
 }
-- (BOOL)downLoadZipFile:(NSString*)filePath fileName:(NSString*)appName unZipToPathwithVersion:(NSString*)version
-{
-    [self downLoadZipToPah:[self getBaseZipSavePath:appName versionName:version] zipFileUrl:filePath appName:appName versionName:version];
-    
-    return YES;
-}
-
-- (void)downLoadZipToPah:(NSString*)path zipFileUrl:(NSString*)zipUrl appName:(NSString*)appName versionName:(NSString*)versionName
+-(void)downLoadZipFile:(NSString*)fileUrl toPath:(NSString *)savePath withZipName:(NSString *)appName versionName:(NSString *)versionName
 {
     //TODO 校验字符串是否合法
     
     dispatch_queue_t queue = dispatch_get_global_queue(
                                                        DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
     dispatch_async(queue, ^{
-        NSURL *url = [NSURL URLWithString:zipUrl];
+        NSURL *url = [NSURL URLWithString:fileUrl];
         NSError *error = nil;
-        // 2
         NSData *data = [NSData dataWithContentsOfURL:url options:0 error:&error];
         if(!error)
         {
             /*得到要保存zip的路径*/
-            NSString *zipPath = [path copy];
-            [self createFileDirectories:zipPath];
+            NSString *zipPath = [savePath copy];
+            [[H5FilePathManager sharedInstance] createFileDirectories:zipPath isRedo:YES];
             /*把zip文件放入路径中*/
             NSString *zipFileName = [zipPath stringByAppendingPathComponent:appName];
-            [data writeToFile:zipFileName options:0 error:&error];
-            if(!error)
-            {
-                //解压zip文件
-                [SSZipArchive unzipFileAtPath:zipFileName toDestination:zipPath];
-                [[GHaierH5Context sharedContext].h5Mapper setValue:@"1" forKey:[NSString stringWithFormat:@"%@%@",appName,versionName]];
-                [self saveH5Context];
-                [[NSNotificationCenter defaultCenter] postNotificationName:DidDownloadH5Success object:zipUrl];
-            }
+           [data writeToFile:zipFileName options:0 error:&error];
+          //解压zip到另外的目录
+            [self uncompressZipfile:zipFileName toPath:[[H5FilePathManager sharedInstance] baseSavePathwithappName:appName andAppversion:versionName]];
+            [[NSNotificationCenter defaultCenter] postNotificationName:DidDownloadH5Success object:nil];
         }
-        
         else
         {
             NSLog(@"Error downloading zip file: %@", error);
@@ -64,54 +51,42 @@ NSString* const H5ContextKey = @"H5ContextKey";
     });
 }
 
-#pragma mark private methods
-- (NSString*)getBaseZipSavePath:(NSString*)appName versionName:(NSString *)versionName
+- (void)downLoadPatchFile:(NSString*)fileUrl toPath:(NSString *)savePath withPatchName:(NSString *)appName CurrentVersion:(NSString *)currentversion targetVersion:(NSString *)targetVersion
 {
-    NSString *sandboxPath = NSHomeDirectory();
-    NSString *path = [sandboxPath  stringByAppendingPathComponent:@"Library/Caches"];//将Documents
-    NSString *zipPath = [path stringByAppendingPathComponent:appName];
-    zipPath =  [zipPath stringByAppendingPathComponent:versionName];
-    return zipPath;
+    dispatch_queue_t queue = dispatch_get_global_queue(
+                                                       DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    dispatch_async(queue, ^{
+        NSURL *url = [NSURL URLWithString:fileUrl];
+        NSError *error = nil;
+        NSData *data = [NSData dataWithContentsOfURL:url options:0 error:&error];
+        if(!error)
+        {
+            /*得到要保存zip的路径*/
+            NSString *zipPath = [savePath copy];
+            [[H5FilePathManager sharedInstance] createFileDirectories:zipPath isRedo:YES];
+            /*把zip文件放入路径中*/
+            NSString *zipFileName = [zipPath stringByAppendingPathComponent:appName];
+            [data writeToFile:zipFileName options:0 error:&error];
+            //解压zip到另外的目录
+        }
+        else
+        {
+            NSLog(@"Error downloading zip file: %@", error);
+        }
+    });
 }
+- (BOOL)uncompressZipfile:(NSString *)filePath toPath:(NSString *)savePath
+{
 
-- (void)createFileDirectories:(NSString *)targetPath
-{
-    NSFileManager *fileManager = [NSFileManager defaultManager];
-    BOOL isDir = FALSE;
-    BOOL isDirExist = [fileManager fileExistsAtPath:targetPath isDirectory:&isDir];
-    if (isDirExist) {
-        if (isDir) {
-            NSLog(@"该文件是一个目录");
-        }else{
-            NSLog(@"该文件不是目录");
-        }
-    }else{
-        BOOL bCreateDir = [fileManager createDirectoryAtPath:targetPath withIntermediateDirectories:YES attributes:nil error:nil];
-        if(!bCreateDir){
-            NSLog(@"Create Audio Directory Failed.");
-        }
-    }
-}
-- (void)removeFile:(NSString *)targetPath
-{
-    // 判断存放音频、视频的文件夹是否存在，不存在则创建对应文件夹
-    NSFileManager *fileManager = [NSFileManager defaultManager];
-    BOOL isDir = FALSE;
-    BOOL isDirExist = [fileManager fileExistsAtPath:targetPath isDirectory:&isDir];
+    [[H5FilePathManager sharedInstance] createFileDirectories:savePath isRedo:NO];
+    //解压zip文件
+    [SSZipArchive unzipFileAtPath:filePath toDestination:savePath overwrite:YES password:@"" error:NULL];
     
-    if (isDirExist) {
-        [fileManager removeItemAtPath:targetPath error:nil];
-    }
+    return YES;
+    
+    
+    
 }
 
-- (void)saveH5Context
-{
-    [[NSUserDefaults standardUserDefaults] setObject:[GHaierH5Context sharedContext].h5Mapper forKey:H5ContextKey];
-    [[NSUserDefaults standardUserDefaults] synchronize];
-}
-- (void)dealloc
-{
-
-}
 
 @end

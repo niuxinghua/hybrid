@@ -11,6 +11,7 @@
 #import "GHaierH5Context.h"
 #import "SSZipArchive.h"
 #import "H5Downloader.h"
+#import "H5FilePathManager.h"
 static NSString* const PATCHVERSIONDIDAPPLY = @"PATCHVERSIONDIDAPPLY";
 static PatchManager * sharedInstance = nil;
 @implementation PatchManager
@@ -30,13 +31,13 @@ static PatchManager * sharedInstance = nil;
     // oldPath
     argv[1] = [oldFilePath UTF8String];
     // newPath
-    argv[2] = [[self createFileWithFileName:@"Haier_Result.zip" appName:@"GoHaierPatch" versionName:versionName] UTF8String];
-    // patchPath
-    argv[3] = [differFilePath UTF8String];
-    int result = BsdiffUntils_bspatch(4, argv);
-   [self deleteFolder:[[GHaierH5Context sharedContext] getBaseZipSavePath:appName]];
-    NSString *patchLastZIPFile = [NSString stringWithFormat:@"%@/%@",[[GHaierH5Context sharedContext] getBaseZipSavePath:@"GoHaierPatch" versionName:versionName],@"Haier_Result.zip"];
-    [self doSaveAndUnzipLastPatchToPath:[[GHaierH5Context sharedContext] getBaseZipSavePath:appName versionName:versionName] appName:appName zipUrl:patchLastZIPFile versionName:versionName];
+//    argv[2] = [[[H5FilePathManager sharedInstance] createFileWithFileName:@"Haier_Result.zip" appName:@"GoHaierPatch" versionName:versionName] UTF8String];
+//    // patchPath
+//    argv[3] = [differFilePath UTF8String];
+//    int result = BsdiffUntils_bspatch(4, argv);
+//   [self deleteFolder:[[H5Downloader sharedInstance] getBaseZipSavePath:appName]];
+//    NSString *patchLastZIPFile = [NSString stringWithFormat:@"%@/%@",[[GHaierH5Context sharedContext] getBaseZipSavePath:@"GoHaierPatch" versionName:versionName],@"Haier_Result.zip"];
+//    [self doSaveAndUnzipLastPatchToPath:[[GHaierH5Context sharedContext] getBaseZipSavePath:appName versionName:versionName] appName:appName zipUrl:patchLastZIPFile versionName:versionName];
 
     return YES;
 }
@@ -47,13 +48,13 @@ static PatchManager * sharedInstance = nil;
     [self saveH5Context];
 }
 
--(NSString *)createFileWithFileName:(NSString *)fileName appName:(NSString*)appName versionName:(NSString*)versionName
-{
- NSString* filePath = [[GHaierH5Context sharedContext] getBaseZipSavePath:appName versionName:versionName];
-    filePath = [filePath stringByAppendingPathComponent:fileName];
-    [[NSFileManager defaultManager] createFileAtPath:filePath contents:nil attributes:nil];
-    return filePath;
-}
+//-(NSString *)createFileWithFileName:(NSString *)fileName appName:(NSString*)appName versionName:(NSString*)versionName
+//{
+// NSString* filePath = [[GHaierH5Context sharedContext] getBaseZipSavePath:appName versionName:versionName];
+//    filePath = [filePath stringByAppendingPathComponent:fileName];
+//    [[NSFileManager defaultManager] createFileAtPath:filePath contents:nil attributes:nil];
+//    return filePath;
+//}
 - (void)deleteFolder:(NSString *)filePath
 {
     NSError *error;
