@@ -36,17 +36,19 @@ static GHaierH5Context *sharedContext = nil;
     
     return NO;
 }
-- (NSString *)currentVersion
+- (NSString *)currentVersionWithAPPname:(NSString *)name;
 {
-    if ([self.h5Mapper objectForKey:@"currentVersion"]) {
-        return [self.h5Mapper objectForKey:@"currentVersion"];
+    NSString *key = [NSString stringWithFormat:@"%@-currentVersion",name];
+    if ([self.h5Mapper objectForKey:key]) {
+        return [self.h5Mapper objectForKey:key];
     }
     return @"";
 }
-- (NSString *)targetVersion
+- (NSString *)targetVersionWithAPPname:(NSString *)name;
 {
-    if ([self.h5Mapper objectForKey:@"targetVersion"]) {
-        return [self.h5Mapper objectForKey:@"targetVersion"];
+    NSString *key = [NSString stringWithFormat:@"%@-targetVersion",name];
+    if ([self.h5Mapper objectForKey:key]) {
+        return [self.h5Mapper objectForKey:key];
     }
     return @"";
 }
