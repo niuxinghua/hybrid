@@ -23,23 +23,25 @@ static PatchManager * sharedInstance = nil;
     });
     return sharedInstance;
 }
-- (BOOL)mergePatch:(NSString *)oldFilePath differFilePath:(NSString*)differFilePath appName:(NSString*)appName versionName:(NSString*)versionName targetVersion:(NSString *)targetVersion
+- (void)mergePatch:(NSString *)oldFilePath differFilePath:(NSString*)differFilePath appName:(NSString*)appName versionName:(NSString*)versionName targetVersion:(NSString *)targetVersion mergeResult:(MergeResultBlock)resultBlock
 {
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        const char *argv[4];
+        argv[0] = "bspatch";
+        // oldPath
+        argv[1] = [oldFilePath UTF8String];
+        // newPath
+        NSString *baseMergedPath = [[H5FilePathManager sharedInstance] baseMergedZipSavePathwithappName:appName andCurrentversion:versionName targetVersion:targetVersion];
+        [[H5FilePathManager sharedInstance] createFileDirectories:baseMergedPath isRedo:YES];
+        baseMergedPath = [baseMergedPath stringByAppendingPathComponent:appName];
+        argv[2] = [baseMergedPath UTF8String];
+        // patchPath
+        argv[3] = [differFilePath UTF8String];
+        int result = BsdiffUntils_bspatch(4, argv);
+        //result为0 表明merge成功
+        resultBlock(result == 0);
+    });
     
-    const char *argv[4];
-    argv[0] = "bspatch";
-    // oldPath
-    argv[1] = [oldFilePath UTF8String];
-    // newPath
-    NSString *baseMergedPath = [[H5FilePathManager sharedInstance] baseMergedZipSavePathwithappName:appName andCurrentversion:versionName targetVersion:targetVersion];
-    [[H5FilePathManager sharedInstance] createFileDirectories:baseMergedPath isRedo:YES];
-    baseMergedPath = [baseMergedPath stringByAppendingPathComponent:appName];
-    argv[2] = [baseMergedPath UTF8String];
-    // patchPath
-    argv[3] = [differFilePath UTF8String];
-    int result = BsdiffUntils_bspatch(4, argv);
-//result为0 表明merge成功
-    return result == 0;
 }
 - (void)doSaveAndUnzipLastPatchToPath:(NSString *)path appName:(NSString *)appName zipUrl:(NSString *)zipUrl versionName:(NSString *)versionName
 {

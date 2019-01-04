@@ -7,8 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-
+typedef void(^MergeResultBlock)(BOOL result);
 @interface PatchManager : NSObject
 + (instancetype)sharedInstance;
-- (BOOL)mergePatch:(NSString *)oldFilePath differFilePath:(NSString*)differFilePath appName:(NSString*)appName versionName:(NSString*)versionName targetVersion:(NSString *)targetVersion;
+- (void)mergePatch:(NSString *)oldFilePath differFilePath:(NSString*)differFilePath appName:(NSString*)appName versionName:(NSString*)versionName targetVersion:(NSString *)targetVersion mergeResult:(MergeResultBlock)resultBlock;
 @end
