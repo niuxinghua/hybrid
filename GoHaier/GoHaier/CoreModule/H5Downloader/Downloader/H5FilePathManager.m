@@ -22,7 +22,7 @@ static H5FilePathManager *instance = nil;
 - (NSString*)getBaseZipSavePath:(NSString*)appName versionName:(NSString *)versionName
 {
     NSString *sandboxPath = NSHomeDirectory();
-    NSString *path = [sandboxPath  stringByAppendingPathComponent:@"Library/Caches"];//将Documents
+    NSString *path = [sandboxPath  stringByAppendingPathComponent:@"Documents"];//将Documents
     NSString *zipPath = [path stringByAppendingPathComponent:@"GoHaier"];
     zipPath = [zipPath stringByAppendingPathComponent:@"zips"];
     NSString *prefix = [NSString stringWithFormat:@"%@-prefix",appName];
@@ -33,7 +33,7 @@ static H5FilePathManager *instance = nil;
 - (NSString *)getBaseSavePath:(NSString *)appName versionName:(NSString *)versionName
 {
     NSString *sandboxPath = NSHomeDirectory();
-    NSString *path = [sandboxPath  stringByAppendingPathComponent:@"Library/Caches"];//将Documents
+    NSString *path = [sandboxPath  stringByAppendingPathComponent:@"Documents"];//将Documents
     NSString *zipPath = [path stringByAppendingPathComponent:@"GoHaier"];
     NSString *prefix = [NSString stringWithFormat:@"%@-prefix",appName];
     zipPath = [zipPath stringByAppendingPathComponent:prefix];
@@ -43,7 +43,7 @@ static H5FilePathManager *instance = nil;
 - (NSString*)getPatchSavePath:(NSString*)appName currentversionName:(NSString *)versionName targetVersionName:(NSString *)targetVersion
 {
     NSString *sandboxPath = NSHomeDirectory();
-    NSString *path = [sandboxPath  stringByAppendingPathComponent:@"Library/Caches"];//将Documents
+    NSString *path = [sandboxPath  stringByAppendingPathComponent:@"Documents"];//将Documents
     NSString *zipPath = [path stringByAppendingPathComponent:@"GoHaier"];
     zipPath = [zipPath stringByAppendingPathComponent:@"Patchs"];
     NSString *prefix = [NSString stringWithFormat:@"%@-prefix",appName];
@@ -55,7 +55,7 @@ static H5FilePathManager *instance = nil;
 - (NSString*)getMergedZipSavePath:(NSString*)appName currentversionName:(NSString *)versionName targetVersionName:(NSString *)targetVersion
 {
     NSString *sandboxPath = NSHomeDirectory();
-    NSString *path = [sandboxPath  stringByAppendingPathComponent:@"Library/Caches"];//将Documents
+    NSString *path = [sandboxPath  stringByAppendingPathComponent:@"Documents"];//将Documents
     NSString *zipPath = [path stringByAppendingPathComponent:@"GoHaier"];
     zipPath = [zipPath stringByAppendingPathComponent:@"MergedZips"];
     NSString *prefix = [NSString stringWithFormat:@"%@-prefix",appName];
