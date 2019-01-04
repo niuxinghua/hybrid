@@ -38,15 +38,15 @@
 
 - (void)downLoadPatch
 {
-    _patchUrl = @"https://github.com/niuxinghua/GOHaierHTMLResource/blob/master/diff_GoHaier?raw=true";
-    NSString *path = [[H5FilePathManager sharedInstance] basePatchSavePathwithappName:@"Hwork" andCurrentversion:@"v0.0.1" targetVersion:@"v0.0.2"];
-    [[H5Downloader sharedInstance] downLoadPatchFile:_patchUrl toPath:path withPatchName:@"Hwork" CurrentVersion:@"v0.0.1" targetVersion:@"v0.0.2"];
+    _patchUrl = @"http://mobilebackend.qdct-lsb.haier.net/api/v1/diffs/hwork/v1/v2";
+    NSString *path = [[H5FilePathManager sharedInstance] basePatchSavePathwithappName:@"Hwork" andCurrentversion:@"v1" targetVersion:@"v2"];
+    [[H5Downloader sharedInstance] downLoadPatchFile:_patchUrl toPath:path withPatchName:@"Hwork" CurrentVersion:@"v1" targetVersion:@"v2"];
     
 }
 - (void)loadHtml
 {
-    if ([[[GHaierH5Context sharedContext] valueForKey:[NSString stringWithFormat:@"%@-currentVersion",@"Hwork"]] isEqualToString:@"v0.0.2"]) {
-        NSString *finalPath = [[H5FilePathManager sharedInstance] baseSavePathwithappName:@"Hwork" andAppversion:@"v0.0.2"];
+    if ([[[GHaierH5Context sharedContext] valueForKey:[NSString stringWithFormat:@"%@-currentVersion",@"Hwork"]] isEqualToString:@"v2"]) {
+        NSString *finalPath = [[H5FilePathManager sharedInstance] baseSavePathwithappName:@"Hwork" andAppversion:@"v2"];
         NSString *index = [[H5FilePathManager sharedInstance] pathForIndexHtmlinFolder:finalPath];
         NSLog(@"%@",index);
         __weak typeof(self)weakSelf = self;
@@ -57,9 +57,9 @@
         });
     }else
     {
-        _zipUrl = @"https://github.com/niuxinghua/GOHaierHTMLResource/blob/master/GoHaier.zip?raw=true";
-        NSString *savePath = [[H5FilePathManager sharedInstance] baseZipSavePathwithappName:@"Hwork" andAppversion:@"v0.0.1"];
-        [[H5Downloader sharedInstance] downLoadZipFile:_zipUrl toPath:savePath withZipName:@"Hwork" versionName:@"v0.0.1"];
+        _zipUrl = @"http://mobilebackend.qdct-lsb.haier.net/api/v1/files/hwork/v1.zip";
+        NSString *savePath = [[H5FilePathManager sharedInstance] baseZipSavePathwithappName:@"Hwork" andAppversion:@"v1"];
+        [[H5Downloader sharedInstance] downLoadZipFile:_zipUrl toPath:savePath withZipName:@"Hwork" versionName:@"v1"];
     }
     
     
@@ -68,7 +68,7 @@
 - (void)handleH5downLoad:(NSNotification *)notification
 {
     __weak typeof(self)weakSelf = self;
-        NSString *urlPath = [[H5FilePathManager sharedInstance] baseSavePathwithappName:@"Hwork" andAppversion:@"v0.0.1"];
+        NSString *urlPath = [[H5FilePathManager sharedInstance] baseSavePathwithappName:@"Hwork" andAppversion:@"v1"];
         NSLog(@"%@",urlPath);
         NSString *indexhtml = [[H5FilePathManager sharedInstance] pathForIndexHtmlinFolder:urlPath];
         NSURL* url = [NSURL  URLWithString:indexhtml];//创建URL
@@ -85,21 +85,21 @@
     //merge Patch
     NSString *currentV = [[GHaierH5Context sharedContext] valueForKey:@"Hwork-currentVersion"];
     NSLog(@"%@",currentV);
-    NSString *currentZipPath = [[H5FilePathManager sharedInstance] baseZipSavePathwithappName:@"Hwork" andAppversion:@"v0.0.1"];
+    NSString *currentZipPath = [[H5FilePathManager sharedInstance] baseZipSavePathwithappName:@"Hwork" andAppversion:@"v1"];
     currentZipPath = [currentZipPath stringByAppendingPathComponent:@"Hwork"];
     
-      NSString *patchPath = [[H5FilePathManager sharedInstance] basePatchSavePathwithappName:@"Hwork" andCurrentversion:@"v0.0.1" targetVersion:@"v0.0.2"];
+      NSString *patchPath = [[H5FilePathManager sharedInstance] basePatchSavePathwithappName:@"Hwork" andCurrentversion:@"v1" targetVersion:@"v2"];
     patchPath = [patchPath stringByAppendingPathComponent:@"Hwork"];
-  BOOL isSuccess  = [[PatchManager sharedInstance] mergePatch:currentZipPath differFilePath:patchPath appName:@"Hwork" versionName:@"v0.0.1" targetVersion:@"v0.0.2"];
+  BOOL isSuccess  = [[PatchManager sharedInstance] mergePatch:currentZipPath differFilePath:patchPath appName:@"Hwork" versionName:@"v1" targetVersion:@"v2"];
     if (isSuccess) {
         //需要将merge的zip替换到新的目录，覆盖这个目录，并将这个zip解压到新的目录更新界面
-        NSString *newPath = [[H5FilePathManager sharedInstance] baseZipSavePathwithappName:@"Hwork" andAppversion:@"v0.0.2"];
+        NSString *newPath = [[H5FilePathManager sharedInstance] baseZipSavePathwithappName:@"Hwork" andAppversion:@"v2"];
         [[H5FilePathManager sharedInstance]createFileDirectories:newPath isRedo:YES];
         newPath = [newPath stringByAppendingPathComponent:@"Hwork"];
-        NSString *mergedPath = [[H5FilePathManager sharedInstance] baseMergedZipSavePathwithappName:@"Hwork" andCurrentversion:@"v0.0.1" targetVersion:@"v0.0.2"];
+        NSString *mergedPath = [[H5FilePathManager sharedInstance] baseMergedZipSavePathwithappName:@"Hwork" andCurrentversion:@"v1" targetVersion:@"v2"];
         [[H5FilePathManager sharedInstance] moveFile:[mergedPath stringByAppendingPathComponent:@"Hwork"] toNewPath:newPath recreate:YES];
         //已经移到zip新的目录，需要解压
-        NSString *finalPath = [[H5FilePathManager sharedInstance] baseSavePathwithappName:@"Hwork" andAppversion:@"v0.0.2"];
+        NSString *finalPath = [[H5FilePathManager sharedInstance] baseSavePathwithappName:@"Hwork" andAppversion:@"v2"];
         [SSZipArchive unzipFileAtPath:newPath toDestination:finalPath overwrite:YES password:@"" error:NULL];
       NSString *index = [[H5FilePathManager sharedInstance] pathForIndexHtmlinFolder:finalPath];
         NSLog(@"%@",index);
@@ -109,7 +109,7 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             [weakSelf.webView loadRequest:request];
         });
-        [[GHaierH5Context sharedContext] setObject:@"v0.0.2" forKey:[NSString stringWithFormat:@"%@-currentVersion",@"Hwork"]];
+        [[GHaierH5Context sharedContext] setObject:@"v2" forKey:[NSString stringWithFormat:@"%@-currentVersion",@"Hwork"]];
     }
     
 }
