@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		32E67C479746212551C850A5 /* libPods-GoHaier.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A98A894C959BAD7EB3B9720D /* libPods-GoHaier.a */; };
+		E029015821DF8D0C00D5259C /* HaierH5ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E029015721DF8D0C00D5259C /* HaierH5ViewController.m */; };
 		E04FBE2121AEA87600D2EAD3 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E04FBE1F21AEA85A00D2EAD3 /* JavaScriptCore.framework */; };
 		E079618B21D3212B00564F83 /* H5FilePathManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E079618A21D3212B00564F83 /* H5FilePathManager.m */; };
 		E079618F21D378B500564F83 /* VersionController.m in Sources */ = {isa = PBXBuildFile; fileRef = E079618E21D378B500564F83 /* VersionController.m */; };
@@ -58,6 +60,8 @@
 		E0B8C9BB21BFA736004CD6CC /* bspatch.c in Sources */ = {isa = PBXBuildFile; fileRef = E0B8C9AC21BFA736004CD6CC /* bspatch.c */; };
 		E0B8C9BC21BFA736004CD6CC /* bsdiff.c in Sources */ = {isa = PBXBuildFile; fileRef = E0B8C9AD21BFA736004CD6CC /* bsdiff.c */; };
 		E0B8C9C421BFD5F0004CD6CC /* PatchManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E0B8C9C321BFD5F0004CD6CC /* PatchManager.m */; };
+		E0E8EFE821E2ECE300BF0434 /* UIBarButtonItem+UC.m in Sources */ = {isa = PBXBuildFile; fileRef = E0E8EFE621E2ECE200BF0434 /* UIBarButtonItem+UC.m */; };
+		E0E8EFEB21E2ED3900BF0434 /* UIColor+UC.m in Sources */ = {isa = PBXBuildFile; fileRef = E0E8EFEA21E2ED3900BF0434 /* UIColor+UC.m */; };
 		E0F6C53121AB9EA2008AF5C0 /* BaseHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = E0F6C53021AB9EA2008AF5C0 /* BaseHandler.m */; };
 		E0FC614A21AABBD10018AA61 /* WebViewJavascriptBridgeBase.m in Sources */ = {isa = PBXBuildFile; fileRef = E0FC614321AABBD10018AA61 /* WebViewJavascriptBridgeBase.m */; };
 		E0FC614B21AABBD10018AA61 /* WKWebViewJavascriptBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = E0FC614421AABBD10018AA61 /* WKWebViewJavascriptBridge.m */; };
@@ -88,6 +92,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4ADB11AD7ED6A8317D47B73E /* Pods-GoHaier.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoHaier.release.xcconfig"; path = "Pods/Target Support Files/Pods-GoHaier/Pods-GoHaier.release.xcconfig"; sourceTree = "<group>"; };
+		97CA5734BC39FAD7AEB74024 /* Pods-GoHaier.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoHaier.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GoHaier/Pods-GoHaier.debug.xcconfig"; sourceTree = "<group>"; };
+		A98A894C959BAD7EB3B9720D /* libPods-GoHaier.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GoHaier.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E029015621DF8D0C00D5259C /* HaierH5ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HaierH5ViewController.h; sourceTree = "<group>"; };
+		E029015721DF8D0C00D5259C /* HaierH5ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HaierH5ViewController.m; sourceTree = "<group>"; };
 		E04FBE1F21AEA85A00D2EAD3 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		E079618921D3212B00564F83 /* H5FilePathManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = H5FilePathManager.h; sourceTree = "<group>"; };
 		E079618A21D3212B00564F83 /* H5FilePathManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = H5FilePathManager.m; sourceTree = "<group>"; };
@@ -181,6 +190,10 @@
 		E0B8C9BD21BFA7BF004CD6CC /* Haier_Bsdiff.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Haier_Bsdiff.h; sourceTree = "<group>"; };
 		E0B8C9C221BFD5F0004CD6CC /* PatchManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PatchManager.h; sourceTree = "<group>"; };
 		E0B8C9C321BFD5F0004CD6CC /* PatchManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PatchManager.m; sourceTree = "<group>"; };
+		E0E8EFE621E2ECE200BF0434 /* UIBarButtonItem+UC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+UC.m"; sourceTree = "<group>"; };
+		E0E8EFE721E2ECE300BF0434 /* UIBarButtonItem+UC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+UC.h"; sourceTree = "<group>"; };
+		E0E8EFE921E2ED3900BF0434 /* UIColor+UC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+UC.h"; sourceTree = "<group>"; };
+		E0E8EFEA21E2ED3900BF0434 /* UIColor+UC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+UC.m"; sourceTree = "<group>"; };
 		E0F6C52F21AB9EA2008AF5C0 /* BaseHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseHandler.h; sourceTree = "<group>"; };
 		E0F6C53021AB9EA2008AF5C0 /* BaseHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseHandler.m; sourceTree = "<group>"; };
 		E0FC614321AABBD10018AA61 /* WebViewJavascriptBridgeBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewJavascriptBridgeBase.m; sourceTree = "<group>"; };
@@ -209,6 +222,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E04FBE2121AEA87600D2EAD3 /* JavaScriptCore.framework in Frameworks */,
+				32E67C479746212551C850A5 /* libPods-GoHaier.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -229,10 +243,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5BFAA7FC3FC9E4A1EF2CFD82 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				97CA5734BC39FAD7AEB74024 /* Pods-GoHaier.debug.xcconfig */,
+				4ADB11AD7ED6A8317D47B73E /* Pods-GoHaier.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		E04FBE1E21AEA85900D2EAD3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				E04FBE1F21AEA85A00D2EAD3 /* JavaScriptCore.framework */,
+				A98A894C959BAD7EB3B9720D /* libPods-GoHaier.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -287,6 +311,7 @@
 				E0A9D1C221A7EC9D00FEA58D /* GoHaierUITests */,
 				E0A9D19D21A7EC9A00FEA58D /* Products */,
 				E04FBE1E21AEA85900D2EAD3 /* Frameworks */,
+				5BFAA7FC3FC9E4A1EF2CFD82 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -539,10 +564,12 @@
 				E080EEE421AAE686006F2080 /* controllers */,
 				E080EEE021AAE540006F2080 /* views */,
 				E0FC615921AACF250018AA61 /* handlermethods */,
-				E0FC615321AABE1E0018AA61 /* HaierCoreWebView.h */,
-				E0FC615421AABE1E0018AA61 /* HaierCoreWebView.m */,
 				E0F6C52F21AB9EA2008AF5C0 /* BaseHandler.h */,
 				E0F6C53021AB9EA2008AF5C0 /* BaseHandler.m */,
+				E0FC615321AABE1E0018AA61 /* HaierCoreWebView.h */,
+				E0FC615421AABE1E0018AA61 /* HaierCoreWebView.m */,
+				E029015621DF8D0C00D5259C /* HaierH5ViewController.h */,
+				E029015721DF8D0C00D5259C /* HaierH5ViewController.m */,
 			);
 			path = WebView;
 			sourceTree = "<group>";
@@ -568,6 +595,10 @@
 				E0B8C94F21BF586E004CD6CC /* SandBox */,
 				E0FC615E21AAD2030018AA61 /* ViewControllerUtil.h */,
 				E0FC615F21AAD2030018AA61 /* ViewControllerUtil.m */,
+				E0E8EFE721E2ECE300BF0434 /* UIBarButtonItem+UC.h */,
+				E0E8EFE621E2ECE200BF0434 /* UIBarButtonItem+UC.m */,
+				E0E8EFE921E2ED3900BF0434 /* UIColor+UC.h */,
+				E0E8EFEA21E2ED3900BF0434 /* UIColor+UC.m */,
 			);
 			path = CoreUtil;
 			sourceTree = "<group>";
@@ -579,9 +610,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E0A9D1C821A7EC9D00FEA58D /* Build configuration list for PBXNativeTarget "GoHaier" */;
 			buildPhases = (
+				E33CF2E7A4BC40B3B87E7974 /* [CP] Check Pods Manifest.lock */,
 				E0A9D19821A7EC9A00FEA58D /* Sources */,
 				E0A9D19921A7EC9A00FEA58D /* Frameworks */,
 				E0A9D19A21A7EC9A00FEA58D /* Resources */,
+				F4634F7621C23B40CF81D015 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -698,6 +731,45 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		E33CF2E7A4BC40B3B87E7974 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GoHaier-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F4634F7621C23B40CF81D015 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-GoHaier/Pods-GoHaier-resources.sh",
+				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GoHaier/Pods-GoHaier-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E0A9D19821A7EC9A00FEA58D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -708,6 +780,7 @@
 				E0B8C9B321BFA736004CD6CC /* huffman.c in Sources */,
 				E0B8C9AE21BFA736004CD6CC /* randtable.c in Sources */,
 				E0B8C98A21BF5DB7004CD6CC /* hmac.c in Sources */,
+				E029015821DF8D0C00D5259C /* HaierH5ViewController.m in Sources */,
 				E0B8C98621BF5DB7004CD6CC /* ioapi_buf.c in Sources */,
 				E0B8C9B221BFA736004CD6CC /* blocksort.c in Sources */,
 				E0B8C98821BF5DB7004CD6CC /* minishared.c in Sources */,
@@ -734,6 +807,7 @@
 				E0B8C98F21BF5DB7004CD6CC /* prng.c in Sources */,
 				E0B8C9B821BFA736004CD6CC /* unzcrash.c in Sources */,
 				E0FC614C21AABBD10018AA61 /* WebViewJavascriptBridge.m in Sources */,
+				E0E8EFE821E2ECE300BF0434 /* UIBarButtonItem+UC.m in Sources */,
 				E0B8C9B921BFA736004CD6CC /* bzlib.c in Sources */,
 				E0FC615C21AACFB00018AA61 /* ImagePickerHandler.m in Sources */,
 				E0B8C9B521BFA736004CD6CC /* dlltest.c in Sources */,
@@ -749,6 +823,7 @@
 				E0B8C98421BF5DB7004CD6CC /* zip.c in Sources */,
 				E0B8C98221BF5DB7004CD6CC /* crypt.c in Sources */,
 				E0FC615121AABC5D0018AA61 /* GoHaierWebviewjavaScriptUtill.m in Sources */,
+				E0E8EFEB21E2ED3900BF0434 /* UIColor+UC.m in Sources */,
 				E0B8C9AF21BFA736004CD6CC /* mk251.c in Sources */,
 				E0A9D1A421A7EC9A00FEA58D /* ViewController.m in Sources */,
 				E079618B21D3212B00564F83 /* H5FilePathManager.m in Sources */,
@@ -923,6 +998,7 @@
 		};
 		E0A9D1C921A7EC9D00FEA58D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 97CA5734BC39FAD7AEB74024 /* Pods-GoHaier.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -943,6 +1019,7 @@
 		};
 		E0A9D1CA21A7EC9D00FEA58D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4ADB11AD7ED6A8317D47B73E /* Pods-GoHaier.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";

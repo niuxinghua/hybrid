@@ -1,0 +1,19 @@
+
+platform :ios, '10.0'
+
+inhibit_all_warnings!
+
+target 'GoHaier' do
+
+ pod "NXHABTest"
+ pod 'BlocksKit'
+ pod 'Masonry'
+ pod 'AFNetworking'
+ pod 'Toast', '~> 4.0.0'
+ pod 'MBProgressHUD'
+ pod 'YYCache'
+ pod 'MGJRouter', '~>0.9.0'
+ pod 'SDWebImage', '~> 4.0'
+ pod 'MJRefresh'
+end
+

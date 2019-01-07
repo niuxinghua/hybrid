@@ -19,7 +19,7 @@ static ViewControllerUtil *sharedInstance;
     });
     return sharedInstance;
 }
-
+#pragma mark -methods
 - (UIViewController *)topViewController{
     return [self topViewController:[UIApplication sharedApplication].keyWindow.rootViewController];
 }
@@ -38,5 +38,14 @@ static ViewControllerUtil *sharedInstance;
     
     UIViewController *presentedViewController = (UIViewController *)rootViewController.presentedViewController;
     return [self topViewController:presentedViewController];
+}
+- (HaierViewControllerMode)isTopViewControllerNavigationMode
+{
+//    UIViewController *topController 
+//    if (<#condition#>) {
+//        <#statements#>
+//    }
+    
+    return ViewControllerModeUnkown;
 }
 @end
