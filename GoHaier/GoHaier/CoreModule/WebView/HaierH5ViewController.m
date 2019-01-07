@@ -28,8 +28,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    _webView = [[HaierCoreWebView alloc]init];
-    _webView.frame = self.view.bounds;
+    _webView = [[HaierCoreWebView alloc]initWithFrame:self.view.bounds];
     [self.view addSubview:_webView];
     [self registerHandlers];
     [self loadHtml];

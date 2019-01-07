@@ -9,6 +9,10 @@
 #import "HaierCoreWebView.h"
 #import <JavaScriptCore/JavaScriptCore.h>
 #import "H5Downloader.h"
+#import "ImagePickerHandler.h"
+#import "PhotoTakerHandler.h"
+#import "BarCodeRecongnizerHandler.h"
+#import "LocationHandler.h"
 @interface HaierCoreWebView()
 @end
 @implementation HaierCoreWebView
@@ -22,6 +26,7 @@
         self.dataDetectorTypes = UIDataDetectorTypeAll;//自动检测网页上的电话号码,网页链接,邮箱;
         [self initweblogToNative];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleH5downLoad) name:DidDownloadH5BaseZipSuccess object:nil];
+         //[self registerHandlers];
     }
     
     return self;
@@ -36,6 +41,7 @@
         self.dataDetectorTypes = UIDataDetectorTypeAll;//自动检测网页上的电话号码,网页链接,邮箱;
         [self initweblogToNative];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleH5downLoad) name:DidDownloadH5BaseZipSuccess object:nil];
+       // [self registerHandlers];
 
     }
     return self;
@@ -76,7 +82,13 @@
     }
     return _handlerCallBacks;
 }
-
+- (void)registerHandlers
+{
+    [self registerNativeHandlers:[ImagePickerHandler sharedInstance]];
+    [self registerNativeHandlers:[PhotoTakerHandler sharedInstance]];
+    [self registerNativeHandlers:[BarCodeRecongnizerHandler sharedInstance]];
+    [self registerNativeHandlers:[LocationHandler sharedInstance]];
+}
 - (void)dealloc
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
