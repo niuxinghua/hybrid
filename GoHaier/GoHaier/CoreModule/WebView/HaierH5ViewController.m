@@ -27,7 +27,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
     _webView = [[HaierCoreWebView alloc]initWithFrame:self.view.bounds];
     [self.view addSubview:_webView];
     [self registerHandlers];
@@ -264,5 +263,14 @@
     
 }
 
+
+
+
+
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    NSLog(@"webview dealloc");
+}
 
 @end

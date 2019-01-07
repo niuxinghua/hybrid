@@ -6,8 +6,10 @@
 + (UIBarButtonItem *)uc_backBarButtonItemWithAction:(void (^)())action {
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     button.frame = CGRectMake(0, 0, 44, 44);
-    [button setImage:[UIImage imageNamed:@"返回"] forState:UIControlStateNormal];
-    [button setImage:[UIImage imageNamed:@"返回"] forState:UIControlStateHighlighted];
+   // [button setImage:[UIImage imageNamed:@"返回"] forState:UIControlStateNormal];
+   // [button setImage:[UIImage imageNamed:@"返回"] forState:UIControlStateHighlighted];
+    [button setTitle:@"返回" forState:UIControlStateNormal];
+    [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [button setImageEdgeInsets:UIEdgeInsetsMake(0, -20, 0, 0)];
     [button bk_addEventHandler:^(id sender) {
         action();
