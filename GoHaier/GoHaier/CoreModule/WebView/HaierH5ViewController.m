@@ -37,6 +37,12 @@
 #pragma mark - controller methods
 + (BOOL)showContentWithAPPName:(NSString *)appName navigationMode:(BOOL)isnavigation fullScreenMode:(BOOL)isfullScreen animated:(BOOL)animation rootController:(UIViewController *)rootController
 {
+    NSString *currentV = [NSString stringWithFormat:@"%@-currentVersion",appName];
+    NSString *currentVersion = [[GHaierH5Context sharedContext]valueForKey:currentV];
+    if (!currentVersion || currentVersion.length <= 0) {
+        //当前app的资源包还未下载下来
+        return NO;
+    }
     
     HaierH5ViewController *controlelr = [[HaierH5ViewController alloc]init];
     controlelr.appName = appName;
