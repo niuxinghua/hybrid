@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface HaierH5ViewController : UIViewController<UIWebViewDelegate>
 @property(nonatomic,strong)HaierCoreWebView *webView;
 
-+ (BOOL)showContentWithUrl:(NSString *)filePath navigationMode:(BOOL)isnavigation fullScreenMode:(BOOL)isfullScreen animated:(BOOL)animation rootController:(UIViewController *)rootController;
++ (BOOL)showContentWithAPPName:(NSString *)appName navigationMode:(BOOL)isnavigation fullScreenMode:(BOOL)isfullScreen animated:(BOOL)animation rootController:(UIViewController *)rootController;
 @end
 
 NS_ASSUME_NONNULL_END
