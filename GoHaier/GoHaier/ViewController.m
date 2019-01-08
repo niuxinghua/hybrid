@@ -14,6 +14,7 @@
 #import "H5FilePathManager.h"
 #import "SSZipArchive.h"
 #import "HaierH5ViewController.h"
+#import "VersionController.h"
 @interface ViewController ()<UIWebViewDelegate>
 @property(nonatomic,strong)HaierCoreWebView *webView;
 @property(nonatomic,copy)NSString * patchUrl;
@@ -31,12 +32,12 @@
     [btn setTitle:@"跳到Hwork" forState:UIControlStateNormal];
     [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [btn addTarget:self action:@selector(showContent) forControlEvents:UIControlEventTouchUpInside];
-    
+    [[VersionController sharedInstance] autoUpateApp:@"hwork"];
 }
 
 - (void)showContent
 {
-    [HaierH5ViewController showContentWithAPPName:@"Hwork" navigationMode:YES fullScreenMode:NO animated:YES rootController:self];
+    [HaierH5ViewController showContentWithAPPName:@"hwork" navigationMode:YES fullScreenMode:NO animated:YES rootController:self];
 }
 
 

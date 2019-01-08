@@ -63,6 +63,7 @@ NSString *const AppsUrl = @"http://mobilebackend.qdct-lsb.haier.net/api/v1/getAl
     //去服务器拉去现在app的所有版本找到最大的版本
     NSDictionary *params = @{@"appId":appName};
     [PPNetworkHelper GET:WidgetUrl parameters:params success:^(id responseObject) {
+        
         NSDictionary *result = (NSDictionary *)responseObject;
         if ([[result valueForKey:@"code"] integerValue] == 200) {
             NSArray *results = [result objectForKey:@"result"];
@@ -71,7 +72,7 @@ NSString *const AppsUrl = @"http://mobilebackend.qdct-lsb.haier.net/api/v1/getAl
             NSString *bestVersionName = @"";
             NSString *bestDownloadUrl = @"";
             if (bestVersion && (![bestVersion isKindOfClass:[NSNull class]])) {
-                bestVersionCode = (NSInteger)[bestVersion valueForKey:@"versionCode"];
+                bestVersionCode = [[bestVersion valueForKey:@"versionCode"] integerValue];
                 bestVersionName = [bestVersion valueForKey:@"versionName"];
                 bestDownloadUrl = [bestVersion valueForKey:@"downloadUrl"];
             }
@@ -118,10 +119,10 @@ NSString *const AppsUrl = @"http://mobilebackend.qdct-lsb.haier.net/api/v1/getAl
     NSDictionary *dic;
     for (int i=0; i<results.count; i++) {
         NSDictionary *result = results[i];
-        NSInteger versionCode = (NSInteger)[result valueForKey:@"versionCode"];
+        NSInteger versionCode = [[result valueForKey:@"versionCode"] integerValue];
         if (versionCode > bestVersion) {
             bestVersion = versionCode;
-            dic = result;
+            dic = [result copy];
         }
     }
     return dic;
