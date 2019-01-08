@@ -164,8 +164,8 @@
     NSString *urlPath = [[H5FilePathManager sharedInstance] baseSavePathwithappName:appName andAppversion:realVersion];
     NSLog(@"%@",urlPath);
     NSString *indexhtml = [[H5FilePathManager sharedInstance] pathForIndexHtmlinFolder:urlPath];
-    NSURL* url = [NSURL  URLWithString:indexhtml];//创建URL
-    NSURLRequest* request = [NSURLRequest requestWithURL:url];//创建NSURLRequest
+    NSURL* url = [NSURL  URLWithString:indexhtml];
+    NSURLRequest* request = [NSURLRequest requestWithURL:url];
     dispatch_async(dispatch_get_main_queue(), ^{
         [weakSelf.webView loadRequest:request];
     });
