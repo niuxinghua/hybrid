@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 #import "PAirSandbox.h"
-
+#import "VersionController.h"
 @interface AppDelegate ()
 
 @end
@@ -23,6 +23,7 @@
         [[PAirSandbox sharedInstance] enableSwipe];
     });
 #endif
+    [[VersionController sharedInstance] updataAll];
     return YES;
 }
 

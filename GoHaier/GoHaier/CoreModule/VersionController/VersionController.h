@@ -15,6 +15,7 @@ typedef void(^VersionUpdateBlcok)(BOOL success);
 +(instancetype)sharedInstance;
 -(void)updateToLatestVersion:(NSString*)appName isSuccess:(VersionUpdateBlcok)updateBlock;
 - (BOOL)autoUpateApp:(NSString *)appName;
+- (void)updataAll;
 @end
 
 NS_ASSUME_NONNULL_END

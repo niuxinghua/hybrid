@@ -33,6 +33,23 @@ NSString *const DiffsUrl = @"http://mobilebackend.qdct-lsb.haier.net/api/v1/diff
     
     return sharedInstance;
 }
+- (void)updataAll
+{
+    [PPNetworkHelper GET:AppsUrl parameters:nil success:^(id responseObject) {
+        NSDictionary *result = (NSDictionary *)responseObject;
+        if ([[result valueForKey:@"code"] integerValue] == 200) {
+            NSArray *results = [result objectForKey:@"result"];
+            for (int i=0; i<results.count; i++) {
+                NSDictionary *result = results[i];
+                [self autoUpateApp:[result objectForKey:@"appId"]];
+            }
+        }
+            
+            
+    } failure:^(NSError *error) {
+        
+    }];
+}
 #pragma mark - patch管理
 -(void)updateToLatestVersion:(NSString*)appName isSuccess:(VersionUpdateBlcok)updateBlock;
 {

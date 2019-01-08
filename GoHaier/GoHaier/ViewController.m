@@ -32,7 +32,7 @@
     [btn setTitle:@"跳到Hwork" forState:UIControlStateNormal];
     [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [btn addTarget:self action:@selector(showContent) forControlEvents:UIControlEventTouchUpInside];
-    [[VersionController sharedInstance] autoUpateApp:@"hwork"];
+   // [[VersionController sharedInstance] autoUpateApp:@"hwork"];
 }
 
 - (void)showContent
