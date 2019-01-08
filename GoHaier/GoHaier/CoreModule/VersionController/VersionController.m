@@ -39,18 +39,7 @@ NSString *const DiffsUrl = @"http://mobilebackend.qdct-lsb.haier.net/api/v1/diff
     
     
 }
-- (void)v2t0v3downLoadPatch
-{
-   
-    
-}
-- (void)v1t0v2downLoadPatch
-{
-//    _patchUrl = @"http://mobilebackend.qdct-lsb.haier.net/api/v1/diffs/hwork/v1/v2";
-//    NSString *path = [[H5FilePathManager sharedInstance] basePatchSavePathwithappName:@"Hwork" andCurrentversion:@"v1" targetVersion:@"v2"];
-//    [[H5Downloader sharedInstance] downLoadPatchFile:_patchUrl toPath:path withPatchName:@"Hwork" CurrentVersion:@"v1" targetVersion:@"v2"];
-    
-}
+
 - (BOOL)autoUpateApp:(NSString *)appName
 {
     if (![PPNetworkHelper isNetwork]) {
@@ -134,7 +123,6 @@ NSString *const DiffsUrl = @"http://mobilebackend.qdct-lsb.haier.net/api/v1/diff
     
         NSString *patchPath = [[H5FilePathManager sharedInstance] basePatchSavePathwithappName:appName andCurrentversion:realCurrentVersion targetVersion:realTargetVersion];
         patchPath = [patchPath stringByAppendingPathComponent:appName];
-        //BOOL isSuccess  = [[PatchManager sharedInstance] mergePatch:currentZipPath differFilePath:patchPath appName:@"Hwork" versionName:@"v1" targetVersion:@"v2"];
         [[PatchManager sharedInstance] mergePatch:currentZipPath differFilePath:patchPath appName:appName versionName:realCurrentVersion targetVersion:realTargetVersion mergeResult:^(BOOL result) {
             if (result) {
                 //需要将merge的zip替换到新的目录，覆盖这个目录，并将这个zip解压到新的目录更新界面
