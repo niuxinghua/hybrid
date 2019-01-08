@@ -7,7 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-
+extern NSString* const DidDownloadH5BaseZipSuccess;
+extern NSString* const DidDownloadH5PatchSuccess;
 NS_ASSUME_NONNULL_BEGIN
 typedef void(^VersionUpdateBlcok)(BOOL success);
 @interface VersionController : NSObject

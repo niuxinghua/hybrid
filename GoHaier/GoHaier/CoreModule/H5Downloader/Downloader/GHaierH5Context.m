@@ -52,6 +52,32 @@ static GHaierH5Context *sharedContext = nil;
     }
     return @"";
 }
+- (NSString *)currentVersionNameWithAPPname:(NSString *)name
+{
+    NSString *key = [NSString stringWithFormat:@"%@-currentVersionName",name];
+    if ([self.h5Mapper objectForKey:key]) {
+        return [self.h5Mapper objectForKey:key];
+    }
+    return @"";
+}
+- (NSString *)currentVersionCodeWithAPPname:(NSString *)name
+{
+    NSString *key = [NSString stringWithFormat:@"%@-currentVersionCode",name];
+    if ([self.h5Mapper objectForKey:key]) {
+        return [self.h5Mapper objectForKey:key];
+    }
+    return @"";
+}
+- (void)setCurrentVersionName:(NSString*)name forApp:(NSString *)appId
+{
+    NSString *key = [NSString stringWithFormat:@"%@-currentVersionName",appId];
+    [self setObject:name forKey:key];
+}
+- (void)setCurrentVersionCode:(NSString*)code forApp:(NSString *)appId
+{
+    NSString *key = [NSString stringWithFormat:@"%@-currentVersionName",appId];
+    [self setObject:code forKey:key];
+}
 - (void)syncToLocal
 {
     @synchronized (self) {

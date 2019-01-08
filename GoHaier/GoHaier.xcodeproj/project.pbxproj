@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		32E67C479746212551C850A5 /* libPods-GoHaier.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A98A894C959BAD7EB3B9720D /* libPods-GoHaier.a */; };
 		E029015821DF8D0C00D5259C /* HaierH5ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E029015721DF8D0C00D5259C /* HaierH5ViewController.m */; };
+		E04A30C521E4708300F7EF5D /* PPNetworkHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = E04A30C121E4708300F7EF5D /* PPNetworkHelper.m */; };
+		E04A30C621E4708300F7EF5D /* PPNetworkCache.m in Sources */ = {isa = PBXBuildFile; fileRef = E04A30C421E4708300F7EF5D /* PPNetworkCache.m */; };
 		E04FBE2121AEA87600D2EAD3 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E04FBE1F21AEA85A00D2EAD3 /* JavaScriptCore.framework */; };
 		E079618B21D3212B00564F83 /* H5FilePathManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E079618A21D3212B00564F83 /* H5FilePathManager.m */; };
 		E079618F21D378B500564F83 /* VersionController.m in Sources */ = {isa = PBXBuildFile; fileRef = E079618E21D378B500564F83 /* VersionController.m */; };
@@ -97,6 +99,10 @@
 		A98A894C959BAD7EB3B9720D /* libPods-GoHaier.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GoHaier.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E029015621DF8D0C00D5259C /* HaierH5ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HaierH5ViewController.h; sourceTree = "<group>"; };
 		E029015721DF8D0C00D5259C /* HaierH5ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HaierH5ViewController.m; sourceTree = "<group>"; };
+		E04A30C121E4708300F7EF5D /* PPNetworkHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPNetworkHelper.m; sourceTree = "<group>"; };
+		E04A30C221E4708300F7EF5D /* PPNetworkCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPNetworkCache.h; sourceTree = "<group>"; };
+		E04A30C321E4708300F7EF5D /* PPNetworkHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPNetworkHelper.h; sourceTree = "<group>"; };
+		E04A30C421E4708300F7EF5D /* PPNetworkCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPNetworkCache.m; sourceTree = "<group>"; };
 		E04FBE1F21AEA85A00D2EAD3 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		E079618921D3212B00564F83 /* H5FilePathManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = H5FilePathManager.h; sourceTree = "<group>"; };
 		E079618A21D3212B00564F83 /* H5FilePathManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = H5FilePathManager.m; sourceTree = "<group>"; };
@@ -250,6 +256,17 @@
 				4ADB11AD7ED6A8317D47B73E /* Pods-GoHaier.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		E04A30C021E4708300F7EF5D /* PPNetworkHelper */ = {
+			isa = PBXGroup;
+			children = (
+				E04A30C121E4708300F7EF5D /* PPNetworkHelper.m */,
+				E04A30C221E4708300F7EF5D /* PPNetworkCache.h */,
+				E04A30C321E4708300F7EF5D /* PPNetworkHelper.h */,
+				E04A30C421E4708300F7EF5D /* PPNetworkCache.m */,
+			);
+			path = PPNetworkHelper;
 			sourceTree = "<group>";
 		};
 		E04FBE1E21AEA85900D2EAD3 /* Frameworks */ = {
@@ -592,6 +609,7 @@
 		E0FC615D21AAD1DE0018AA61 /* CoreUtil */ = {
 			isa = PBXGroup;
 			children = (
+				E04A30C021E4708300F7EF5D /* PPNetworkHelper */,
 				E0B8C94F21BF586E004CD6CC /* SandBox */,
 				E0FC615E21AAD2030018AA61 /* ViewControllerUtil.h */,
 				E0FC615F21AAD2030018AA61 /* ViewControllerUtil.m */,
@@ -790,6 +808,7 @@
 				E0B8C9BC21BFA736004CD6CC /* bsdiff.c in Sources */,
 				E0B8C9BB21BFA736004CD6CC /* bspatch.c in Sources */,
 				E0B8C99921BF8C16004CD6CC /* LocationHandler.m in Sources */,
+				E04A30C621E4708300F7EF5D /* PPNetworkCache.m in Sources */,
 				E079618F21D378B500564F83 /* VersionController.m in Sources */,
 				E0FC615521AABE1E0018AA61 /* HaierCoreWebView.m in Sources */,
 				E080EEE721AAE69D006F2080 /* HaierQRScanViewController.m in Sources */,
@@ -827,6 +846,7 @@
 				E0B8C9AF21BFA736004CD6CC /* mk251.c in Sources */,
 				E0A9D1A421A7EC9A00FEA58D /* ViewController.m in Sources */,
 				E079618B21D3212B00564F83 /* H5FilePathManager.m in Sources */,
+				E04A30C521E4708300F7EF5D /* PPNetworkHelper.m in Sources */,
 				E0B8C94E21BF4B59004CD6CC /* H5Downloader.m in Sources */,
 				E0A9D1AF21A7EC9D00FEA58D /* main.m in Sources */,
 				E0B8C98B21BF5DB7004CD6CC /* aescrypt.c in Sources */,

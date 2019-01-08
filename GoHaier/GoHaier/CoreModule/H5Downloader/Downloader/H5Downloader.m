@@ -11,8 +11,7 @@
 #import "GHaierH5Context.h"
 #import "H5FilePathManager.h"
 static H5Downloader *sharedInstance = nil;
-NSString* const DidDownloadH5BaseZipSuccess = @"DidDownloadH5BaseZipSuccess";
-NSString* const DidDownloadH5PatchSuccess = @"DidDownloadH5PatchSuccess";
+
 
 NSString* const H5ContextKey = @"H5ContextKey";
 @implementation H5Downloader
@@ -24,7 +23,7 @@ NSString* const H5ContextKey = @"H5ContextKey";
     });
     return sharedInstance;
 }
--(void)downLoadZipFile:(NSString*)fileUrl toPath:(NSString *)savePath withZipName:(NSString *)appName versionName:(NSString *)versionName
+-(void)downLoadZipFile:(NSString*)fileUrl toPath:(NSString *)savePath withZipName:(NSString *)appName versionName:(NSString *)versionName versionCode:(NSInteger)versionCode resultBlock:(FileDownLoadResultBlock)downloadBlock;
 {
     //TODO 校验字符串是否合法
     
@@ -41,16 +40,22 @@ NSString* const H5ContextKey = @"H5ContextKey";
             [[H5FilePathManager sharedInstance] createFileDirectories:zipPath isRedo:YES];
             /*把zip文件放入路径中*/
             NSString *zipFileName = [zipPath stringByAppendingPathComponent:appName];
-           [data writeToFile:zipFileName options:0 error:&error];
+            [data writeToFile:zipFileName options:0 error:&error];
+            if (error) {
+                downloadBlock(NO);
+                return ;
+            }
           //解压zip到另外的目录
-            [self uncompressZipfile:zipFileName toPath:[[H5FilePathManager sharedInstance] baseSavePathwithappName:appName andAppversion:versionName]];
-            NSString *currentV = [NSString stringWithFormat:@"%@-currentVersion",appName];
-            [[GHaierH5Context sharedContext]setObject:versionName forKey:currentV];
-            [[NSNotificationCenter defaultCenter] postNotificationName:DidDownloadH5BaseZipSuccess object:nil];
+            NSString *realVersion = [NSString stringWithFormat:@"%@_%li",versionName,(long)versionCode];
+            [self uncompressZipfile:zipFileName toPath:[[H5FilePathManager sharedInstance] baseSavePathwithappName:appName andAppversion:realVersion]];
+            [[GHaierH5Context sharedContext]setCurrentVersionCode:[NSString stringWithFormat:@"%li",versionCode] forApp:appName];
+            [[GHaierH5Context sharedContext]setCurrentVersionName:versionName forApp:appName];
+            downloadBlock(YES);
         }
         else
         {
             NSLog(@"Error downloading zip file: %@", error);
+            downloadBlock(NO);
         }
     });
 }
@@ -71,8 +76,6 @@ NSString* const H5ContextKey = @"H5ContextKey";
             /*把zip文件放入路径中*/
             NSString *zipFileName = [zipPath stringByAppendingPathComponent:appName];
             [data writeToFile:zipFileName options:0 error:&error];
-            //解压zip到另外的目录
-            [[NSNotificationCenter defaultCenter] postNotificationName:DidDownloadH5PatchSuccess object:nil];
         }
         else
         {

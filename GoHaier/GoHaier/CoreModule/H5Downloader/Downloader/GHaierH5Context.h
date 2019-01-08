@@ -13,8 +13,15 @@ extern NSString * const CURRENTVERSION;
 + (instancetype)sharedContext;
 @property(atomic,strong)NSDictionary *h5Mapper;
 + (BOOL)isExitResource:(NSString *)appName appVersion:(NSString *)appversion;
-- (NSString *)currentVersionWithAPPname:(NSString *)name;
-- (NSString *)targetVersionWithAPPname:(NSString *)name;
+
+
+- (NSString *)currentVersionNameWithAPPname:(NSString *)name;
+- (NSString *)currentVersionCodeWithAPPname:(NSString *)name;
+
+- (void)setCurrentVersionName:(NSString*)name forApp:(NSString *)appId;
+- (void)setCurrentVersionCode:(NSString*)code forApp:(NSString *)appId;
+
+
 - (void)setObject:(id)object forKey:(NSString *)key;
 - (NSString *)valueForKey:(NSString *)key;
 @end
