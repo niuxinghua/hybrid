@@ -25,7 +25,6 @@
         }];
         self.dataDetectorTypes = UIDataDetectorTypeAll;//自动检测网页上的电话号码,网页链接,邮箱;
         [self initweblogToNative];
-         //[self registerHandlers];
     }
     
     return self;
@@ -39,8 +38,7 @@
         }];
         self.dataDetectorTypes = UIDataDetectorTypeAll;//自动检测网页上的电话号码,网页链接,邮箱;
         [self initweblogToNative];
-       // [self registerHandlers];
-
+        
     }
     return self;
 }
@@ -124,7 +122,7 @@
 }
 - (void)handleH5downLoad
 {
- //h5下载完成
+    //h5下载完成
     
 }
 

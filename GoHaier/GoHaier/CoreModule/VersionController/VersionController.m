@@ -74,7 +74,6 @@ NSString *const DiffsUrl = @"http://mobilebackend.qdct-lsb.haier.net/api/v1/diff
                     NSString *savePath = [[H5FilePathManager sharedInstance] baseZipSavePathwithappName:appName andAppversion:realVersion];
                     [[H5Downloader sharedInstance] downLoadZipFile:bestDownloadUrl toPath:savePath withZipName:appName versionName:bestVersionName versionCode:bestVersionCode resultBlock:^(BOOL issuccess) {
                         dispatch_async(dispatch_get_main_queue(), ^{
-                            //
                             if (issuccess) {
                                 //需要将这个广播发送出去给corewebview重新加载
                                 NSDictionary *notificationObject = @{@"appName":appName,@"versionName":bestVersionName,@"versionCode":@(bestVersionCode)};
