@@ -18,6 +18,7 @@
 #import "PatchManager.h"
 #import "H5FilePathManager.h"
 #import "SSZipArchive.h"
+#import "VersionController.h"
 @interface HaierH5ViewController ()
 @property(nonatomic,copy)NSString *appName;
 @end
@@ -37,8 +38,7 @@
 #pragma mark - controller methods
 + (BOOL)showContentWithAPPName:(NSString *)appName navigationMode:(BOOL)isnavigation fullScreenMode:(BOOL)isfullScreen animated:(BOOL)animation rootController:(UIViewController *)rootController
 {
-    NSString *currentV = [NSString stringWithFormat:@"%@-currentVersion",appName];
-    NSString *currentVersion = [[GHaierH5Context sharedContext]valueForKey:currentV];
+    NSString *currentVersion = [[GHaierH5Context sharedContext]currentVersionCodeWithAPPname:appName];
     if (!currentVersion || currentVersion.length <= 0) {
         //当前app的资源包还未下载下来
         return NO;
@@ -163,12 +163,12 @@
 - (void)loadCurrentVersionPathWithAPPName:(NSString*)appName
 {
     
-    NSString *currentV = [NSString stringWithFormat:@"%@-currentVersion",appName];
-    
-    NSString *currentVersion = [[GHaierH5Context sharedContext]valueForKey:currentV];
+    NSString *currentVersionName = [[GHaierH5Context sharedContext]currentVersionNameWithAPPname:appName];
+    NSString *currentCode = [[GHaierH5Context sharedContext]currentVersionCodeWithAPPname:appName];
+    NSString *realVersion = [NSString stringWithFormat:@"%@_%@",currentVersionName,currentCode];
     
     __weak typeof(self)weakSelf = self;
-    NSString *urlPath = [[H5FilePathManager sharedInstance] baseSavePathwithappName:appName andAppversion:currentVersion];
+    NSString *urlPath = [[H5FilePathManager sharedInstance] baseSavePathwithappName:appName andAppversion:realVersion];
     NSLog(@"%@",urlPath);
     NSString *indexhtml = [[H5FilePathManager sharedInstance] pathForIndexHtmlinFolder:urlPath];
     NSURL* url = [NSURL  URLWithString:indexhtml];//创建URL
