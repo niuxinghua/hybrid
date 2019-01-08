@@ -45,7 +45,7 @@ NSString* const H5ContextKey = @"H5ContextKey";
                 downloadBlock(NO);
                 return ;
             }
-          //解压zip到另外的目录
+            //解压zip到另外的目录
             NSString *realVersion = [NSString stringWithFormat:@"%@_%li",versionName,(long)versionCode];
             [self uncompressZipfile:zipFileName toPath:[[H5FilePathManager sharedInstance] baseSavePathwithappName:appName andAppversion:realVersion]];
             [[GHaierH5Context sharedContext]setCurrentVersionCode:[NSString stringWithFormat:@"%li",versionCode] forApp:appName];
@@ -60,7 +60,7 @@ NSString* const H5ContextKey = @"H5ContextKey";
     });
 }
 
-- (void)downLoadPatchFile:(NSString*)fileUrl toPath:(NSString *)savePath withPatchName:(NSString *)appName CurrentVersion:(NSString *)currentversion targetVersion:(NSString *)targetVersion
+- (void)downLoadPatchFile:(NSString*)fileUrl toPath:(NSString *)savePath withPatchName:(NSString *)appName CurrentVersion:(NSString *)currentversion targetVersion:(NSString *)targetVersion resultBlock:(FileDownLoadResultBlock)downloadBlock
 {
     dispatch_queue_t queue = dispatch_get_global_queue(
                                                        DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
@@ -76,16 +76,22 @@ NSString* const H5ContextKey = @"H5ContextKey";
             /*把zip文件放入路径中*/
             NSString *zipFileName = [zipPath stringByAppendingPathComponent:appName];
             [data writeToFile:zipFileName options:0 error:&error];
+            if (error) {
+                downloadBlock(NO);
+            }else{
+                downloadBlock(YES);
+            }
         }
         else
         {
             NSLog(@"Error downloading zip file: %@", error);
+            downloadBlock(NO);
         }
     });
 }
 - (BOOL)uncompressZipfile:(NSString *)filePath toPath:(NSString *)savePath
 {
-
+    
     [[H5FilePathManager sharedInstance] createFileDirectories:savePath isRedo:NO];
     //解压zip文件
     [SSZipArchive unzipFileAtPath:filePath toDestination:savePath overwrite:YES password:@"" error:NULL];

@@ -11,11 +11,14 @@
 #import "H5Downloader.h"
 #import "PPNetworkHelper.h"
 #import "GHaierH5Context.h"
+#import "PatchManager.h"
+#import "SSZipArchive.h"
 static VersionController *sharedInstance;
 NSString* const DidDownloadH5BaseZipSuccess = @"DidDownloadH5BaseZipSuccess";
 NSString* const DidDownloadH5PatchSuccess = @"DidDownloadH5PatchSuccess";
 NSString *const WidgetUrl = @"http://mobilebackend.qdct-lsb.haier.net/api/v1/getAllAppVersions";
 NSString *const AppsUrl = @"http://mobilebackend.qdct-lsb.haier.net/api/v1/getAllAppinfos";
+NSString *const DiffsUrl = @"http://mobilebackend.qdct-lsb.haier.net/api/v1/diffs/";
 @interface VersionController()
 @property(nonatomic,copy)NSString * patchUrl;
 @property(nonatomic,copy)NSString * zipUrl;
@@ -38,16 +41,14 @@ NSString *const AppsUrl = @"http://mobilebackend.qdct-lsb.haier.net/api/v1/getAl
 }
 - (void)v2t0v3downLoadPatch
 {
-    _patchUrl = @"http://mobilebackend.qdct-lsb.haier.net/api/v1/diffs/hwork/v2/v3";
-    NSString *path = [[H5FilePathManager sharedInstance] basePatchSavePathwithappName:@"Hwork" andCurrentversion:@"v2" targetVersion:@"v3"];
-    [[H5Downloader sharedInstance] downLoadPatchFile:_patchUrl toPath:path withPatchName:@"Hwork" CurrentVersion:@"v2" targetVersion:@"v3"];
+   
     
 }
 - (void)v1t0v2downLoadPatch
 {
-    _patchUrl = @"http://mobilebackend.qdct-lsb.haier.net/api/v1/diffs/hwork/v1/v2";
-    NSString *path = [[H5FilePathManager sharedInstance] basePatchSavePathwithappName:@"Hwork" andCurrentversion:@"v1" targetVersion:@"v2"];
-    [[H5Downloader sharedInstance] downLoadPatchFile:_patchUrl toPath:path withPatchName:@"Hwork" CurrentVersion:@"v1" targetVersion:@"v2"];
+//    _patchUrl = @"http://mobilebackend.qdct-lsb.haier.net/api/v1/diffs/hwork/v1/v2";
+//    NSString *path = [[H5FilePathManager sharedInstance] basePatchSavePathwithappName:@"Hwork" andCurrentversion:@"v1" targetVersion:@"v2"];
+//    [[H5Downloader sharedInstance] downLoadPatchFile:_patchUrl toPath:path withPatchName:@"Hwork" CurrentVersion:@"v1" targetVersion:@"v2"];
     
 }
 - (BOOL)autoUpateApp:(NSString *)appName
@@ -56,6 +57,7 @@ NSString *const AppsUrl = @"http://mobilebackend.qdct-lsb.haier.net/api/v1/getAl
         return NO;
     }
     NSString *currentCode = [[GHaierH5Context sharedContext] currentVersionCodeWithAPPname:appName];
+     NSString *currentVersionName = [[GHaierH5Context sharedContext] currentVersionNameWithAPPname:appName];
     NSInteger currentVersion = currentCode.integerValue;
     if (currentCode.length == 0 || !currentCode) {
         currentCode = 0;
@@ -95,12 +97,23 @@ NSString *const AppsUrl = @"http://mobilebackend.qdct-lsb.haier.net/api/v1/getAl
                         
                     }];
                     
-                    
-                    
-                    
-                    
                 }else{
                     //需要下载这个bestversion与currentversion的diff文件，并merge
+//                   NSString *patchUrl = DiffsUrl + appName + @"/" + currentVersionName + @"_" + currentCode + @"/" + bestVersionName + @"_" + bestVersionCode;
+                    NSString *realCurrent = [NSString stringWithFormat:@"%@_%@",currentVersionName,currentCode];
+                    NSString *realTarget = [NSString stringWithFormat:@"%@_%li",bestVersionName,bestVersionCode];
+                    NSString *patchUrl = [NSString stringWithFormat:@"%@%@%@%@%@%@%@%@%@%li",DiffsUrl ,appName,@"/" ,currentVersionName,@"_",currentCode,@"/", bestVersionName,@"_",bestVersionCode];
+                    NSString *path = [[H5FilePathManager sharedInstance] basePatchSavePathwithappName:appName andCurrentversion:[NSString stringWithFormat:@"%@_%@",currentVersionName,currentCode] targetVersion:[NSString stringWithFormat:@"%@_%li",bestVersionName,bestVersionCode]];
+                    [[H5Downloader sharedInstance] downLoadPatchFile:patchUrl toPath:path withPatchName:appName CurrentVersion:[NSString stringWithFormat:@"%@_%@",currentVersionName,currentCode] targetVersion:[NSString stringWithFormat:@"%@_%li",bestVersionName,bestVersionCode] resultBlock:^(BOOL issuccess) {
+                        if (issuccess) {
+                            [self mergeDiffWithCurrentRealversion:realCurrent AndRealTarget:realTarget AppName:appName];
+                            [[GHaierH5Context sharedContext]setCurrentVersionCode:[NSString stringWithFormat:@"%li",bestVersionCode] forApp:appName];
+                            [[GHaierH5Context sharedContext]setCurrentVersionName:bestVersionName forApp:appName];
+                            NSDictionary *notificationObject = @{@"appName":appName,@"versionName":bestVersionName,@"versionCode":@(bestVersionCode)};
+                            [[NSNotificationCenter defaultCenter] postNotificationName:DidDownloadH5BaseZipSuccess object:notificationObject];
+                        }
+                    }];
+                    
                     
                 }
             }
@@ -111,6 +124,32 @@ NSString *const AppsUrl = @"http://mobilebackend.qdct-lsb.haier.net/api/v1/getAl
     }];
     
     return NO;
+    
+}
+- (void)mergeDiffWithCurrentRealversion:(NSString *)realCurrentVersion AndRealTarget:(NSString *)realTargetVersion AppName:(NSString *)appName
+{
+    
+        NSString *currentZipPath = [[H5FilePathManager sharedInstance] baseZipSavePathwithappName:appName andAppversion:realCurrentVersion];
+        currentZipPath = [currentZipPath stringByAppendingPathComponent:appName];
+    
+        NSString *patchPath = [[H5FilePathManager sharedInstance] basePatchSavePathwithappName:appName andCurrentversion:realCurrentVersion targetVersion:realTargetVersion];
+        patchPath = [patchPath stringByAppendingPathComponent:appName];
+        //BOOL isSuccess  = [[PatchManager sharedInstance] mergePatch:currentZipPath differFilePath:patchPath appName:@"Hwork" versionName:@"v1" targetVersion:@"v2"];
+        [[PatchManager sharedInstance] mergePatch:currentZipPath differFilePath:patchPath appName:appName versionName:realCurrentVersion targetVersion:realTargetVersion mergeResult:^(BOOL result) {
+            if (result) {
+                //需要将merge的zip替换到新的目录，覆盖这个目录，并将这个zip解压到新的目录更新界面
+                NSString *newPath = [[H5FilePathManager sharedInstance] baseZipSavePathwithappName:appName andAppversion:realTargetVersion];
+                [[H5FilePathManager sharedInstance]createFileDirectories:newPath isRedo:YES];
+                newPath = [newPath stringByAppendingPathComponent:appName];
+                NSString *mergedPath = [[H5FilePathManager sharedInstance] baseMergedZipSavePathwithappName:appName andCurrentversion:realCurrentVersion targetVersion:realTargetVersion];
+                [[H5FilePathManager sharedInstance] moveFile:[mergedPath stringByAppendingPathComponent:appName] toNewPath:newPath recreate:YES];
+                //已经移到zip新的目录，需要解压
+                NSString *finalPath = [[H5FilePathManager sharedInstance] baseSavePathwithappName:appName andAppversion:realTargetVersion];
+                [SSZipArchive unzipFileAtPath:newPath toDestination:finalPath overwrite:YES password:@"" error:NULL];
+              
+            }
+        }];
+    
     
 }
 - (NSDictionary *)findHighestVersionCode:(NSArray *)results
