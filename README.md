@@ -19,4 +19,8 @@ use memory dictionary to hold the router and the callback
 
 
 
-使用方式，已经实现了将前端html压缩后，解压到本地渲染的逻辑，并且增加了patch版本控制的逻辑。下一步需要开发后端控制接口。
+使用方式，已经实现了将前端html压缩后，解压到本地渲染的逻辑，并且增加了patch版本控制的逻辑。
+
+接口已经部署到内网环境，需要等待外网服务。
+
+基本完成hybrid app的增量 全量下载，与jsbridge。todo 给前端调试做一个webstorm的插件，将前端修改的页面实时同步到app内加载调试。
