@@ -75,7 +75,7 @@ static GHaierH5Context *sharedContext = nil;
 }
 - (void)setCurrentVersionCode:(NSString*)code forApp:(NSString *)appId
 {
-    NSString *key = [NSString stringWithFormat:@"%@-currentVersionName",appId];
+    NSString *key = [NSString stringWithFormat:@"%@-currentVersionCode",appId];
     [self setObject:code forKey:key];
 }
 - (void)syncToLocal
