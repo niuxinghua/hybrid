@@ -28,6 +28,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     _webView = [[HaierCoreWebView alloc]initWithFrame:self.view.bounds];
+    _webView.scrollView.scrollEnabled = NO;
     [self.view addSubview:_webView];
     [self registerHandlers];
     [self loadCurrentVersionPathWithAPPName:_appName];
