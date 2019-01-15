@@ -35,10 +35,16 @@
     [self loadCurrentVersionPathWithAPPName:_appName andPageName:_PageName];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshWebview:) name:DidDownloadH5BaseZipSuccess object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshWebview:) name:DidDownloadH5PatchSuccess object:nil];
-
+    if (_titleName) {
+        self.title = _titleName;
+    }
 }
 
-
+- (void)setTitleName:(NSString *)titleName
+{
+    _titleName = [titleName copy];
+    self.title = titleName;
+}
 - (void)refreshWebview:(NSNotification *)notification
 {
     NSDictionary *dic = notification.object;
@@ -50,7 +56,7 @@
 }
 
 #pragma mark - controller methods
-+ (BOOL)showContentWithAPPName:(NSString *)appName navigationMode:(BOOL)isnavigation fullScreenMode:(BOOL)isfullScreen animated:(BOOL)animation rootController:(UIViewController *)rootController pageName:(NSString *)pageName
++ (BOOL)showContentWithAPPName:(NSString *)appName navigationMode:(BOOL)isnavigation fullScreenMode:(BOOL)isfullScreen animated:(BOOL)animation titleName:(NSString *)title rootController:(UIViewController *)rootController pageName:(NSString *)pageName
 {
     NSString *currentVersion = [[GHaierH5Context sharedContext]currentVersionCodeWithAPPname:appName];
     if (!currentVersion || currentVersion.length <= 0) {
@@ -61,6 +67,7 @@
     HaierH5ViewController *controlelr = [[HaierH5ViewController alloc]init];
     controlelr.PageName = [pageName copy];
     controlelr.appName = [appName copy];
+    controlelr.titleName = title;
     if (controlelr) {
         if (isnavigation) {
             if (rootController.navigationController) {

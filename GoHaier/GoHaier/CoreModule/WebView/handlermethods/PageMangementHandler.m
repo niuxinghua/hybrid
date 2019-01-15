@@ -27,8 +27,14 @@ static PageMangementHandler* sharedInstance;
 - (void)handlerMethod:(id)data
 {
     NSLog(@"handler key %@ method called",[self handlerKey]);
-    
-    [HaierH5ViewController showContentWithAPPName:[VersionController sharedInstance].currentAppName navigationMode:YES fullScreenMode:NO animated:NO rootController:[[ViewControllerUtil sharedInstance] topViewController] pageName:(NSString *)data];
+    NSArray *args = (NSArray *)data;
+    if (args.count < 2) {
+        return;
+    }
+    NSString *title = [args objectAtIndex:0];
+    NSString *pageName = [args objectAtIndex:1];
+
+    [HaierH5ViewController showContentWithAPPName:[VersionController sharedInstance].currentAppName navigationMode:YES fullScreenMode:NO animated:NO titleName:title rootController:[[ViewControllerUtil sharedInstance] topViewController] pageName:pageName];
 
     
 }
