@@ -16,6 +16,7 @@ typedef void(^VersionUpdateBlcok)(BOOL success);
 -(void)updateToLatestVersion:(NSString*)appName isSuccess:(VersionUpdateBlcok)updateBlock;
 - (BOOL)autoUpateApp:(NSString *)appName;
 - (void)updataAll;
+@property(nonatomic,copy)NSString *currentAppName;
 @end
 
 NS_ASSUME_NONNULL_END

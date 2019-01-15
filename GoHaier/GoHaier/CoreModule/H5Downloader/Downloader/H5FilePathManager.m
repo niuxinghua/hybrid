@@ -95,7 +95,7 @@ static H5FilePathManager *instance = nil;
         }
     }
 }
-- (NSString *)pathForIndexHtmlinFolder:(NSString *)folderPath
+- (NSString *)pathForIndexHtmlinFolder:(NSString *)folderPath withPageaName:(NSString *)pageName
 {
     NSFileManager *myFileManager = [NSFileManager defaultManager];
     NSDirectoryEnumerator *myDirectoryEnumerator = [myFileManager enumeratorAtPath:folderPath];
@@ -110,7 +110,7 @@ static H5FilePathManager *instance = nil;
         if (isDir) {
         } else {
             NSLog(@"%@", path.lastPathComponent);    // 文件路径
-            if ([path.lastPathComponent isEqualToString:@"demo.html"]) {
+            if ([path.lastPathComponent isEqualToString:pageName]) {
                 return [NSString stringWithFormat:@"%@/%@", folderPath, path];
             }
         }

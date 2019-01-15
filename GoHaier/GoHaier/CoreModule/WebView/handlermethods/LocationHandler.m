@@ -30,7 +30,7 @@ static LocationHandler* sharedInstance = nil;
 }
 
 
-- (void)handlerMethod
+- (void)handlerMethod:(id)data
 {
     NSLog(@"handler key %@ method called",[self handlerKey]);
     [manager startUpdatingLocation];

@@ -19,6 +19,7 @@
 #import "H5FilePathManager.h"
 #import "SSZipArchive.h"
 #import "VersionController.h"
+#import "PageMangementHandler.h"
 @interface HaierH5ViewController ()
 @property(nonatomic,copy)NSString *appName;
 @end
@@ -31,7 +32,7 @@
     _webView.scrollView.scrollEnabled = NO;
     [self.view addSubview:_webView];
     [self registerHandlers];
-    [self loadCurrentVersionPathWithAPPName:_appName];
+    [self loadCurrentVersionPathWithAPPName:_appName andPageName:_PageName];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshWebview:) name:DidDownloadH5BaseZipSuccess object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshWebview:) name:DidDownloadH5PatchSuccess object:nil];
 
@@ -42,23 +43,24 @@
 {
     NSDictionary *dic = notification.object;
     if ([[dic objectForKey:@"appName"] isEqualToString:_appName]) {
-        [self loadCurrentVersionPathWithAPPName:_appName];
+        [self loadCurrentVersionPathWithAPPName:_appName andPageName:@"demo.html"];
     }
     
     
 }
 
 #pragma mark - controller methods
-+ (BOOL)showContentWithAPPName:(NSString *)appName navigationMode:(BOOL)isnavigation fullScreenMode:(BOOL)isfullScreen animated:(BOOL)animation rootController:(UIViewController *)rootController
++ (BOOL)showContentWithAPPName:(NSString *)appName navigationMode:(BOOL)isnavigation fullScreenMode:(BOOL)isfullScreen animated:(BOOL)animation rootController:(UIViewController *)rootController pageName:(NSString *)pageName
 {
     NSString *currentVersion = [[GHaierH5Context sharedContext]currentVersionCodeWithAPPname:appName];
     if (!currentVersion || currentVersion.length <= 0) {
         //当前app的资源包还未下载下来
         return NO;
     }
-    
+    [VersionController sharedInstance].currentAppName = [appName copy];
     HaierH5ViewController *controlelr = [[HaierH5ViewController alloc]init];
-    controlelr.appName = appName;
+    controlelr.PageName = [pageName copy];
+    controlelr.appName = [appName copy];
     if (controlelr) {
         if (isnavigation) {
             if (rootController.navigationController) {
@@ -149,6 +151,8 @@
     [_webView registerNativeHandlers:[PhotoTakerHandler sharedInstance]];
     [_webView registerNativeHandlers:[BarCodeRecongnizerHandler sharedInstance]];
     [_webView registerNativeHandlers:[LocationHandler sharedInstance]];
+    [_webView registerNativeHandlers:[PageMangementHandler sharedInstance]];
+
 }
 
 
@@ -168,7 +172,7 @@
     
 }
 
-- (void)loadCurrentVersionPathWithAPPName:(NSString*)appName
+- (void)loadCurrentVersionPathWithAPPName:(NSString*)appName andPageName:(NSString *)pageName
 {
     
     NSString *currentVersionName = [[GHaierH5Context sharedContext]currentVersionNameWithAPPname:appName];
@@ -178,7 +182,7 @@
     __weak typeof(self)weakSelf = self;
     NSString *urlPath = [[H5FilePathManager sharedInstance] baseSavePathwithappName:appName andAppversion:realVersion];
     NSLog(@"%@",urlPath);
-    NSString *indexhtml = [[H5FilePathManager sharedInstance] pathForIndexHtmlinFolder:urlPath];
+    NSString *indexhtml = [[H5FilePathManager sharedInstance] pathForIndexHtmlinFolder:urlPath withPageaName:pageName];
     NSURL* url = [NSURL  URLWithString:indexhtml];
     NSURLRequest* request = [NSURLRequest requestWithURL:url];
     dispatch_async(dispatch_get_main_queue(), ^{

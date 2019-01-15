@@ -64,6 +64,7 @@
 		E0B8C9C421BFD5F0004CD6CC /* PatchManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E0B8C9C321BFD5F0004CD6CC /* PatchManager.m */; };
 		E0E8EFE821E2ECE300BF0434 /* UIBarButtonItem+UC.m in Sources */ = {isa = PBXBuildFile; fileRef = E0E8EFE621E2ECE200BF0434 /* UIBarButtonItem+UC.m */; };
 		E0E8EFEB21E2ED3900BF0434 /* UIColor+UC.m in Sources */ = {isa = PBXBuildFile; fileRef = E0E8EFEA21E2ED3900BF0434 /* UIColor+UC.m */; };
+		E0F425B021EDCED20021D742 /* PageMangementHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = E0F425AF21EDCED20021D742 /* PageMangementHandler.m */; };
 		E0F6C53121AB9EA2008AF5C0 /* BaseHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = E0F6C53021AB9EA2008AF5C0 /* BaseHandler.m */; };
 		E0FC614A21AABBD10018AA61 /* WebViewJavascriptBridgeBase.m in Sources */ = {isa = PBXBuildFile; fileRef = E0FC614321AABBD10018AA61 /* WebViewJavascriptBridgeBase.m */; };
 		E0FC614B21AABBD10018AA61 /* WKWebViewJavascriptBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = E0FC614421AABBD10018AA61 /* WKWebViewJavascriptBridge.m */; };
@@ -200,6 +201,8 @@
 		E0E8EFE721E2ECE300BF0434 /* UIBarButtonItem+UC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+UC.h"; sourceTree = "<group>"; };
 		E0E8EFE921E2ED3900BF0434 /* UIColor+UC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+UC.h"; sourceTree = "<group>"; };
 		E0E8EFEA21E2ED3900BF0434 /* UIColor+UC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+UC.m"; sourceTree = "<group>"; };
+		E0F425AE21EDCED20021D742 /* PageMangementHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PageMangementHandler.h; sourceTree = "<group>"; };
+		E0F425AF21EDCED20021D742 /* PageMangementHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PageMangementHandler.m; sourceTree = "<group>"; };
 		E0F6C52F21AB9EA2008AF5C0 /* BaseHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseHandler.h; sourceTree = "<group>"; };
 		E0F6C53021AB9EA2008AF5C0 /* BaseHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseHandler.m; sourceTree = "<group>"; };
 		E0FC614321AABBD10018AA61 /* WebViewJavascriptBridgeBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewJavascriptBridgeBase.m; sourceTree = "<group>"; };
@@ -597,6 +600,8 @@
 				E0FC615A21AACFB00018AA61 /* ImagePickerHandler.h */,
 				E0FC615B21AACFB00018AA61 /* ImagePickerHandler.m */,
 				E0FC616421AADB350018AA61 /* PhotoTakerHandler.h */,
+				E0F425AE21EDCED20021D742 /* PageMangementHandler.h */,
+				E0F425AF21EDCED20021D742 /* PageMangementHandler.m */,
 				E0FC616521AADB350018AA61 /* PhotoTakerHandler.m */,
 				E080EEDD21AAE3A8006F2080 /* BarCodeRecongnizerHandler.h */,
 				E080EEDE21AAE3A8006F2080 /* BarCodeRecongnizerHandler.m */,
@@ -797,6 +802,7 @@
 				E0B8C99021BF5DB7004CD6CC /* pwd2key.c in Sources */,
 				E0B8C9B321BFA736004CD6CC /* huffman.c in Sources */,
 				E0B8C9AE21BFA736004CD6CC /* randtable.c in Sources */,
+				E0F425B021EDCED20021D742 /* PageMangementHandler.m in Sources */,
 				E0B8C98A21BF5DB7004CD6CC /* hmac.c in Sources */,
 				E029015821DF8D0C00D5259C /* HaierH5ViewController.m in Sources */,
 				E0B8C98621BF5DB7004CD6CC /* ioapi_buf.c in Sources */,

@@ -13,7 +13,7 @@
 {
     return @"";
 }
-- (void)handlerMethod
+- (void)handlerMethod:(id)data
 {
     
 }

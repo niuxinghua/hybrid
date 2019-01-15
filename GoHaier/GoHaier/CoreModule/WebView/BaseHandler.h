@@ -11,7 +11,7 @@
 typedef void (^CallBackHandlerBlock)(id data);
 @interface BaseHandler : NSObject
 - (NSString *)handlerKey;
-- (void)handlerMethod;
+- (void)handlerMethod:(id)data;
 - (BOOL)respondToWeb:(id)data;
 @property (nonatomic,copy)CallBackHandlerBlock webCallBack;
 @end

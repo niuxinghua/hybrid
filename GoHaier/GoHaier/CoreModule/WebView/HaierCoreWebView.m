@@ -104,7 +104,7 @@
     __weak typeof(self) weakSelf = self;
     [self.bridge registerHandler:handlerKey handler:^(id data, WVJBResponseCallback responseCallback) {
         [weakSelf.handlerCallBacks setObject:responseCallback forKey:handlerKey];
-        [handler handlerMethod];
+        [handler handlerMethod:data];
     }];
     handler.webCallBack = ^(id data) {
         [weakSelf respondToWeb:data withHandlerKey:handlerKey];

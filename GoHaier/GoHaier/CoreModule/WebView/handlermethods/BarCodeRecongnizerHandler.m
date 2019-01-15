@@ -28,7 +28,7 @@ static BarCodeRecongnizerHandler* sharedInstance;
 }
 
 
-- (void)handlerMethod
+- (void)handlerMethod:(id)data
 {
     NSLog(@"handler key %@ method called",[self handlerKey]);
     HaierQRScanViewController *controller = [[HaierQRScanViewController alloc]init];

@@ -23,7 +23,7 @@ static ImagePickerHandler* sharedInstance;
 {
     return @"ghaier_choosePhoto";
 }
-- (void)handlerMethod
+- (void)handlerMethod:(id)data
 {
     NSLog(@"handler key %@ method called",[self handlerKey]);
     if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeSavedPhotosAlbum]) {

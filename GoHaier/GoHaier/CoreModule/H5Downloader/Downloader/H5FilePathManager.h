@@ -19,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)createFileDirectories:(NSString *)targetPath isRedo:(BOOL)redo;
 - (BOOL)moveFile:(NSString *)filepath toNewPath:(NSString *)newFilePath recreate:(BOOL)redo;
 - (BOOL)removeFile:(NSString *)targetPath;
-- (NSString *)pathForIndexHtmlinFolder:(NSString *)folderPath;
+- (NSString *)pathForIndexHtmlinFolder:(NSString *)folderPath withPageaName:(NSString *)pageName;
 @end
 
 NS_ASSUME_NONNULL_END
