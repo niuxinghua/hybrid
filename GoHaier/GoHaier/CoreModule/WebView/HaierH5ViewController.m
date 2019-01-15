@@ -64,6 +64,12 @@
             if (rootController.navigationController) {
                 controlelr.navigationItem.leftBarButtonItem = [UIBarButtonItem uc_backBarButtonItemWithAction:^{
                     
+                    //处理webview回退的关系
+                    if (controlelr.webView.canGoBack) {
+                        [controlelr.webView goBack];
+                        return ;
+                    }
+                    
                     [rootController.navigationController popViewControllerAnimated:NO];
                     
                 }];
@@ -81,8 +87,13 @@
                 //rootcontroller不是导航控制器，创建一个导航控制器弹出这个controller
                 
                 UINavigationController *rootContent = [[UINavigationController alloc]initWithRootViewController:controlelr];
+            
                 controlelr.navigationItem.leftBarButtonItem = [UIBarButtonItem uc_backBarButtonItemWithAction:^{
-                    
+                    //处理webview回退的关系
+                    if (controlelr.webView.canGoBack) {
+                        [controlelr.webView goBack];
+                        return;
+                    }
                     [rootController dismissViewControllerAnimated:animation completion:^{
                         
                     }];
@@ -101,7 +112,10 @@
             if (!isfullScreen) {
                 UINavigationController *rootContent = [[UINavigationController alloc]initWithRootViewController:controlelr];
                 controlelr.navigationItem.leftBarButtonItem = [UIBarButtonItem uc_backBarButtonItemWithAction:^{
-                    
+                    if (controlelr.webView.canGoBack) {
+                        [controlelr.webView goBack];
+                        return;
+                    }
                     [rootController dismissViewControllerAnimated:animation completion:^{
                         
                     }];
