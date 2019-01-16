@@ -85,7 +85,7 @@ NSString *const DiffsUrl = @"http://mobilebackend.qdct-lsb.haier.net/api/v1/diff
                 bestDownloadUrl = [bestVersion valueForKey:@"downloadUrl"];
             }
             if ((bestVersionCode > currentVersion)) {
-                if (currentVersion == 0) {
+                if (currentVersion == 0 || [bestVersion valueForKey:@"isforceupdate"]) {
                     //直接下载bestversion的zip
                     NSString *realVersion = [NSString stringWithFormat:@"%@_%li",bestVersionName,(long)bestVersionCode];
                     NSString *savePath = [[H5FilePathManager sharedInstance] baseZipSavePathwithappName:appName andAppversion:realVersion];
