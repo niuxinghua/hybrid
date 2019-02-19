@@ -20,6 +20,7 @@
 #import "SSZipArchive.h"
 #import "VersionController.h"
 #import "PageMangementHandler.h"
+#import "PageGoBackHandler.h"
 @interface HaierH5ViewController ()
 @property(nonatomic,copy)NSString *appName;
 @end
@@ -49,7 +50,7 @@
 {
     NSDictionary *dic = notification.object;
     if ([[dic objectForKey:@"appName"] isEqualToString:_appName]) {
-        [self loadCurrentVersionPathWithAPPName:_appName andPageName:@"demo.html"];
+        [self loadCurrentVersionPathWithAPPName:_appName andPageName:@"index.html"];
     }
     
     
@@ -159,6 +160,13 @@
     [_webView registerNativeHandlers:[BarCodeRecongnizerHandler sharedInstance]];
     [_webView registerNativeHandlers:[LocationHandler sharedInstance]];
     [_webView registerNativeHandlers:[PageMangementHandler sharedInstance]];
+    
+    //注册回退的handler
+    PageGoBackHandler *pageGoBack = [[PageGoBackHandler alloc]init];
+    pageGoBack.webView = _webView;
+    [_webView registerNativeHandlers:pageGoBack];
+    
+    
 
 }
 

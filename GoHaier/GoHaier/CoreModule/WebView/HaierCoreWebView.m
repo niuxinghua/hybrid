@@ -25,6 +25,10 @@
         }];
         self.dataDetectorTypes = UIDataDetectorTypeAll;//自动检测网页上的电话号码,网页链接,邮箱;
         [self initweblogToNative];
+        //以下代码为了适配uiwebview回退重新reload的问题
+        id webView = [self valueForKeyPath:@"_internal.browserView._webView"];
+        id preferences = [webView valueForKey:@"preferences"];
+        [preferences performSelector:@selector(_postCacheModelChangedNotification)];
     }
     
     return self;
@@ -39,6 +43,10 @@
         self.dataDetectorTypes = UIDataDetectorTypeAll;//自动检测网页上的电话号码,网页链接,邮箱;
         [self initweblogToNative];
         
+        //以下代码为了适配uiwebview回退重新reload的问题
+        id webView = [self valueForKeyPath:@"_internal.browserView._webView"];
+        id preferences = [webView valueForKey:@"preferences"];
+        [preferences performSelector:@selector(_postCacheModelChangedNotification)];
     }
     return self;
 }
@@ -78,13 +86,7 @@
     }
     return _handlerCallBacks;
 }
-- (void)registerHandlers
-{
-    [self registerNativeHandlers:[ImagePickerHandler sharedInstance]];
-    [self registerNativeHandlers:[PhotoTakerHandler sharedInstance]];
-    [self registerNativeHandlers:[BarCodeRecongnizerHandler sharedInstance]];
-    [self registerNativeHandlers:[LocationHandler sharedInstance]];
-}
+
 - (void)dealloc
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
@@ -111,6 +113,7 @@
     };
     return YES;
 }
+
 - (BOOL)respondToWeb:(id) responseData withHandlerKey:(NSString *)handlerKey
 {
     WVJBResponseCallback callBack = [_handlerCallBacks objectForKey:handlerKey];
@@ -125,6 +128,11 @@
     //h5下载完成
     
 }
-
+- (void)pageGoBack
+{
+    if ([self canGoBack]) {
+        [self goBack];
+    }
+}
 
 @end

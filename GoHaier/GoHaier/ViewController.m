@@ -29,7 +29,7 @@
     // Do any additional setup after loading the view, typically from a nib.
     UIButton *btn = [[UIButton alloc]initWithFrame:CGRectMake(50, 200, 100, 40)];
     [self.view addSubview:btn];
-    [btn setTitle:@"跳到Hwork" forState:UIControlStateNormal];
+    [btn setTitle:@"跳到mintui" forState:UIControlStateNormal];
     [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [btn addTarget:self action:@selector(showContent) forControlEvents:UIControlEventTouchUpInside];
    // [[VersionController sharedInstance] autoUpateApp:@"hwork"];
@@ -37,7 +37,7 @@
 
 - (void)showContent
 {
-    [HaierH5ViewController showContentWithAPPName:@"hwork" navigationMode:YES fullScreenMode:NO animated:YES titleName:@"hwork" rootController:self pageName:@"demo.html"];
+    [HaierH5ViewController showContentWithAPPName:@"mintui" navigationMode:YES fullScreenMode:NO animated:YES titleName:@"mintui" rootController:self pageName:@"index.html"];
 }
 
 
