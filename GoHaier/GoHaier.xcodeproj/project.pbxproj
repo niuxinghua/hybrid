@@ -14,6 +14,7 @@
 		E04FBE2121AEA87600D2EAD3 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E04FBE1F21AEA85A00D2EAD3 /* JavaScriptCore.framework */; };
 		E0588094221E4D130030CBA5 /* KDPermission.m in Sources */ = {isa = PBXBuildFile; fileRef = E0588091221E4D130030CBA5 /* KDPermission.m */; };
 		E0588095221E4D130030CBA5 /* KDPermission.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E0588093221E4D130030CBA5 /* KDPermission.bundle */; };
+		E0588098221E72B10030CBA5 /* ContactsHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = E0588097221E72B10030CBA5 /* ContactsHandler.m */; };
 		E079618B21D3212B00564F83 /* H5FilePathManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E079618A21D3212B00564F83 /* H5FilePathManager.m */; };
 		E079618F21D378B500564F83 /* VersionController.m in Sources */ = {isa = PBXBuildFile; fileRef = E079618E21D378B500564F83 /* VersionController.m */; };
 		E080EEDF21AAE3A8006F2080 /* BarCodeRecongnizerHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = E080EEDE21AAE3A8006F2080 /* BarCodeRecongnizerHandler.m */; };
@@ -111,6 +112,8 @@
 		E0588091221E4D130030CBA5 /* KDPermission.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KDPermission.m; sourceTree = "<group>"; };
 		E0588092221E4D130030CBA5 /* KDPermission.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KDPermission.h; sourceTree = "<group>"; };
 		E0588093221E4D130030CBA5 /* KDPermission.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = KDPermission.bundle; sourceTree = "<group>"; };
+		E0588096221E72B10030CBA5 /* ContactsHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ContactsHandler.h; sourceTree = "<group>"; };
+		E0588097221E72B10030CBA5 /* ContactsHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ContactsHandler.m; sourceTree = "<group>"; };
 		E079618921D3212B00564F83 /* H5FilePathManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = H5FilePathManager.h; sourceTree = "<group>"; };
 		E079618A21D3212B00564F83 /* H5FilePathManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = H5FilePathManager.m; sourceTree = "<group>"; };
 		E079618D21D378B500564F83 /* VersionController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VersionController.h; sourceTree = "<group>"; };
@@ -626,15 +629,17 @@
 				E0FC615A21AACFB00018AA61 /* ImagePickerHandler.h */,
 				E0FC615B21AACFB00018AA61 /* ImagePickerHandler.m */,
 				E0FC616421AADB350018AA61 /* PhotoTakerHandler.h */,
+				E0FC616521AADB350018AA61 /* PhotoTakerHandler.m */,
 				E0F425AE21EDCED20021D742 /* PageMangementHandler.h */,
 				E0F425AF21EDCED20021D742 /* PageMangementHandler.m */,
-				E0FC616521AADB350018AA61 /* PhotoTakerHandler.m */,
 				E080EEDD21AAE3A8006F2080 /* BarCodeRecongnizerHandler.h */,
 				E080EEDE21AAE3A8006F2080 /* BarCodeRecongnizerHandler.m */,
 				E0B8C99721BF8C16004CD6CC /* LocationHandler.h */,
 				E0B8C99821BF8C16004CD6CC /* LocationHandler.m */,
 				E0D3503B221A78BC0099E454 /* PageGoBackHandler.h */,
 				E0D3503C221A78BC0099E454 /* PageGoBackHandler.m */,
+				E0588096221E72B10030CBA5 /* ContactsHandler.h */,
+				E0588097221E72B10030CBA5 /* ContactsHandler.m */,
 			);
 			path = handlermethods;
 			sourceTree = "<group>";
@@ -888,6 +893,7 @@
 				E0A9D1AF21A7EC9D00FEA58D /* main.m in Sources */,
 				E0B8C98B21BF5DB7004CD6CC /* aescrypt.c in Sources */,
 				E0588094221E4D130030CBA5 /* KDPermission.m in Sources */,
+				E0588098221E72B10030CBA5 /* ContactsHandler.m in Sources */,
 				E0A9D1A121A7EC9A00FEA58D /* AppDelegate.m in Sources */,
 				E0B8C9B621BFA736004CD6CC /* bzip2recover.c in Sources */,
 			);
@@ -1060,17 +1066,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 6MFHUAAY76;
 				INFOPLIST_FILE = GoHaier/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.haier.imapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.morec.fisher;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "95bff849-f2ef-4999-93d1-6401b9d53cbf";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = morec.fisher;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1081,14 +1088,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = GoHaier/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.haier.imapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.morec.fisher;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "95bff849-f2ef-4999-93d1-6401b9d53cbf";
 				PROVISIONING_PROFILE_SPECIFIER = "";

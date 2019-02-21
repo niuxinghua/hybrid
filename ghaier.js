@@ -64,7 +64,7 @@ function callHandler(code, handler_arg, args) {
     WebViewJavascriptBridge.callHandler(code, handler_arg, function (responseData) {
         if (responseData) {
             // suc
-            console.log(responseData);
+            console.log(JSON.parse(responseData));
             if (args.success) {
                 typeof args.success == "function" & args.success(responseData);
             }

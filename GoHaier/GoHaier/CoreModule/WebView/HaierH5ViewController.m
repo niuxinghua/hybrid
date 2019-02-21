@@ -21,6 +21,7 @@
 #import "VersionController.h"
 #import "PageMangementHandler.h"
 #import "PageGoBackHandler.h"
+#import "ContactsHandler.h"
 @interface HaierH5ViewController ()
 @property(nonatomic,copy)NSString *appName;
 @end
@@ -165,6 +166,7 @@
     PageGoBackHandler *pageGoBack = [[PageGoBackHandler alloc]init];
     pageGoBack.webView = _webView;
     [_webView registerNativeHandlers:pageGoBack];
+    [_webView registerNativeHandlers:[ContactsHandler sharedInstance]];
     
     
 

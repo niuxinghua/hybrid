@@ -43,6 +43,24 @@ static BarCodeRecongnizerHandler* sharedInstance;
         [[[ViewControllerUtil sharedInstance] topViewController] presentViewController:controller animated:NO completion:^{
             
         }];
+    }else{
+        [AVCaptureDevice requestAccessForMediaType:AVMediaTypeVideo
+                                 completionHandler:^(BOOL granted) {
+                                     NSError *error;
+                                     if (granted) {
+                                         HaierQRScanViewController *controller = [[HaierQRScanViewController alloc]init];
+                                         __weak typeof (BarCodeRecongnizerHandler)*weakSelf = self;
+                                         controller.resultBlock = ^(NSString * result) {
+                                             if (weakSelf.webCallBack) {
+                                                 weakSelf.webCallBack(result);
+                                             }
+                                         };
+                                         [[[ViewControllerUtil sharedInstance] topViewController] presentViewController:controller animated:NO completion:^{
+                                             
+                                         }];
+                                     }else {
+                                     }
+                                 }];
     }
   
 }
