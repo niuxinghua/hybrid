@@ -30,16 +30,20 @@ static BarCodeRecongnizerHandler* sharedInstance;
 
 - (void)handlerMethod:(id)data
 {
-    NSLog(@"handler key %@ method called",[self handlerKey]);
-    HaierQRScanViewController *controller = [[HaierQRScanViewController alloc]init];
-    __weak typeof (BarCodeRecongnizerHandler)*weakSelf = self;
-    controller.resultBlock = ^(NSString * result) {
-        if (weakSelf.webCallBack) {
-            weakSelf.webCallBack(result);
-        }
-    };
-    [[[ViewControllerUtil sharedInstance] topViewController] presentViewController:controller animated:NO completion:^{
-        
-    }];
+    if([[KDPermission helper] isGetCameraPemission])
+    {
+        NSLog(@"handler key %@ method called",[self handlerKey]);
+        HaierQRScanViewController *controller = [[HaierQRScanViewController alloc]init];
+        __weak typeof (BarCodeRecongnizerHandler)*weakSelf = self;
+        controller.resultBlock = ^(NSString * result) {
+            if (weakSelf.webCallBack) {
+                weakSelf.webCallBack(result);
+            }
+        };
+        [[[ViewControllerUtil sharedInstance] topViewController] presentViewController:controller animated:NO completion:^{
+            
+        }];
+    }
+  
 }
 @end
