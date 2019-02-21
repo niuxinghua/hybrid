@@ -25,13 +25,18 @@ static PhotoTakerHandler* sharedInstance;
 
 - (void)handlerMethod
 {
-    NSLog(@"handler key %@ method called",[self handlerKey]);
-    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeSavedPhotosAlbum]) {
-        UIImagePickerController * imagePicker = [[UIImagePickerController alloc]init];
-        imagePicker.delegate = self;
-        imagePicker.allowsEditing = YES;
-        imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
-        [[[ViewControllerUtil sharedInstance]topViewController] presentViewController:imagePicker animated:YES completion:nil];
+    
+    
+    if ([[KDPermission helper] isGetCameraPemission]) {
+        NSLog(@"handler key %@ method called",[self handlerKey]);
+        if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeSavedPhotosAlbum]) {
+            UIImagePickerController * imagePicker = [[UIImagePickerController alloc]init];
+            imagePicker.delegate = self;
+            imagePicker.allowsEditing = YES;
+            imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
+            [[[ViewControllerUtil sharedInstance]topViewController] presentViewController:imagePicker animated:YES completion:nil];
+            
+        }
         
     }
 }

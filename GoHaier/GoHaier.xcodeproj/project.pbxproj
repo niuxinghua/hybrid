@@ -12,6 +12,8 @@
 		E04A30C521E4708300F7EF5D /* PPNetworkHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = E04A30C121E4708300F7EF5D /* PPNetworkHelper.m */; };
 		E04A30C621E4708300F7EF5D /* PPNetworkCache.m in Sources */ = {isa = PBXBuildFile; fileRef = E04A30C421E4708300F7EF5D /* PPNetworkCache.m */; };
 		E04FBE2121AEA87600D2EAD3 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E04FBE1F21AEA85A00D2EAD3 /* JavaScriptCore.framework */; };
+		E0588094221E4D130030CBA5 /* KDPermission.m in Sources */ = {isa = PBXBuildFile; fileRef = E0588091221E4D130030CBA5 /* KDPermission.m */; };
+		E0588095221E4D130030CBA5 /* KDPermission.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E0588093221E4D130030CBA5 /* KDPermission.bundle */; };
 		E079618B21D3212B00564F83 /* H5FilePathManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E079618A21D3212B00564F83 /* H5FilePathManager.m */; };
 		E079618F21D378B500564F83 /* VersionController.m in Sources */ = {isa = PBXBuildFile; fileRef = E079618E21D378B500564F83 /* VersionController.m */; };
 		E080EEDF21AAE3A8006F2080 /* BarCodeRecongnizerHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = E080EEDE21AAE3A8006F2080 /* BarCodeRecongnizerHandler.m */; };
@@ -106,6 +108,9 @@
 		E04A30C321E4708300F7EF5D /* PPNetworkHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPNetworkHelper.h; sourceTree = "<group>"; };
 		E04A30C421E4708300F7EF5D /* PPNetworkCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPNetworkCache.m; sourceTree = "<group>"; };
 		E04FBE1F21AEA85A00D2EAD3 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		E0588091221E4D130030CBA5 /* KDPermission.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KDPermission.m; sourceTree = "<group>"; };
+		E0588092221E4D130030CBA5 /* KDPermission.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KDPermission.h; sourceTree = "<group>"; };
+		E0588093221E4D130030CBA5 /* KDPermission.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = KDPermission.bundle; sourceTree = "<group>"; };
 		E079618921D3212B00564F83 /* H5FilePathManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = H5FilePathManager.h; sourceTree = "<group>"; };
 		E079618A21D3212B00564F83 /* H5FilePathManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = H5FilePathManager.m; sourceTree = "<group>"; };
 		E079618D21D378B500564F83 /* VersionController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VersionController.h; sourceTree = "<group>"; };
@@ -297,6 +302,24 @@
 			children = (
 			);
 			path = GoHaier;
+			sourceTree = "<group>";
+		};
+		E058808F221E4D020030CBA5 /* Permission */ = {
+			isa = PBXGroup;
+			children = (
+				E0588090221E4D130030CBA5 /* KDPermission */,
+			);
+			path = Permission;
+			sourceTree = "<group>";
+		};
+		E0588090221E4D130030CBA5 /* KDPermission */ = {
+			isa = PBXGroup;
+			children = (
+				E0588091221E4D130030CBA5 /* KDPermission.m */,
+				E0588092221E4D130030CBA5 /* KDPermission.h */,
+				E0588093221E4D130030CBA5 /* KDPermission.bundle */,
+			);
+			path = KDPermission;
 			sourceTree = "<group>";
 		};
 		E079618C21D3783400564F83 /* VersionController */ = {
@@ -619,6 +642,7 @@
 		E0FC615D21AAD1DE0018AA61 /* CoreUtil */ = {
 			isa = PBXGroup;
 			children = (
+				E058808F221E4D020030CBA5 /* Permission */,
 				E04A30C021E4708300F7EF5D /* PPNetworkHelper */,
 				E0B8C94F21BF586E004CD6CC /* SandBox */,
 				E0FC615E21AAD2030018AA61 /* ViewControllerUtil.h */,
@@ -739,6 +763,7 @@
 				E0FC614D21AABBD10018AA61 /* WebViewJavascriptBridge.js.txt in Resources */,
 				E0A9D1AC21A7EC9D00FEA58D /* LaunchScreen.storyboard in Resources */,
 				E0A9D1A921A7EC9D00FEA58D /* Assets.xcassets in Resources */,
+				E0588095221E4D130030CBA5 /* KDPermission.bundle in Resources */,
 				E0A9D1A721A7EC9A00FEA58D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -862,6 +887,7 @@
 				E0B8C94E21BF4B59004CD6CC /* H5Downloader.m in Sources */,
 				E0A9D1AF21A7EC9D00FEA58D /* main.m in Sources */,
 				E0B8C98B21BF5DB7004CD6CC /* aescrypt.c in Sources */,
+				E0588094221E4D130030CBA5 /* KDPermission.m in Sources */,
 				E0A9D1A121A7EC9A00FEA58D /* AppDelegate.m in Sources */,
 				E0B8C9B621BFA736004CD6CC /* bzip2recover.c in Sources */,
 			);
@@ -1033,9 +1059,9 @@
 			baseConfigurationReference = 97CA5734BC39FAD7AEB74024 /* Pods-GoHaier.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = 5YMLXQ5HEE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = GoHaier/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1044,7 +1070,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.haier.imapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "95bff849-f2ef-4999-93d1-6401b9d53cbf";
-				PROVISIONING_PROFILE_SPECIFIER = COSMOIM;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1054,9 +1080,9 @@
 			baseConfigurationReference = 4ADB11AD7ED6A8317D47B73E /* Pods-GoHaier.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = 5YMLXQ5HEE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = GoHaier/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1065,7 +1091,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.haier.imapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "95bff849-f2ef-4999-93d1-6401b9d53cbf";
-				PROVISIONING_PROFILE_SPECIFIER = COSMOIM;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

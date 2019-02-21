@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "KDPermission.h"
 typedef void (^CallBackHandlerBlock)(id data);
 @interface BaseHandler : NSObject
 - (NSString *)handlerKey;

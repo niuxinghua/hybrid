@@ -25,6 +25,7 @@ static ImagePickerHandler* sharedInstance;
 }
 - (void)handlerMethod:(id)data
 {
+
     NSLog(@"handler key %@ method called",[self handlerKey]);
     if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeSavedPhotosAlbum]) {
         UIImagePickerController * imagePicker = [[UIImagePickerController alloc]init];
@@ -46,12 +47,22 @@ static ImagePickerHandler* sharedInstance;
 #pragma mark - UIImagePickerControllerDelegate
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
-    UIImage *newImage = [info objectForKey:UIImagePickerControllerOriginalImage];
-    NSData *imageData = UIImageJPEGRepresentation(newImage, 1);
-    NSString *base64=[imageData base64EncodedStringWithOptions:NSUTF8StringEncoding];
-    [picker dismissViewControllerAnimated:YES completion:nil];
-    [self respondToWeb:base64];
     
+//切掉file 后把路径给前端
+    NSURL *fileUrl = [info objectForKey:@"UIImagePickerControllerImageURL"];
+    if ([fileUrl.absoluteString length] > 0) {
+        NSArray *fileArray = [fileUrl.absoluteString componentsSeparatedByString:@"file://"];
+        if (fileArray != nil && fileArray.count > 0) {
+            NSString *url = @"";
+            if (fileArray.count >= 2) {
+                url = fileArray[1];
+            }
+            NSDictionary *dic = @{@"filePath":url};
+            [self respondToWeb:dic];
+            [picker dismissViewControllerAnimated:YES completion:nil];
+        }
+    }
+
     
     
 }

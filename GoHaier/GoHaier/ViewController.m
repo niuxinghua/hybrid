@@ -37,7 +37,7 @@
 
 - (void)showContent
 {
-    [HaierH5ViewController showContentWithAPPName:@"mintui" navigationMode:YES fullScreenMode:NO animated:YES titleName:@"mintui" rootController:self pageName:@"index.html"];
+    [HaierH5ViewController showContentWithAPPName:@"mintui" navigationMode:NO fullScreenMode:YES animated:YES titleName:@"mintui" rootController:self pageName:@"index.html"];
 }
 
 
