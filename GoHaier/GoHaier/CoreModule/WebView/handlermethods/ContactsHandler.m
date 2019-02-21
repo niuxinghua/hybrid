@@ -37,12 +37,15 @@ static ContactsHandler *sharedInstance;
                 NSLog(@"没有授权, 需要去设置中心设置授权");
             }else
             {
-                NSLog(@"用户已授权限");
-                CNContactPickerViewController * picker = [CNContactPickerViewController new];
-                picker.delegate = self;
-                // 加载手机号
-                picker.displayedPropertyKeys = @[CNContactPhoneNumbersKey];
-                [[[ViewControllerUtil sharedInstance]topViewController] presentViewController: picker  animated:YES completion:nil];
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    NSLog(@"用户已授权限");
+                    CNContactPickerViewController * picker = [CNContactPickerViewController new];
+                    picker.delegate = self;
+                    // 加载手机号
+                    picker.displayedPropertyKeys = @[CNContactPhoneNumbersKey];
+                    [[[ViewControllerUtil sharedInstance]topViewController] presentViewController: picker  animated:YES completion:nil];
+                });
+                
             }
         }];
     }
@@ -50,10 +53,13 @@ static ContactsHandler *sharedInstance;
     if (status == CNAuthorizationStatusAuthorized) {
         
         //有权限时
-        CNContactPickerViewController * picker = [CNContactPickerViewController new];
-        picker.delegate = self;
-        picker.displayedPropertyKeys = @[CNContactPhoneNumbersKey];
-        [[[ViewControllerUtil sharedInstance]topViewController] presentViewController: picker  animated:YES completion:nil];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            CNContactPickerViewController * picker = [CNContactPickerViewController new];
+            picker.delegate = self;
+            picker.displayedPropertyKeys = @[CNContactPhoneNumbersKey];
+            [[[ViewControllerUtil sharedInstance]topViewController] presentViewController: picker  animated:YES completion:nil];
+        });
+       
     }
     else{
         NSLog(@"您未开启通讯录权限,请前往设置中心开启");
