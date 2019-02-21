@@ -19,6 +19,9 @@
 }
 - (BOOL)respondToWeb:(id)data
 {
-    return NO;
+    if (self.webCallBack) {
+        self.webCallBack(data);
+    }
+    return YES;
 }
 @end

@@ -48,7 +48,20 @@ static PhotoTakerHandler* sharedInstance;
     //    NSString *base64=[imageData base64EncodedStringWithOptions:NSUTF8StringEncoding];
     //    [picker dismissViewControllerAnimated:YES completion:nil];
     //    [self.bridge callHandler:@"imageData" data:@{@"image":base64}];
-    
+    //切掉file 后把路径给前端
+    NSURL *fileUrl = [info objectForKey:@"UIImagePickerControllerImageURL"];
+    if ([fileUrl.absoluteString length] > 0) {
+        NSArray *fileArray = [fileUrl.absoluteString componentsSeparatedByString:@"file://"];
+        if (fileArray != nil && fileArray.count > 0) {
+            NSString *url = @"";
+            if (fileArray.count >= 2) {
+                url = fileArray[1];
+            }
+            NSDictionary *dic = @{@"filePath":url};
+            [self respondToWeb:dic];
+            [picker dismissViewControllerAnimated:YES completion:nil];
+        }
+    }
     
 }
 
