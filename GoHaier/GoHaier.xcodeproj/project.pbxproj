@@ -65,6 +65,11 @@
 		E0B8C9BB21BFA736004CD6CC /* bspatch.c in Sources */ = {isa = PBXBuildFile; fileRef = E0B8C9AC21BFA736004CD6CC /* bspatch.c */; };
 		E0B8C9BC21BFA736004CD6CC /* bsdiff.c in Sources */ = {isa = PBXBuildFile; fileRef = E0B8C9AD21BFA736004CD6CC /* bsdiff.c */; };
 		E0B8C9C421BFD5F0004CD6CC /* PatchManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E0B8C9C321BFD5F0004CD6CC /* PatchManager.m */; };
+		E0C160B8221FE08D00C5D3E6 /* NSMutableArray+Safe.m in Sources */ = {isa = PBXBuildFile; fileRef = E0C160AE221FE08D00C5D3E6 /* NSMutableArray+Safe.m */; };
+		E0C160B9221FE08D00C5D3E6 /* NSMutableDictionary+Safe.m in Sources */ = {isa = PBXBuildFile; fileRef = E0C160B0221FE08D00C5D3E6 /* NSMutableDictionary+Safe.m */; };
+		E0C160BA221FE08D00C5D3E6 /* NSDictionary+Safe.m in Sources */ = {isa = PBXBuildFile; fileRef = E0C160B5221FE08D00C5D3E6 /* NSDictionary+Safe.m */; };
+		E0C160BB221FE08D00C5D3E6 /* NSArray+Safe.m in Sources */ = {isa = PBXBuildFile; fileRef = E0C160B6221FE08D00C5D3E6 /* NSArray+Safe.m */; };
+		E0C160BC221FE08D00C5D3E6 /* NSObject+ImpChangeTool.m in Sources */ = {isa = PBXBuildFile; fileRef = E0C160B7221FE08D00C5D3E6 /* NSObject+ImpChangeTool.m */; };
 		E0D3503D221A78BC0099E454 /* PageGoBackHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = E0D3503C221A78BC0099E454 /* PageGoBackHandler.m */; };
 		E0E8EFE821E2ECE300BF0434 /* UIBarButtonItem+UC.m in Sources */ = {isa = PBXBuildFile; fileRef = E0E8EFE621E2ECE200BF0434 /* UIBarButtonItem+UC.m */; };
 		E0E8EFEB21E2ED3900BF0434 /* UIColor+UC.m in Sources */ = {isa = PBXBuildFile; fileRef = E0E8EFEA21E2ED3900BF0434 /* UIColor+UC.m */; };
@@ -206,6 +211,16 @@
 		E0B8C9BD21BFA7BF004CD6CC /* Haier_Bsdiff.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Haier_Bsdiff.h; sourceTree = "<group>"; };
 		E0B8C9C221BFD5F0004CD6CC /* PatchManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PatchManager.h; sourceTree = "<group>"; };
 		E0B8C9C321BFD5F0004CD6CC /* PatchManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PatchManager.m; sourceTree = "<group>"; };
+		E0C160AE221FE08D00C5D3E6 /* NSMutableArray+Safe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+Safe.m"; sourceTree = "<group>"; };
+		E0C160AF221FE08D00C5D3E6 /* NSDictionary+Safe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Safe.h"; sourceTree = "<group>"; };
+		E0C160B0221FE08D00C5D3E6 /* NSMutableDictionary+Safe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+Safe.m"; sourceTree = "<group>"; };
+		E0C160B1221FE08D00C5D3E6 /* NSObject+ImpChangeTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+ImpChangeTool.h"; sourceTree = "<group>"; };
+		E0C160B2221FE08D00C5D3E6 /* NSArray+Safe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Safe.h"; sourceTree = "<group>"; };
+		E0C160B3221FE08D00C5D3E6 /* NSMutableArray+Safe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+Safe.h"; sourceTree = "<group>"; };
+		E0C160B4221FE08D00C5D3E6 /* NSMutableDictionary+Safe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableDictionary+Safe.h"; sourceTree = "<group>"; };
+		E0C160B5221FE08D00C5D3E6 /* NSDictionary+Safe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Safe.m"; sourceTree = "<group>"; };
+		E0C160B6221FE08D00C5D3E6 /* NSArray+Safe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Safe.m"; sourceTree = "<group>"; };
+		E0C160B7221FE08D00C5D3E6 /* NSObject+ImpChangeTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+ImpChangeTool.m"; sourceTree = "<group>"; };
 		E0D3503B221A78BC0099E454 /* PageGoBackHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PageGoBackHandler.h; sourceTree = "<group>"; };
 		E0D3503C221A78BC0099E454 /* PageGoBackHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PageGoBackHandler.m; sourceTree = "<group>"; };
 		E0E8EFE621E2ECE200BF0434 /* UIBarButtonItem+UC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+UC.m"; sourceTree = "<group>"; };
@@ -565,6 +580,23 @@
 			path = "bsdiff-4.3";
 			sourceTree = "<group>";
 		};
+		E0C160AD221FE08D00C5D3E6 /* ST_SafeTool */ = {
+			isa = PBXGroup;
+			children = (
+				E0C160AE221FE08D00C5D3E6 /* NSMutableArray+Safe.m */,
+				E0C160AF221FE08D00C5D3E6 /* NSDictionary+Safe.h */,
+				E0C160B0221FE08D00C5D3E6 /* NSMutableDictionary+Safe.m */,
+				E0C160B1221FE08D00C5D3E6 /* NSObject+ImpChangeTool.h */,
+				E0C160B2221FE08D00C5D3E6 /* NSArray+Safe.h */,
+				E0C160B3221FE08D00C5D3E6 /* NSMutableArray+Safe.h */,
+				E0C160B4221FE08D00C5D3E6 /* NSMutableDictionary+Safe.h */,
+				E0C160B5221FE08D00C5D3E6 /* NSDictionary+Safe.m */,
+				E0C160B6221FE08D00C5D3E6 /* NSArray+Safe.m */,
+				E0C160B7221FE08D00C5D3E6 /* NSObject+ImpChangeTool.m */,
+			);
+			path = ST_SafeTool;
+			sourceTree = "<group>";
+		};
 		E0FC614221AABBD10018AA61 /* WebViewJavascriptBridge */ = {
 			isa = PBXGroup;
 			children = (
@@ -647,6 +679,7 @@
 		E0FC615D21AAD1DE0018AA61 /* CoreUtil */ = {
 			isa = PBXGroup;
 			children = (
+				E0C160AD221FE08D00C5D3E6 /* ST_SafeTool */,
 				E058808F221E4D020030CBA5 /* Permission */,
 				E04A30C021E4708300F7EF5D /* PPNetworkHelper */,
 				E0B8C94F21BF586E004CD6CC /* SandBox */,
@@ -837,12 +870,14 @@
 				E0B8C99021BF5DB7004CD6CC /* pwd2key.c in Sources */,
 				E0B8C9B321BFA736004CD6CC /* huffman.c in Sources */,
 				E0B8C9AE21BFA736004CD6CC /* randtable.c in Sources */,
+				E0C160B8221FE08D00C5D3E6 /* NSMutableArray+Safe.m in Sources */,
 				E0F425B021EDCED20021D742 /* PageMangementHandler.m in Sources */,
 				E0B8C98A21BF5DB7004CD6CC /* hmac.c in Sources */,
 				E029015821DF8D0C00D5259C /* HaierH5ViewController.m in Sources */,
 				E0B8C98621BF5DB7004CD6CC /* ioapi_buf.c in Sources */,
 				E0B8C9B221BFA736004CD6CC /* blocksort.c in Sources */,
 				E0B8C98821BF5DB7004CD6CC /* minishared.c in Sources */,
+				E0C160BB221FE08D00C5D3E6 /* NSArray+Safe.m in Sources */,
 				E080EEE321AAE55B006F2080 /* HaierQRScanView.m in Sources */,
 				E0B8C95221BF596F004CD6CC /* PAirSandbox.m in Sources */,
 				E0B8C98721BF5DB7004CD6CC /* ioapi_mem.c in Sources */,
@@ -861,6 +896,7 @@
 				E0B8C98E21BF5DB7004CD6CC /* aes_ni.c in Sources */,
 				E0FC614A21AABBD10018AA61 /* WebViewJavascriptBridgeBase.m in Sources */,
 				E0B8C9B021BFA736004CD6CC /* compress.c in Sources */,
+				E0C160BA221FE08D00C5D3E6 /* NSDictionary+Safe.m in Sources */,
 				E0B8C98521BF5DB7004CD6CC /* ioapi.c in Sources */,
 				E0FC616021AAD2030018AA61 /* ViewControllerUtil.m in Sources */,
 				E0B8C98C21BF5DB7004CD6CC /* fileenc.c in Sources */,
@@ -882,6 +918,7 @@
 				E0FC616621AADB350018AA61 /* PhotoTakerHandler.m in Sources */,
 				E0B8C98321BF5DB7004CD6CC /* unzip.c in Sources */,
 				E0B8C98421BF5DB7004CD6CC /* zip.c in Sources */,
+				E0C160BC221FE08D00C5D3E6 /* NSObject+ImpChangeTool.m in Sources */,
 				E0B8C98221BF5DB7004CD6CC /* crypt.c in Sources */,
 				E0FC615121AABC5D0018AA61 /* GoHaierWebviewjavaScriptUtill.m in Sources */,
 				E0E8EFEB21E2ED3900BF0434 /* UIColor+UC.m in Sources */,
@@ -896,6 +933,7 @@
 				E0588098221E72B10030CBA5 /* ContactsHandler.m in Sources */,
 				E0A9D1A121A7EC9A00FEA58D /* AppDelegate.m in Sources */,
 				E0B8C9B621BFA736004CD6CC /* bzip2recover.c in Sources */,
+				E0C160B9221FE08D00C5D3E6 /* NSMutableDictionary+Safe.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
