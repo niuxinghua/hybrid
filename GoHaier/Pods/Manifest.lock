@@ -14,6 +14,9 @@ PODS:
   - AFNetworking/Serialization (3.2.1)
   - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
+  - AMapFoundation-NO-IDFA (1.5.6)
+  - AMapLocation-NO-IDFA (2.6.1):
+    - AMapFoundation-NO-IDFA (~> 1.4)
   - BlocksKit (2.2.5):
     - BlocksKit/All (= 2.2.5)
   - BlocksKit/All (2.2.5):
@@ -42,6 +45,7 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking
+  - AMapLocation-NO-IDFA
   - BlocksKit
   - Masonry
   - MBProgressHUD
@@ -55,6 +59,8 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - AFNetworking
+    - AMapFoundation-NO-IDFA
+    - AMapLocation-NO-IDFA
     - BlocksKit
     - Masonry
     - MBProgressHUD
@@ -67,6 +73,8 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
+  AMapFoundation-NO-IDFA: 40d723b352992d0f95abe2976f0c0ecda3c3ffc3
+  AMapLocation-NO-IDFA: ffd69b8b88f553d0b252d4967bf301ad2afff9c0
   BlocksKit: 7f422b971407001178d181a43b99014ea2591fe6
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
@@ -77,6 +85,6 @@ SPEC CHECKSUMS:
   Toast: 91b396c56ee72a5790816f40d3a94dd357abc196
   YYCache: 8105b6638f5e849296c71f331ff83891a4942952
 
-PODFILE CHECKSUM: 61bc73251f3a38edb34317046578783011fd04d0
+PODFILE CHECKSUM: 16d6e1b1f446a76ca21d88f908a89eb16d10a6cd
 
 COCOAPODS: 1.5.3

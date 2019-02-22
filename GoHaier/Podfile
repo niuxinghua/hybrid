@@ -15,5 +15,6 @@ target 'GoHaier' do
  pod 'MGJRouter', '~>0.9.0'
  pod 'SDWebImage', '~> 4.0'
  pod 'MJRefresh'
+ pod 'AMapLocation-NO-IDFA'
 end
 

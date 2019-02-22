@@ -1,0 +1,1 @@
+../../../../AMapFoundation-NO-IDFA/AMapFoundationKit.framework/Headers/NSObject+AMapJsonSerialization.h
