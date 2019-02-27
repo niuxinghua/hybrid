@@ -17,6 +17,7 @@ typedef void(^VersionUpdateBlcok)(BOOL success);
 - (BOOL)autoUpateApp:(NSString *)appName;
 - (void)updataAll;
 @property(nonatomic,copy)NSString *currentAppName;
+- (BOOL)innerVersionCopyToOutside:(NSString *)appName;
 @end
 
 NS_ASSUME_NONNULL_END

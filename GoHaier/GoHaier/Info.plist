@@ -18,6 +18,8 @@
 	<string>1.1</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>LSApplicationCategoryType</key>
+	<string></string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSAppTransportSecurity</key>
@@ -30,7 +32,7 @@
 	<key>NSContactsUsageDescription</key>
 	<string>需要获取通信录信息</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>需要获取定位权限</string>
+	<string>需要位置权限</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>需要操作相册</string>
 	<key>NSPhotoLibraryUsageDescription</key>

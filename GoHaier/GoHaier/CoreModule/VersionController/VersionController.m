@@ -33,6 +33,30 @@ NSString *const DiffsUrl = @"http://mobilebackend.qdct-lsb.haier.net/api/v1/diff
     
     return sharedInstance;
 }
+- (BOOL)innerVersionCopyToOutside:(NSString *)appName
+{
+    NSString *path = [[NSBundle mainBundle] pathForResource:appName ofType:@"zip"];
+    if (!path) {
+        return NO;
+    }
+    NSString *realVersion = [NSString stringWithFormat:@"%@_%d",@"v0",0];
+    NSString *savePath = [[H5FilePathManager sharedInstance] baseZipSavePathwithappName:appName andAppversion:realVersion];
+    [[H5Downloader sharedInstance] downLoadZipFile:[NSURL fileURLWithPath:path] toPath:savePath withZipName:appName versionName:@"v0" versionCode:0 resultBlock:^(BOOL issuccess) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (issuccess) {
+                //需要将这个广播发送出去给corewebview重新加载
+                NSDictionary *notificationObject = @{@"appName":appName,@"versionName":@"v0",@"versionCode":@(0)};
+                [[NSNotificationCenter defaultCenter] postNotificationName:DidDownloadH5BaseZipSuccess object:notificationObject];
+            }
+            
+        });
+        
+        
+    }];
+    
+    return YES;
+    
+}
 - (void)updataAll
 {
     [PPNetworkHelper GET:AppsUrl parameters:nil success:^(id responseObject) {
@@ -89,7 +113,7 @@ NSString *const DiffsUrl = @"http://mobilebackend.qdct-lsb.haier.net/api/v1/diff
                     //直接下载bestversion的zip
                     NSString *realVersion = [NSString stringWithFormat:@"%@_%li",bestVersionName,(long)bestVersionCode];
                     NSString *savePath = [[H5FilePathManager sharedInstance] baseZipSavePathwithappName:appName andAppversion:realVersion];
-                    [[H5Downloader sharedInstance] downLoadZipFile:bestDownloadUrl toPath:savePath withZipName:appName versionName:bestVersionName versionCode:bestVersionCode resultBlock:^(BOOL issuccess) {
+                    [[H5Downloader sharedInstance] downLoadZipFile:[NSURL URLWithString:bestDownloadUrl] toPath:savePath withZipName:appName versionName:bestVersionName versionCode:bestVersionCode resultBlock:^(BOOL issuccess) {
                         dispatch_async(dispatch_get_main_queue(), ^{
                             if (issuccess) {
                                 //需要将这个广播发送出去给corewebview重新加载

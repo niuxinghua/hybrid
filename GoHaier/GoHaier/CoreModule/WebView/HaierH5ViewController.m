@@ -63,7 +63,11 @@
     NSString *currentVersion = [[GHaierH5Context sharedContext]currentVersionCodeWithAPPname:appName];
     if (!currentVersion || currentVersion.length <= 0) {
         //当前app的资源包还未下载下来
-        return NO;
+        //先展示内置的版本
+        BOOL hasInner = [[VersionController sharedInstance] innerVersionCopyToOutside:appName];
+        if (!hasInner) {
+            return NO;
+        }
     }
     [VersionController sharedInstance].currentAppName = [appName copy];
     HaierH5ViewController *controlelr = [[HaierH5ViewController alloc]init];
@@ -98,7 +102,7 @@
                 //rootcontroller不是导航控制器，创建一个导航控制器弹出这个controller
                 
                 UINavigationController *rootContent = [[UINavigationController alloc]initWithRootViewController:controlelr];
-            
+                
                 controlelr.navigationItem.leftBarButtonItem = [UIBarButtonItem uc_backBarButtonItemWithAction:^{
                     //处理webview回退的关系
                     if (controlelr.webView.canGoBack) {
@@ -169,7 +173,7 @@
     [_webView registerNativeHandlers:[ContactsHandler sharedInstance]];
     
     
-
+    
 }
 
 

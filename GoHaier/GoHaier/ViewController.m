@@ -37,7 +37,7 @@
 
 - (void)showContent
 {
-    [HaierH5ViewController showContentWithAPPName:@"hwork" navigationMode:NO fullScreenMode:YES animated:YES titleName:@"hwork" rootController:self pageName:@"demo.html"];
+    [HaierH5ViewController showContentWithAPPName:@"hwork" navigationMode:NO fullScreenMode:YES animated:YES titleName:@"hwork" rootController:self pageName:@"index.html"];
 }
 
 

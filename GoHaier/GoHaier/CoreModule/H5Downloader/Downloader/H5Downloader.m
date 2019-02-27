@@ -23,14 +23,14 @@ NSString* const H5ContextKey = @"H5ContextKey";
     });
     return sharedInstance;
 }
--(void)downLoadZipFile:(NSString*)fileUrl toPath:(NSString *)savePath withZipName:(NSString *)appName versionName:(NSString *)versionName versionCode:(NSInteger)versionCode resultBlock:(FileDownLoadResultBlock)downloadBlock;
+-(void)downLoadZipFile:(NSURL*)fileUrl toPath:(NSString *)savePath withZipName:(NSString *)appName versionName:(NSString *)versionName versionCode:(NSInteger)versionCode resultBlock:(FileDownLoadResultBlock)downloadBlock;
 {
     //TODO 校验字符串是否合法
     
     dispatch_queue_t queue = dispatch_get_global_queue(
                                                        DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
     dispatch_async(queue, ^{
-        NSURL *url = [NSURL URLWithString:fileUrl];
+        NSURL *url = [fileUrl copy];
         NSError *error = nil;
         NSData *data = [NSData dataWithContentsOfURL:url options:0 error:&error];
         if(!error)
