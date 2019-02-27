@@ -13,6 +13,16 @@
 		E04A30C621E4708300F7EF5D /* PPNetworkCache.m in Sources */ = {isa = PBXBuildFile; fileRef = E04A30C421E4708300F7EF5D /* PPNetworkCache.m */; };
 		E04FBE2121AEA87600D2EAD3 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E04FBE1F21AEA85A00D2EAD3 /* JavaScriptCore.framework */; };
 		E0573F9F222623390010FE8F /* hwork.zip in Resources */ = {isa = PBXBuildFile; fileRef = E0573F9E222623390010FE8F /* hwork.zip */; };
+		E0573FA9222629600010FE8F /* SetSyncStorageHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = E0573FA8222629600010FE8F /* SetSyncStorageHandler.m */; };
+		E0573FAC22262BF30010FE8F /* RemoveSyncStorageHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = E0573FAB22262BF30010FE8F /* RemoveSyncStorageHandler.m */; };
+		E0573FAF22262CF90010FE8F /* SetStorageHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = E0573FAE22262CF90010FE8F /* SetStorageHandler.m */; };
+		E0573FB222262E180010FE8F /* RemoveStorageHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = E0573FB122262E180010FE8F /* RemoveStorageHandler.m */; };
+		E0573FB522262FA60010FE8F /* SyncGetStorageHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = E0573FB422262FA60010FE8F /* SyncGetStorageHandler.m */; };
+		E0573FB8222630C70010FE8F /* GetStorageHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = E0573FB7222630C70010FE8F /* GetStorageHandler.m */; };
+		E0573FBB222631770010FE8F /* SyncGetStorageInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = E0573FBA222631770010FE8F /* SyncGetStorageInfo.m */; };
+		E0573FBE222633930010FE8F /* GetStorageInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = E0573FBD222633930010FE8F /* GetStorageInfo.m */; };
+		E0573FC12226342E0010FE8F /* ClearStorageSync.m in Sources */ = {isa = PBXBuildFile; fileRef = E0573FC02226342E0010FE8F /* ClearStorageSync.m */; };
+		E0573FC4222634CA0010FE8F /* ClearStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = E0573FC3222634CA0010FE8F /* ClearStorage.m */; };
 		E0588094221E4D130030CBA5 /* KDPermission.m in Sources */ = {isa = PBXBuildFile; fileRef = E0588091221E4D130030CBA5 /* KDPermission.m */; };
 		E0588095221E4D130030CBA5 /* KDPermission.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E0588093221E4D130030CBA5 /* KDPermission.bundle */; };
 		E0588098221E72B10030CBA5 /* ContactsHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = E0588097221E72B10030CBA5 /* ContactsHandler.m */; };
@@ -116,6 +126,26 @@
 		E04A30C421E4708300F7EF5D /* PPNetworkCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPNetworkCache.m; sourceTree = "<group>"; };
 		E04FBE1F21AEA85A00D2EAD3 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		E0573F9E222623390010FE8F /* hwork.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; name = hwork.zip; path = ../../../../../../whocall/hwork.zip; sourceTree = "<group>"; };
+		E0573FA7222629600010FE8F /* SetSyncStorageHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SetSyncStorageHandler.h; sourceTree = "<group>"; };
+		E0573FA8222629600010FE8F /* SetSyncStorageHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SetSyncStorageHandler.m; sourceTree = "<group>"; };
+		E0573FAA22262BF30010FE8F /* RemoveSyncStorageHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RemoveSyncStorageHandler.h; sourceTree = "<group>"; };
+		E0573FAB22262BF30010FE8F /* RemoveSyncStorageHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RemoveSyncStorageHandler.m; sourceTree = "<group>"; };
+		E0573FAD22262CF90010FE8F /* SetStorageHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SetStorageHandler.h; sourceTree = "<group>"; };
+		E0573FAE22262CF90010FE8F /* SetStorageHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SetStorageHandler.m; sourceTree = "<group>"; };
+		E0573FB022262E180010FE8F /* RemoveStorageHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RemoveStorageHandler.h; sourceTree = "<group>"; };
+		E0573FB122262E180010FE8F /* RemoveStorageHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RemoveStorageHandler.m; sourceTree = "<group>"; };
+		E0573FB322262FA60010FE8F /* SyncGetStorageHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SyncGetStorageHandler.h; sourceTree = "<group>"; };
+		E0573FB422262FA60010FE8F /* SyncGetStorageHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SyncGetStorageHandler.m; sourceTree = "<group>"; };
+		E0573FB6222630C70010FE8F /* GetStorageHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GetStorageHandler.h; sourceTree = "<group>"; };
+		E0573FB7222630C70010FE8F /* GetStorageHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GetStorageHandler.m; sourceTree = "<group>"; };
+		E0573FB9222631770010FE8F /* SyncGetStorageInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SyncGetStorageInfo.h; sourceTree = "<group>"; };
+		E0573FBA222631770010FE8F /* SyncGetStorageInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SyncGetStorageInfo.m; sourceTree = "<group>"; };
+		E0573FBC222633930010FE8F /* GetStorageInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GetStorageInfo.h; sourceTree = "<group>"; };
+		E0573FBD222633930010FE8F /* GetStorageInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GetStorageInfo.m; sourceTree = "<group>"; };
+		E0573FBF2226342E0010FE8F /* ClearStorageSync.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClearStorageSync.h; sourceTree = "<group>"; };
+		E0573FC02226342E0010FE8F /* ClearStorageSync.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClearStorageSync.m; sourceTree = "<group>"; };
+		E0573FC2222634CA0010FE8F /* ClearStorage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClearStorage.h; sourceTree = "<group>"; };
+		E0573FC3222634CA0010FE8F /* ClearStorage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClearStorage.m; sourceTree = "<group>"; };
 		E0588091221E4D130030CBA5 /* KDPermission.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KDPermission.m; sourceTree = "<group>"; };
 		E0588092221E4D130030CBA5 /* KDPermission.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KDPermission.h; sourceTree = "<group>"; };
 		E0588093221E4D130030CBA5 /* KDPermission.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = KDPermission.bundle; sourceTree = "<group>"; };
@@ -323,6 +353,33 @@
 				E0573F9E222623390010FE8F /* hwork.zip */,
 			);
 			path = GoHaier;
+			sourceTree = "<group>";
+		};
+		E0573FA2222628B20010FE8F /* storage */ = {
+			isa = PBXGroup;
+			children = (
+				E0573FA7222629600010FE8F /* SetSyncStorageHandler.h */,
+				E0573FA8222629600010FE8F /* SetSyncStorageHandler.m */,
+				E0573FAD22262CF90010FE8F /* SetStorageHandler.h */,
+				E0573FAE22262CF90010FE8F /* SetStorageHandler.m */,
+				E0573FAA22262BF30010FE8F /* RemoveSyncStorageHandler.h */,
+				E0573FAB22262BF30010FE8F /* RemoveSyncStorageHandler.m */,
+				E0573FB022262E180010FE8F /* RemoveStorageHandler.h */,
+				E0573FB122262E180010FE8F /* RemoveStorageHandler.m */,
+				E0573FB322262FA60010FE8F /* SyncGetStorageHandler.h */,
+				E0573FB422262FA60010FE8F /* SyncGetStorageHandler.m */,
+				E0573FB6222630C70010FE8F /* GetStorageHandler.h */,
+				E0573FB7222630C70010FE8F /* GetStorageHandler.m */,
+				E0573FB9222631770010FE8F /* SyncGetStorageInfo.h */,
+				E0573FBA222631770010FE8F /* SyncGetStorageInfo.m */,
+				E0573FBC222633930010FE8F /* GetStorageInfo.h */,
+				E0573FBD222633930010FE8F /* GetStorageInfo.m */,
+				E0573FBF2226342E0010FE8F /* ClearStorageSync.h */,
+				E0573FC02226342E0010FE8F /* ClearStorageSync.m */,
+				E0573FC2222634CA0010FE8F /* ClearStorage.h */,
+				E0573FC3222634CA0010FE8F /* ClearStorage.m */,
+			);
+			path = storage;
 			sourceTree = "<group>";
 		};
 		E058808F221E4D020030CBA5 /* Permission */ = {
@@ -661,6 +718,7 @@
 		E0FC615921AACF250018AA61 /* handlermethods */ = {
 			isa = PBXGroup;
 			children = (
+				E0573FA2222628B20010FE8F /* storage */,
 				E0FC615A21AACFB00018AA61 /* ImagePickerHandler.h */,
 				E0FC615B21AACFB00018AA61 /* ImagePickerHandler.m */,
 				E0FC616421AADB350018AA61 /* PhotoTakerHandler.h */,
@@ -875,13 +933,16 @@
 				E0B8C9B321BFA736004CD6CC /* huffman.c in Sources */,
 				E0B8C9AE21BFA736004CD6CC /* randtable.c in Sources */,
 				E0C160B8221FE08D00C5D3E6 /* NSMutableArray+Safe.m in Sources */,
+				E0573FAC22262BF30010FE8F /* RemoveSyncStorageHandler.m in Sources */,
 				E0F425B021EDCED20021D742 /* PageMangementHandler.m in Sources */,
 				E0B8C98A21BF5DB7004CD6CC /* hmac.c in Sources */,
 				E029015821DF8D0C00D5259C /* HaierH5ViewController.m in Sources */,
 				E0B8C98621BF5DB7004CD6CC /* ioapi_buf.c in Sources */,
+				E0573FBB222631770010FE8F /* SyncGetStorageInfo.m in Sources */,
 				E0B8C9B221BFA736004CD6CC /* blocksort.c in Sources */,
 				E0B8C98821BF5DB7004CD6CC /* minishared.c in Sources */,
 				E0C160BB221FE08D00C5D3E6 /* NSArray+Safe.m in Sources */,
+				E0573FB522262FA60010FE8F /* SyncGetStorageHandler.m in Sources */,
 				E080EEE321AAE55B006F2080 /* HaierQRScanView.m in Sources */,
 				E0B8C95221BF596F004CD6CC /* PAirSandbox.m in Sources */,
 				E0B8C98721BF5DB7004CD6CC /* ioapi_mem.c in Sources */,
@@ -895,14 +956,17 @@
 				E0B8C9C421BFD5F0004CD6CC /* PatchManager.m in Sources */,
 				E0B8C98D21BF5DB7004CD6CC /* sha1.c in Sources */,
 				E0B8C99621BF73DB004CD6CC /* GHaierH5Context.m in Sources */,
+				E0573FBE222633930010FE8F /* GetStorageInfo.m in Sources */,
 				E0F6C53121AB9EA2008AF5C0 /* BaseHandler.m in Sources */,
 				E0B8C9B721BFA736004CD6CC /* crctable.c in Sources */,
 				E0B8C98E21BF5DB7004CD6CC /* aes_ni.c in Sources */,
 				E0FC614A21AABBD10018AA61 /* WebViewJavascriptBridgeBase.m in Sources */,
+				E0573FC4222634CA0010FE8F /* ClearStorage.m in Sources */,
 				E0B8C9B021BFA736004CD6CC /* compress.c in Sources */,
 				E0C160BA221FE08D00C5D3E6 /* NSDictionary+Safe.m in Sources */,
 				E0B8C98521BF5DB7004CD6CC /* ioapi.c in Sources */,
 				E0FC616021AAD2030018AA61 /* ViewControllerUtil.m in Sources */,
+				E0573FC12226342E0010FE8F /* ClearStorageSync.m in Sources */,
 				E0B8C98C21BF5DB7004CD6CC /* fileenc.c in Sources */,
 				E0B8C98F21BF5DB7004CD6CC /* prng.c in Sources */,
 				E0B8C9B821BFA736004CD6CC /* unzcrash.c in Sources */,
@@ -917,21 +981,25 @@
 				E0B8C98921BF5DB7004CD6CC /* aeskey.c in Sources */,
 				E0B8C9B121BFA736004CD6CC /* decompress.c in Sources */,
 				E0D3503D221A78BC0099E454 /* PageGoBackHandler.m in Sources */,
+				E0573FB8222630C70010FE8F /* GetStorageHandler.m in Sources */,
 				E080EEDF21AAE3A8006F2080 /* BarCodeRecongnizerHandler.m in Sources */,
 				E0B8C99121BF5DB7004CD6CC /* aestab.c in Sources */,
 				E0FC616621AADB350018AA61 /* PhotoTakerHandler.m in Sources */,
+				E0573FAF22262CF90010FE8F /* SetStorageHandler.m in Sources */,
 				E0B8C98321BF5DB7004CD6CC /* unzip.c in Sources */,
 				E0B8C98421BF5DB7004CD6CC /* zip.c in Sources */,
 				E0C160BC221FE08D00C5D3E6 /* NSObject+ImpChangeTool.m in Sources */,
 				E0B8C98221BF5DB7004CD6CC /* crypt.c in Sources */,
 				E0FC615121AABC5D0018AA61 /* GoHaierWebviewjavaScriptUtill.m in Sources */,
 				E0E8EFEB21E2ED3900BF0434 /* UIColor+UC.m in Sources */,
+				E0573FB222262E180010FE8F /* RemoveStorageHandler.m in Sources */,
 				E0B8C9AF21BFA736004CD6CC /* mk251.c in Sources */,
 				E0A9D1A421A7EC9A00FEA58D /* ViewController.m in Sources */,
 				E079618B21D3212B00564F83 /* H5FilePathManager.m in Sources */,
 				E04A30C521E4708300F7EF5D /* PPNetworkHelper.m in Sources */,
 				E0B8C94E21BF4B59004CD6CC /* H5Downloader.m in Sources */,
 				E0A9D1AF21A7EC9D00FEA58D /* main.m in Sources */,
+				E0573FA9222629600010FE8F /* SetSyncStorageHandler.m in Sources */,
 				E0B8C98B21BF5DB7004CD6CC /* aescrypt.c in Sources */,
 				E0588094221E4D130030CBA5 /* KDPermission.m in Sources */,
 				E0588098221E72B10030CBA5 /* ContactsHandler.m in Sources */,

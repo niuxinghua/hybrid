@@ -22,6 +22,7 @@
 #import "PageMangementHandler.h"
 #import "PageGoBackHandler.h"
 #import "ContactsHandler.h"
+#import "SetSyncStorageHandler.h"
 @interface HaierH5ViewController ()
 @property(nonatomic,copy)NSString *appName;
 @end
@@ -172,7 +173,7 @@
     [_webView registerNativeHandlers:pageGoBack];
     [_webView registerNativeHandlers:[ContactsHandler sharedInstance]];
     
-    
+    [_webView registerNativeHandlers:[SetSyncStorageHandler sharedInstance]];
     
 }
 
