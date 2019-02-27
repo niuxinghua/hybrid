@@ -26,6 +26,10 @@
 		E0573FC7222637C40010FE8F /* MakeCallHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = E0573FC6222637C40010FE8F /* MakeCallHandler.m */; };
 		E0573FCA222639780010FE8F /* VibrateHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = E0573FC9222639780010FE8F /* VibrateHandler.m */; };
 		E0573FCD22263B480010FE8F /* VibrateShortHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = E0573FCC22263B480010FE8F /* VibrateShortHandler.m */; };
+		E0573FD122265A380010FE8F /* FileSaveHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = E0573FD022265A380010FE8F /* FileSaveHandler.m */; };
+		E0573FD422265E680010FE8F /* TimeUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = E0573FD322265E680010FE8F /* TimeUtils.m */; };
+		E0573FD72226683B0010FE8F /* RemoveSavedFileHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = E0573FD62226683B0010FE8F /* RemoveSavedFileHandler.m */; };
+		E0573FDA222669D70010FE8F /* FileInfoHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = E0573FD9222669D70010FE8F /* FileInfoHandler.m */; };
 		E0588094221E4D130030CBA5 /* KDPermission.m in Sources */ = {isa = PBXBuildFile; fileRef = E0588091221E4D130030CBA5 /* KDPermission.m */; };
 		E0588095221E4D130030CBA5 /* KDPermission.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E0588093221E4D130030CBA5 /* KDPermission.bundle */; };
 		E0588098221E72B10030CBA5 /* ContactsHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = E0588097221E72B10030CBA5 /* ContactsHandler.m */; };
@@ -155,6 +159,14 @@
 		E0573FC9222639780010FE8F /* VibrateHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VibrateHandler.m; sourceTree = "<group>"; };
 		E0573FCB22263B480010FE8F /* VibrateShortHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VibrateShortHandler.h; sourceTree = "<group>"; };
 		E0573FCC22263B480010FE8F /* VibrateShortHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VibrateShortHandler.m; sourceTree = "<group>"; };
+		E0573FCF22265A380010FE8F /* FileSaveHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FileSaveHandler.h; sourceTree = "<group>"; };
+		E0573FD022265A380010FE8F /* FileSaveHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FileSaveHandler.m; sourceTree = "<group>"; };
+		E0573FD222265E680010FE8F /* TimeUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TimeUtils.h; sourceTree = "<group>"; };
+		E0573FD322265E680010FE8F /* TimeUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TimeUtils.m; sourceTree = "<group>"; };
+		E0573FD52226683B0010FE8F /* RemoveSavedFileHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RemoveSavedFileHandler.h; sourceTree = "<group>"; };
+		E0573FD62226683B0010FE8F /* RemoveSavedFileHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RemoveSavedFileHandler.m; sourceTree = "<group>"; };
+		E0573FD8222669D70010FE8F /* FileInfoHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FileInfoHandler.h; sourceTree = "<group>"; };
+		E0573FD9222669D70010FE8F /* FileInfoHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FileInfoHandler.m; sourceTree = "<group>"; };
 		E0588091221E4D130030CBA5 /* KDPermission.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KDPermission.m; sourceTree = "<group>"; };
 		E0588092221E4D130030CBA5 /* KDPermission.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KDPermission.h; sourceTree = "<group>"; };
 		E0588093221E4D130030CBA5 /* KDPermission.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = KDPermission.bundle; sourceTree = "<group>"; };
@@ -389,6 +401,19 @@
 				E0573FC3222634CA0010FE8F /* ClearStorage.m */,
 			);
 			path = storage;
+			sourceTree = "<group>";
+		};
+		E0573FCE22265A100010FE8F /* file */ = {
+			isa = PBXGroup;
+			children = (
+				E0573FCF22265A380010FE8F /* FileSaveHandler.h */,
+				E0573FD022265A380010FE8F /* FileSaveHandler.m */,
+				E0573FD52226683B0010FE8F /* RemoveSavedFileHandler.h */,
+				E0573FD62226683B0010FE8F /* RemoveSavedFileHandler.m */,
+				E0573FD8222669D70010FE8F /* FileInfoHandler.h */,
+				E0573FD9222669D70010FE8F /* FileInfoHandler.m */,
+			);
+			path = file;
 			sourceTree = "<group>";
 		};
 		E058808F221E4D020030CBA5 /* Permission */ = {
@@ -727,6 +752,7 @@
 		E0FC615921AACF250018AA61 /* handlermethods */ = {
 			isa = PBXGroup;
 			children = (
+				E0573FCE22265A100010FE8F /* file */,
 				E0573FA2222628B20010FE8F /* storage */,
 				E0FC615A21AACFB00018AA61 /* ImagePickerHandler.h */,
 				E0FC615B21AACFB00018AA61 /* ImagePickerHandler.m */,
@@ -765,6 +791,8 @@
 				E0E8EFE621E2ECE200BF0434 /* UIBarButtonItem+UC.m */,
 				E0E8EFE921E2ED3900BF0434 /* UIColor+UC.h */,
 				E0E8EFEA21E2ED3900BF0434 /* UIColor+UC.m */,
+				E0573FD222265E680010FE8F /* TimeUtils.h */,
+				E0573FD322265E680010FE8F /* TimeUtils.m */,
 			);
 			path = CoreUtil;
 			sourceTree = "<group>";
@@ -952,8 +980,10 @@
 				E0F425B021EDCED20021D742 /* PageMangementHandler.m in Sources */,
 				E0B8C98A21BF5DB7004CD6CC /* hmac.c in Sources */,
 				E029015821DF8D0C00D5259C /* HaierH5ViewController.m in Sources */,
+				E0573FDA222669D70010FE8F /* FileInfoHandler.m in Sources */,
 				E0B8C98621BF5DB7004CD6CC /* ioapi_buf.c in Sources */,
 				E0573FBB222631770010FE8F /* SyncGetStorageInfo.m in Sources */,
+				E0573FD122265A380010FE8F /* FileSaveHandler.m in Sources */,
 				E0B8C9B221BFA736004CD6CC /* blocksort.c in Sources */,
 				E0B8C98821BF5DB7004CD6CC /* minishared.c in Sources */,
 				E0C160BB221FE08D00C5D3E6 /* NSArray+Safe.m in Sources */,
@@ -973,8 +1003,10 @@
 				E0B8C98D21BF5DB7004CD6CC /* sha1.c in Sources */,
 				E0B8C99621BF73DB004CD6CC /* GHaierH5Context.m in Sources */,
 				E0573FBE222633930010FE8F /* GetStorageInfo.m in Sources */,
+				E0573FD422265E680010FE8F /* TimeUtils.m in Sources */,
 				E0F6C53121AB9EA2008AF5C0 /* BaseHandler.m in Sources */,
 				E0B8C9B721BFA736004CD6CC /* crctable.c in Sources */,
+				E0573FD72226683B0010FE8F /* RemoveSavedFileHandler.m in Sources */,
 				E0B8C98E21BF5DB7004CD6CC /* aes_ni.c in Sources */,
 				E0FC614A21AABBD10018AA61 /* WebViewJavascriptBridgeBase.m in Sources */,
 				E0573FC4222634CA0010FE8F /* ClearStorage.m in Sources */,
