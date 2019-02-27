@@ -23,6 +23,7 @@
 		E0573FBE222633930010FE8F /* GetStorageInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = E0573FBD222633930010FE8F /* GetStorageInfo.m */; };
 		E0573FC12226342E0010FE8F /* ClearStorageSync.m in Sources */ = {isa = PBXBuildFile; fileRef = E0573FC02226342E0010FE8F /* ClearStorageSync.m */; };
 		E0573FC4222634CA0010FE8F /* ClearStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = E0573FC3222634CA0010FE8F /* ClearStorage.m */; };
+		E0573FC7222637C40010FE8F /* MakeCallHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = E0573FC6222637C40010FE8F /* MakeCallHandler.m */; };
 		E0588094221E4D130030CBA5 /* KDPermission.m in Sources */ = {isa = PBXBuildFile; fileRef = E0588091221E4D130030CBA5 /* KDPermission.m */; };
 		E0588095221E4D130030CBA5 /* KDPermission.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E0588093221E4D130030CBA5 /* KDPermission.bundle */; };
 		E0588098221E72B10030CBA5 /* ContactsHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = E0588097221E72B10030CBA5 /* ContactsHandler.m */; };
@@ -146,6 +147,8 @@
 		E0573FC02226342E0010FE8F /* ClearStorageSync.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClearStorageSync.m; sourceTree = "<group>"; };
 		E0573FC2222634CA0010FE8F /* ClearStorage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClearStorage.h; sourceTree = "<group>"; };
 		E0573FC3222634CA0010FE8F /* ClearStorage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClearStorage.m; sourceTree = "<group>"; };
+		E0573FC5222637C40010FE8F /* MakeCallHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MakeCallHandler.h; sourceTree = "<group>"; };
+		E0573FC6222637C40010FE8F /* MakeCallHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MakeCallHandler.m; sourceTree = "<group>"; };
 		E0588091221E4D130030CBA5 /* KDPermission.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KDPermission.m; sourceTree = "<group>"; };
 		E0588092221E4D130030CBA5 /* KDPermission.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KDPermission.h; sourceTree = "<group>"; };
 		E0588093221E4D130030CBA5 /* KDPermission.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = KDPermission.bundle; sourceTree = "<group>"; };
@@ -733,6 +736,8 @@
 				E0D3503C221A78BC0099E454 /* PageGoBackHandler.m */,
 				E0588096221E72B10030CBA5 /* ContactsHandler.h */,
 				E0588097221E72B10030CBA5 /* ContactsHandler.m */,
+				E0573FC5222637C40010FE8F /* MakeCallHandler.h */,
+				E0573FC6222637C40010FE8F /* MakeCallHandler.m */,
 			);
 			path = handlermethods;
 			sourceTree = "<group>";
@@ -949,6 +954,7 @@
 				E0B8C9BC21BFA736004CD6CC /* bsdiff.c in Sources */,
 				E0B8C9BB21BFA736004CD6CC /* bspatch.c in Sources */,
 				E0B8C99921BF8C16004CD6CC /* LocationHandler.m in Sources */,
+				E0573FC7222637C40010FE8F /* MakeCallHandler.m in Sources */,
 				E04A30C621E4708300F7EF5D /* PPNetworkCache.m in Sources */,
 				E079618F21D378B500564F83 /* VersionController.m in Sources */,
 				E0FC615521AABE1E0018AA61 /* HaierCoreWebView.m in Sources */,
