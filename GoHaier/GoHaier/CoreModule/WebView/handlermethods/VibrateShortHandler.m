@@ -1,15 +1,15 @@
 //
-//  VibrateHandler.m
+//  VibrateShortHandler.m
 //  GoHaier
 //
 //  Created by niuxinghua on 2019/2/27.
 //  Copyright © 2019年 com.haier. All rights reserved.
 //
 
-#import "VibrateHandler.h"
+#import "VibrateShortHandler.h"
 #import <AudioToolbox/AudioToolbox.h>
-static VibrateHandler *sharedInstance;
-@implementation VibrateHandler
+static VibrateShortHandler *sharedInstance;
+@implementation VibrateShortHandler
 + (instancetype)sharedInstance
 {
     static dispatch_once_t onceToken;
@@ -20,11 +20,11 @@ static VibrateHandler *sharedInstance;
 }
 - (NSString *)handlerKey
 {
-    return @"ghaier_vibrateLong";
+    return @"ghaier_vibrateShort";
 }
 - (void)handlerMethod:(id)data
 {
     NSLog(@"handler key %@ method called",[self handlerKey]);
-    AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
+    AudioServicesPlaySystemSound(1519);
 }
 @end

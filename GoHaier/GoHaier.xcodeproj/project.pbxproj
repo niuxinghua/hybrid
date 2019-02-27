@@ -25,6 +25,7 @@
 		E0573FC4222634CA0010FE8F /* ClearStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = E0573FC3222634CA0010FE8F /* ClearStorage.m */; };
 		E0573FC7222637C40010FE8F /* MakeCallHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = E0573FC6222637C40010FE8F /* MakeCallHandler.m */; };
 		E0573FCA222639780010FE8F /* VibrateHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = E0573FC9222639780010FE8F /* VibrateHandler.m */; };
+		E0573FCD22263B480010FE8F /* VibrateShortHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = E0573FCC22263B480010FE8F /* VibrateShortHandler.m */; };
 		E0588094221E4D130030CBA5 /* KDPermission.m in Sources */ = {isa = PBXBuildFile; fileRef = E0588091221E4D130030CBA5 /* KDPermission.m */; };
 		E0588095221E4D130030CBA5 /* KDPermission.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E0588093221E4D130030CBA5 /* KDPermission.bundle */; };
 		E0588098221E72B10030CBA5 /* ContactsHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = E0588097221E72B10030CBA5 /* ContactsHandler.m */; };
@@ -152,6 +153,8 @@
 		E0573FC6222637C40010FE8F /* MakeCallHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MakeCallHandler.m; sourceTree = "<group>"; };
 		E0573FC8222639780010FE8F /* VibrateHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VibrateHandler.h; sourceTree = "<group>"; };
 		E0573FC9222639780010FE8F /* VibrateHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VibrateHandler.m; sourceTree = "<group>"; };
+		E0573FCB22263B480010FE8F /* VibrateShortHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VibrateShortHandler.h; sourceTree = "<group>"; };
+		E0573FCC22263B480010FE8F /* VibrateShortHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VibrateShortHandler.m; sourceTree = "<group>"; };
 		E0588091221E4D130030CBA5 /* KDPermission.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KDPermission.m; sourceTree = "<group>"; };
 		E0588092221E4D130030CBA5 /* KDPermission.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KDPermission.h; sourceTree = "<group>"; };
 		E0588093221E4D130030CBA5 /* KDPermission.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = KDPermission.bundle; sourceTree = "<group>"; };
@@ -743,6 +746,8 @@
 				E0573FC6222637C40010FE8F /* MakeCallHandler.m */,
 				E0573FC8222639780010FE8F /* VibrateHandler.h */,
 				E0573FC9222639780010FE8F /* VibrateHandler.m */,
+				E0573FCB22263B480010FE8F /* VibrateShortHandler.h */,
+				E0573FCC22263B480010FE8F /* VibrateShortHandler.m */,
 			);
 			path = handlermethods;
 			sourceTree = "<group>";
@@ -1015,6 +1020,7 @@
 				E0B8C98B21BF5DB7004CD6CC /* aescrypt.c in Sources */,
 				E0588094221E4D130030CBA5 /* KDPermission.m in Sources */,
 				E0588098221E72B10030CBA5 /* ContactsHandler.m in Sources */,
+				E0573FCD22263B480010FE8F /* VibrateShortHandler.m in Sources */,
 				E0A9D1A121A7EC9A00FEA58D /* AppDelegate.m in Sources */,
 				E0B8C9B621BFA736004CD6CC /* bzip2recover.c in Sources */,
 				E0C160B9221FE08D00C5D3E6 /* NSMutableDictionary+Safe.m in Sources */,
