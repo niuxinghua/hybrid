@@ -1,5 +1,5 @@
 //
-//  MakeCallHandler.h
+//  VibrateHandler.h
 //  GoHaier
 //
 //  Created by niuxinghua on 2019/2/27.
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MakeCallHandler : BaseHandler
+@interface VibrateHandler : BaseHandler
 + (instancetype)sharedInstance;
 @end
 
