@@ -26,6 +26,6 @@ static MakeCallHandler *sharedInstance;
     NSLog(@"handler key %@ method called",[self handlerKey]);
     NSString *telePhone = (NSString *)data;
     NSMutableString *str=[[NSMutableString alloc] initWithFormat:@"telprompt://%@",telePhone];
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:str]]
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:str]];
 }
 @end

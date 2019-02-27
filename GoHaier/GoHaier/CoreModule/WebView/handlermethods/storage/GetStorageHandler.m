@@ -26,11 +26,11 @@ static GetStorageHandler *sharedInstance;
     NSLog(@"handler key %@ method called",[self handlerKey]);
     NSString *getKey = (NSString *)data;
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
-        if ([[NSUserDefaults standardUserDefaults] objectForKey:removeKey]) {
-            [self respondToWeb:[[NSUserDefaults standardUserDefaults] objectForKey:removeKey]]
+        if ([[NSUserDefaults standardUserDefaults] objectForKey:getKey]) {
+            [self respondToWeb:[[NSUserDefaults standardUserDefaults] objectForKey:getKey]];
         }else{
             [self respondToWeb:@""];
         }
-    };
+    });
 }
 @end
