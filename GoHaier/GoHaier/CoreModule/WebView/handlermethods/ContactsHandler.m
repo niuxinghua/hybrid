@@ -43,7 +43,9 @@ static ContactsHandler *sharedInstance;
                     picker.delegate = self;
                     // 加载手机号
                     picker.displayedPropertyKeys = @[CNContactPhoneNumbersKey];
-                    [[[ViewControllerUtil sharedInstance]topViewController] presentViewController: picker  animated:YES completion:nil];
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        [[[ViewControllerUtil sharedInstance]topViewController] presentViewController: picker  animated:YES completion:nil];
+                    });
                 });
                 
             }

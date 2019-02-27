@@ -40,9 +40,11 @@ static BarCodeRecongnizerHandler* sharedInstance;
                 weakSelf.webCallBack(result);
             }
         };
-        [[[ViewControllerUtil sharedInstance] topViewController] presentViewController:controller animated:NO completion:^{
-            
-        }];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [[[ViewControllerUtil sharedInstance] topViewController] presentViewController:controller animated:NO completion:^{
+                
+            }];
+        });
     }else{
         [AVCaptureDevice requestAccessForMediaType:AVMediaTypeVideo
                                  completionHandler:^(BOOL granted) {

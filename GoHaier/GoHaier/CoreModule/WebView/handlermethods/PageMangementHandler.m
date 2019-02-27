@@ -34,8 +34,8 @@ static PageMangementHandler* sharedInstance;
     NSString *title = [args objectAtIndex:0];
     NSString *pageName = [args objectAtIndex:1];
 
-    [HaierH5ViewController showContentWithAPPName:[VersionController sharedInstance].currentAppName navigationMode:YES fullScreenMode:NO animated:NO titleName:title rootController:[[ViewControllerUtil sharedInstance] topViewController] pageName:pageName];
-
-    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [HaierH5ViewController showContentWithAPPName:[VersionController sharedInstance].currentAppName navigationMode:YES fullScreenMode:NO animated:NO titleName:title rootController:[[ViewControllerUtil sharedInstance] topViewController] pageName:pageName];
+    });
 }
 @end

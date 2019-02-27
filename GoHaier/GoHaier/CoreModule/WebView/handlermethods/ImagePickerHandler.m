@@ -32,8 +32,9 @@ static ImagePickerHandler* sharedInstance;
         imagePicker.delegate = self;
         imagePicker.allowsEditing = YES;
         imagePicker.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
-        [[[ViewControllerUtil sharedInstance]topViewController] presentViewController:imagePicker animated:YES completion:nil];
-
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [[[ViewControllerUtil sharedInstance]topViewController] presentViewController:imagePicker animated:YES completion:nil];
+        });
     }
 }
 - (BOOL)respondToWeb:(id)data

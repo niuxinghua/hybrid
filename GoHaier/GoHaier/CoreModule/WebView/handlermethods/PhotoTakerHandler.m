@@ -34,7 +34,9 @@ static PhotoTakerHandler* sharedInstance;
             imagePicker.delegate = self;
             imagePicker.allowsEditing = YES;
             imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
-            [[[ViewControllerUtil sharedInstance]topViewController] presentViewController:imagePicker animated:YES completion:nil];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [[[ViewControllerUtil sharedInstance]topViewController] presentViewController:imagePicker animated:YES completion:nil];
+            });
             
         }
     }else{
@@ -47,7 +49,9 @@ static PhotoTakerHandler* sharedInstance;
                                              imagePicker.delegate = self;
                                              imagePicker.allowsEditing = YES;
                                              imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
-                                             [[[ViewControllerUtil sharedInstance]topViewController] presentViewController:imagePicker animated:YES completion:nil];
+                                             dispatch_async(dispatch_get_main_queue(), ^{
+                                                 [[[ViewControllerUtil sharedInstance]topViewController] presentViewController:imagePicker animated:YES completion:nil];
+                                             });
                                              
                                          }
                                      }else {

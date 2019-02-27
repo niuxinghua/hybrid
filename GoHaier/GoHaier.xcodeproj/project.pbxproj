@@ -12,7 +12,7 @@
 		E04A30C521E4708300F7EF5D /* PPNetworkHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = E04A30C121E4708300F7EF5D /* PPNetworkHelper.m */; };
 		E04A30C621E4708300F7EF5D /* PPNetworkCache.m in Sources */ = {isa = PBXBuildFile; fileRef = E04A30C421E4708300F7EF5D /* PPNetworkCache.m */; };
 		E04FBE2121AEA87600D2EAD3 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E04FBE1F21AEA85A00D2EAD3 /* JavaScriptCore.framework */; };
-		E0573F9B22261C430010FE8F /* hwork.zip in Resources */ = {isa = PBXBuildFile; fileRef = E0573F9A22261C420010FE8F /* hwork.zip */; };
+		E0573F9D222621300010FE8F /* hwork.zip in Resources */ = {isa = PBXBuildFile; fileRef = E0573F9C222621300010FE8F /* hwork.zip */; };
 		E0588094221E4D130030CBA5 /* KDPermission.m in Sources */ = {isa = PBXBuildFile; fileRef = E0588091221E4D130030CBA5 /* KDPermission.m */; };
 		E0588095221E4D130030CBA5 /* KDPermission.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E0588093221E4D130030CBA5 /* KDPermission.bundle */; };
 		E0588098221E72B10030CBA5 /* ContactsHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = E0588097221E72B10030CBA5 /* ContactsHandler.m */; };
@@ -115,7 +115,7 @@
 		E04A30C321E4708300F7EF5D /* PPNetworkHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPNetworkHelper.h; sourceTree = "<group>"; };
 		E04A30C421E4708300F7EF5D /* PPNetworkCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPNetworkCache.m; sourceTree = "<group>"; };
 		E04FBE1F21AEA85A00D2EAD3 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		E0573F9A22261C420010FE8F /* hwork.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = hwork.zip; sourceTree = "<group>"; };
+		E0573F9C222621300010FE8F /* hwork.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; name = hwork.zip; path = ../../../../../../whocall/hwork.zip; sourceTree = "<group>"; };
 		E0588091221E4D130030CBA5 /* KDPermission.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KDPermission.m; sourceTree = "<group>"; };
 		E0588092221E4D130030CBA5 /* KDPermission.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KDPermission.h; sourceTree = "<group>"; };
 		E0588093221E4D130030CBA5 /* KDPermission.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = KDPermission.bundle; sourceTree = "<group>"; };
@@ -320,7 +320,7 @@
 		E056B39321C0A067006C6232 /* GoHaier */ = {
 			isa = PBXGroup;
 			children = (
-				E0573F9A22261C420010FE8F /* hwork.zip */,
+				E0573F9C222621300010FE8F /* hwork.zip */,
 			);
 			path = GoHaier;
 			sourceTree = "<group>";
@@ -802,7 +802,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E0FC614D21AABBD10018AA61 /* WebViewJavascriptBridge.js.txt in Resources */,
-				E0573F9B22261C430010FE8F /* hwork.zip in Resources */,
+				E0573F9D222621300010FE8F /* hwork.zip in Resources */,
 				E0A9D1AC21A7EC9D00FEA58D /* LaunchScreen.storyboard in Resources */,
 				E0A9D1A921A7EC9D00FEA58D /* Assets.xcassets in Resources */,
 				E0588095221E4D130030CBA5 /* KDPermission.bundle in Resources */,
