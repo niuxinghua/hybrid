@@ -8,11 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		32E67C479746212551C850A5 /* libPods-GoHaier.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A98A894C959BAD7EB3B9720D /* libPods-GoHaier.a */; };
+		A5A8D9EC42897BB9366BFE7F /* hwork.zip in Resources */ = {isa = PBXBuildFile; fileRef = 65B5ACBAF1F7F90D5DF8FD12 /* hwork.zip */; };
 		E029015821DF8D0C00D5259C /* HaierH5ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E029015721DF8D0C00D5259C /* HaierH5ViewController.m */; };
 		E04A30C521E4708300F7EF5D /* PPNetworkHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = E04A30C121E4708300F7EF5D /* PPNetworkHelper.m */; };
 		E04A30C621E4708300F7EF5D /* PPNetworkCache.m in Sources */ = {isa = PBXBuildFile; fileRef = E04A30C421E4708300F7EF5D /* PPNetworkCache.m */; };
 		E04FBE2121AEA87600D2EAD3 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E04FBE1F21AEA85A00D2EAD3 /* JavaScriptCore.framework */; };
-		E0573F9F222623390010FE8F /* hwork.zip in Resources */ = {isa = PBXBuildFile; fileRef = E0573F9E222623390010FE8F /* hwork.zip */; };
 		E0573FA9222629600010FE8F /* SetSyncStorageHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = E0573FA8222629600010FE8F /* SetSyncStorageHandler.m */; };
 		E0573FAC22262BF30010FE8F /* RemoveSyncStorageHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = E0573FAB22262BF30010FE8F /* RemoveSyncStorageHandler.m */; };
 		E0573FAF22262CF90010FE8F /* SetStorageHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = E0573FAE22262CF90010FE8F /* SetStorageHandler.m */; };
@@ -123,6 +123,7 @@
 
 /* Begin PBXFileReference section */
 		4ADB11AD7ED6A8317D47B73E /* Pods-GoHaier.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoHaier.release.xcconfig"; path = "Pods/Target Support Files/Pods-GoHaier/Pods-GoHaier.release.xcconfig"; sourceTree = "<group>"; };
+		65B5ACBAF1F7F90D5DF8FD12 /* hwork.zip */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.zip; path = hwork.zip; sourceTree = "<group>"; };
 		97CA5734BC39FAD7AEB74024 /* Pods-GoHaier.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoHaier.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GoHaier/Pods-GoHaier.debug.xcconfig"; sourceTree = "<group>"; };
 		A98A894C959BAD7EB3B9720D /* libPods-GoHaier.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GoHaier.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E029015621DF8D0C00D5259C /* HaierH5ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HaierH5ViewController.h; sourceTree = "<group>"; };
@@ -132,7 +133,6 @@
 		E04A30C321E4708300F7EF5D /* PPNetworkHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPNetworkHelper.h; sourceTree = "<group>"; };
 		E04A30C421E4708300F7EF5D /* PPNetworkCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPNetworkCache.m; sourceTree = "<group>"; };
 		E04FBE1F21AEA85A00D2EAD3 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		E0573F9E222623390010FE8F /* hwork.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; name = hwork.zip; path = ../../../../../../whocall/hwork.zip; sourceTree = "<group>"; };
 		E0573FA7222629600010FE8F /* SetSyncStorageHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SetSyncStorageHandler.h; sourceTree = "<group>"; };
 		E0573FA8222629600010FE8F /* SetSyncStorageHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SetSyncStorageHandler.m; sourceTree = "<group>"; };
 		E0573FAA22262BF30010FE8F /* RemoveSyncStorageHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RemoveSyncStorageHandler.h; sourceTree = "<group>"; };
@@ -331,6 +331,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		20728A12D977EF9A12B36404 /* zips */ = {
+			isa = PBXGroup;
+			children = (
+				65B5ACBAF1F7F90D5DF8FD12 /* hwork.zip */,
+			);
+			name = zips;
+			path = ./zipresource/zips;
+			sourceTree = "<group>";
+		};
 		5BFAA7FC3FC9E4A1EF2CFD82 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -371,7 +380,6 @@
 		E056B39321C0A067006C6232 /* GoHaier */ = {
 			isa = PBXGroup;
 			children = (
-				E0573F9E222623390010FE8F /* hwork.zip */,
 			);
 			path = GoHaier;
 			sourceTree = "<group>";
@@ -470,6 +478,7 @@
 				E0A9D19D21A7EC9A00FEA58D /* Products */,
 				E04FBE1E21AEA85900D2EAD3 /* Frameworks */,
 				5BFAA7FC3FC9E4A1EF2CFD82 /* Pods */,
+				FC38252D2369E6955DE2E77B /* zipresource */,
 			);
 			sourceTree = "<group>";
 		};
@@ -797,6 +806,14 @@
 			path = CoreUtil;
 			sourceTree = "<group>";
 		};
+		FC38252D2369E6955DE2E77B /* zipresource */ = {
+			isa = PBXGroup;
+			children = (
+				20728A12D977EF9A12B36404 /* zips */,
+			);
+			name = zipresource;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -903,11 +920,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				E0FC614D21AABBD10018AA61 /* WebViewJavascriptBridge.js.txt in Resources */,
-				E0573F9F222623390010FE8F /* hwork.zip in Resources */,
 				E0A9D1AC21A7EC9D00FEA58D /* LaunchScreen.storyboard in Resources */,
 				E0A9D1A921A7EC9D00FEA58D /* Assets.xcassets in Resources */,
 				E0588095221E4D130030CBA5 /* KDPermission.bundle in Resources */,
 				E0A9D1A721A7EC9A00FEA58D /* Main.storyboard in Resources */,
+				A5A8D9EC42897BB9366BFE7F /* hwork.zip in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
