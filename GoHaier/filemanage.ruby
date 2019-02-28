@@ -7,7 +7,7 @@ project = Xcodeproj::Project.open(project_path)
 mapiGroup = project.main_group.find_subpath(File.join('H5',''), true)#创建工程目录,没有可以创建
 mapiGroup.set_source_tree('<group>')
 #源,相对于.xcodeproj路径,提供给项目实体文件的路径
-mapiGroup.set_path('./zipresource/zips')
+mapiGroup.set_path('./H5')
 
 #移除索引
 def removeBuildPhaseFilesRecursively(aTarget, aGroup)

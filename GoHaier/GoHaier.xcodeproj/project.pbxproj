@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		22EB0607321C511610012991 /* hwork.zip in Resources */ = {isa = PBXBuildFile; fileRef = 0FF33E667F31A6E9B289C3BE /* hwork.zip */; };
 		32E67C479746212551C850A5 /* libPods-GoHaier.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A98A894C959BAD7EB3B9720D /* libPods-GoHaier.a */; };
-		B56EE4DC87DF978E88705699 /* hwork.zip in Resources */ = {isa = PBXBuildFile; fileRef = 4820684D766EE40620985F6A /* hwork.zip */; };
 		E029015821DF8D0C00D5259C /* HaierH5ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E029015721DF8D0C00D5259C /* HaierH5ViewController.m */; };
 		E04A30C521E4708300F7EF5D /* PPNetworkHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = E04A30C121E4708300F7EF5D /* PPNetworkHelper.m */; };
 		E04A30C621E4708300F7EF5D /* PPNetworkCache.m in Sources */ = {isa = PBXBuildFile; fileRef = E04A30C421E4708300F7EF5D /* PPNetworkCache.m */; };
@@ -122,7 +122,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		4820684D766EE40620985F6A /* hwork.zip */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.zip; path = hwork.zip; sourceTree = "<group>"; };
+		0FF33E667F31A6E9B289C3BE /* hwork.zip */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.zip; path = hwork.zip; sourceTree = "<group>"; };
 		4ADB11AD7ED6A8317D47B73E /* Pods-GoHaier.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoHaier.release.xcconfig"; path = "Pods/Target Support Files/Pods-GoHaier/Pods-GoHaier.release.xcconfig"; sourceTree = "<group>"; };
 		97CA5734BC39FAD7AEB74024 /* Pods-GoHaier.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoHaier.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GoHaier/Pods-GoHaier.debug.xcconfig"; sourceTree = "<group>"; };
 		A98A894C959BAD7EB3B9720D /* libPods-GoHaier.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GoHaier.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -331,13 +331,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		042E3C22B2BE8609AC32377C /* H5 */ = {
+		096E12B4C147BEB6F2DB9E6A /* H5 */ = {
 			isa = PBXGroup;
 			children = (
-				4820684D766EE40620985F6A /* hwork.zip */,
+				0FF33E667F31A6E9B289C3BE /* hwork.zip */,
 			);
 			name = H5;
-			path = ./zipresource/zips;
+			path = ./H5;
 			sourceTree = "<group>";
 		};
 		5BFAA7FC3FC9E4A1EF2CFD82 /* Pods */ = {
@@ -463,7 +463,7 @@
 				E0A9D19D21A7EC9A00FEA58D /* Products */,
 				E04FBE1E21AEA85900D2EAD3 /* Frameworks */,
 				5BFAA7FC3FC9E4A1EF2CFD82 /* Pods */,
-				042E3C22B2BE8609AC32377C /* H5 */,
+				096E12B4C147BEB6F2DB9E6A /* H5 */,
 			);
 			sourceTree = "<group>";
 		};
@@ -900,7 +900,7 @@
 				E0A9D1A921A7EC9D00FEA58D /* Assets.xcassets in Resources */,
 				E0588095221E4D130030CBA5 /* KDPermission.bundle in Resources */,
 				E0A9D1A721A7EC9A00FEA58D /* Main.storyboard in Resources */,
-				B56EE4DC87DF978E88705699 /* hwork.zip in Resources */,
+				22EB0607321C511610012991 /* hwork.zip in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
