@@ -4,7 +4,7 @@ project = Xcodeproj::Project.open(project_path)
 
 #第一个参数,相对于.xcodeproj 项目根目录,一定要和工程里的根目录名字相同
 #第二个参数,相对工程里的目录
-mapiGroup = project.main_group.find_subpath(File.join('zipresource','zips'), true)#创建工程目录,没有可以创建
+mapiGroup = project.main_group.find_subpath(File.join('H5',''), true)#创建工程目录,没有可以创建
 mapiGroup.set_source_tree('<group>')
 #源,相对于.xcodeproj路径,提供给项目实体文件的路径
 mapiGroup.set_path('./zipresource/zips')
