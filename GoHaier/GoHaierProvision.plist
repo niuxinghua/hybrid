@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AppIDName</key>
+	<string>COSMOIM</string>
+	<key>ApplicationIdentifierPrefix</key>
+	<array>
+	<string>5YMLXQ5HEE</string>
+	</array>
+	<key>CreationDate</key>
+	<date>2018-05-14T06:49:56Z</date>
+	<key>Platform</key>
+	<array>
+		<string>iOS</string>
+	</array>
+    <key>IsXcodeManaged</key>
+    <false/>
+	<key>DeveloperCertificates</key>
+	<array>
+		<data>MIIFrDCCBJSgAwIBAgIIfeV7KuhIfiswDQYJKoZIhvcNAQEFBQAwgZYxCzAJBgNVBAYTAlVTMRMwEQYDVQQKDApBcHBsZSBJbmMuMSwwKgYDVQQLDCNBcHBsZSBXb3JsZHdpZGUgRGV2ZWxvcGVyIFJlbGF0aW9uczFEMEIGA1UEAww7QXBwbGUgV29ybGR3aWRlIERldmVsb3BlciBSZWxhdGlvbnMgQ2VydGlmaWNhdGlvbiBBdXRob3JpdHkwHhcNMTcwNTA1MDIxODUzWhcNMjAwNTA0MDIxODUzWjCBrTEaMBgGCgmSJomT8ixkAQEMCjVZTUxYUTVIRUUxQDA+BgNVBAMMN2lQaG9uZSBEaXN0cmlidXRpb246IFFpbmdkYW8gSGFpZXIgVGVjaG5vbG9neSBDby4sIEx0ZC4xEzARBgNVBAsMCjVZTUxYUTVIRUUxKzApBgNVBAoMIlFpbmdkYW8gSGFpZXIgVGVjaG5vbG9neSBDby4sIEx0ZC4xCzAJBgNVBAYTAlVTMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA1vLjdoJcpqeJ3b3eTOBY3J/OAdT7WlbBQw80uITInwZ/I7vmTiU83k0ahJh3l1/TtOZl+18v6gfk8qUJuTs5usQPx4h3QOJ5cV5t56gpDjQn8P66FFoPFdNUBZpI6OeDi2IWRhjLtcWjYjjEu3aKcScQUvb2Rtf4K20YymlUYNqkA/eQGOYVFB5vnT7YPD/7jHndYhA4Gk+27wXtSACYYFd+CeSHxrYXsNRHF467+FPAmBwsbXoinXrXaXU+IV26ZJYD5YJNzyZrxWGS8cqOrp29yHyDPV3OFmKLFBA1oow/8s3N4GOr9/kQOxWQn4lPTynWtue7uidbcpyWRfPs2wIDAQABo4IB4zCCAd8wPwYIKwYBBQUHAQEEMzAxMC8GCCsGAQUFBzABhiNodHRwOi8vb2NzcC5hcHBsZS5jb20vb2NzcDAyLXd3ZHIwMTAdBgNVHQ4EFgQUv23K5Xt+GYarwpibvUOVaiAHRpEwDAYDVR0TAQH/BAIwADAfBgNVHSMEGDAWgBSIJxcJqbYYYIvs67r2R1nFUlSjtzCCAQ8GA1UdIASCAQYwggECMIH/BgkqhkiG92NkBQEwgfEwgcMGCCsGAQUFBwICMIG2DIGzUmVsaWFuY2Ugb24gdGhpcyBjZXJ0aWZpY2F0ZSBieSBhbnkgcGFydHkgYXNzdW1lcyBhY2NlcHRhbmNlIG9mIHRoZSB0aGVuIGFwcGxpY2FibGUgc3RhbmRhcmQgdGVybXMgYW5kIGNvbmRpdGlvbnMgb2YgdXNlLCBjZXJ0aWZpY2F0ZSBwb2xpY3kgYW5kIGNlcnRpZmljYXRpb24gcHJhY3RpY2Ugc3RhdGVtZW50cy4wKQYIKwYBBQUHAgEWHWh0dHA6Ly93d3cuYXBwbGUuY29tL2FwcGxlY2EvMA4GA1UdDwEB/wQEAwIHgDAWBgNVHSUBAf8EDDAKBggrBgEFBQcDAzATBgoqhkiG92NkBgEEAQH/BAIFADANBgkqhkiG9w0BAQUFAAOCAQEAZkQYT8Lg+WTH9jA42MyiIYvDTOIeyvaLV2nA8XCE6VnPUKYbS637GRMJ3l/R8hxvE/kf8KhsLMnrZWiqJExo4P0IW9LKlg6va4O2bVeATxb46R8JQ9zbUtMsg9N0qxsmgBGctc2KG89GNBhu2knhMulZeYq9j/lGdMO4gF4CRQnSoz8ZcVwF5A9jUy4Zk2EcmgwxzSkOy1/bfVFfoUT+4PiLOqE2EkSkC/5LILdWQ/nyvqxpP2hg9C82OJ7qIe9Xh6aVtrUcMNNltzKlXzdUqEbI1QYfz6mmPK5kFZUCJvesE7PHjZvqAmJXMVoc5wjiDbTt8Ah6Bh6lDsn6rkSR+Q==</data>
+	</array>
+	<key>Entitlements</key>
+	<dict>
+		<key>keychain-access-groups</key>
+		<array>
+			<string>5YMLXQ5HEE.*</string>		
+		</array>
+		<key>get-task-allow</key>
+		<false/>
+		<key>application-identifier</key>
+		<string>5YMLXQ5HEE.com.haier.imapp</string>
+		<key>com.apple.developer.team-identifier</key>
+		<string>5YMLXQ5HEE</string>
+	</dict>
+	<key>ExpirationDate</key>
+	<date>2019-05-14T06:49:56Z</date>
+	<key>Name</key>
+	<string>COSMOIM</string>
+	<key>ProvisionsAllDevices</key>
+	<true/>
+	<key>TeamIdentifier</key>
+	<array>
+		<string>5YMLXQ5HEE</string>
+	</array>
+	<key>TeamName</key>
+	<string>Qingdao Haier Technology Co., Ltd.</string>
+	<key>TimeToLive</key>
+	<integer>365</integer>
+	<key>UUID</key>
+	<string>95bff849-f2ef-4999-93d1-6401b9d53cbf</string>
+	<key>Version</key>
+	<integer>1</integer>
+</dict>
+</plist>

@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		30250FB26CCDA06433C3166C /* hwork.zip in Resources */ = {isa = PBXBuildFile; fileRef = E5A6A5915198AE446C8DE7FB /* hwork.zip */; };
 		32E67C479746212551C850A5 /* libPods-GoHaier.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A98A894C959BAD7EB3B9720D /* libPods-GoHaier.a */; };
+		8B0D9D609964DD93AA714A63 /* hwork.zip in Resources */ = {isa = PBXBuildFile; fileRef = FF09E78AAB7ACFF4DA9C8BC2 /* hwork.zip */; };
 		E029015821DF8D0C00D5259C /* HaierH5ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E029015721DF8D0C00D5259C /* HaierH5ViewController.m */; };
 		E04A30C521E4708300F7EF5D /* PPNetworkHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = E04A30C121E4708300F7EF5D /* PPNetworkHelper.m */; };
 		E04A30C621E4708300F7EF5D /* PPNetworkCache.m in Sources */ = {isa = PBXBuildFile; fileRef = E04A30C421E4708300F7EF5D /* PPNetworkCache.m */; };
@@ -301,7 +301,7 @@
 		E0FC615F21AAD2030018AA61 /* ViewControllerUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewControllerUtil.m; sourceTree = "<group>"; };
 		E0FC616421AADB350018AA61 /* PhotoTakerHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoTakerHandler.h; sourceTree = "<group>"; };
 		E0FC616521AADB350018AA61 /* PhotoTakerHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotoTakerHandler.m; sourceTree = "<group>"; };
-		E5A6A5915198AE446C8DE7FB /* hwork.zip */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.zip; path = hwork.zip; sourceTree = "<group>"; };
+		FF09E78AAB7ACFF4DA9C8BC2 /* hwork.zip */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.zip; path = hwork.zip; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -334,7 +334,7 @@
 		08E56BCFD77A69A895C0FA0D /* H5 */ = {
 			isa = PBXGroup;
 			children = (
-				E5A6A5915198AE446C8DE7FB /* hwork.zip */,
+				FF09E78AAB7ACFF4DA9C8BC2 /* hwork.zip */,
 			);
 			name = H5;
 			path = ./H5;
@@ -900,7 +900,7 @@
 				E0A9D1A921A7EC9D00FEA58D /* Assets.xcassets in Resources */,
 				E0588095221E4D130030CBA5 /* KDPermission.bundle in Resources */,
 				E0A9D1A721A7EC9A00FEA58D /* Main.storyboard in Resources */,
-				30250FB26CCDA06433C3166C /* hwork.zip in Resources */,
+				8B0D9D609964DD93AA714A63 /* hwork.zip in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1218,7 +1218,7 @@
 			baseConfigurationReference = 97CA5734BC39FAD7AEB74024 /* Pods-GoHaier.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: moreccommunity@foxmail.com (95K27JU97C)";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = GoHaier/Info.plist;
@@ -1240,7 +1240,7 @@
 			baseConfigurationReference = 4ADB11AD7ED6A8317D47B73E /* Pods-GoHaier.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: moreccommunity@foxmail.com (95K27JU97C)";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = GoHaier/Info.plist;
