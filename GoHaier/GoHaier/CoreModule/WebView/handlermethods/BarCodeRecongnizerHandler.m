@@ -37,7 +37,8 @@ static BarCodeRecongnizerHandler* sharedInstance;
         __weak typeof (BarCodeRecongnizerHandler)*weakSelf = self;
         controller.resultBlock = ^(NSString * result) {
             if (weakSelf.webCallBack) {
-                weakSelf.webCallBack(result);
+                NSDictionary *dic = @{@"result":result};
+                weakSelf.webCallBack(dic);
             }
         };
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -54,7 +55,8 @@ static BarCodeRecongnizerHandler* sharedInstance;
                                          __weak typeof (BarCodeRecongnizerHandler)*weakSelf = self;
                                          controller.resultBlock = ^(NSString * result) {
                                              if (weakSelf.webCallBack) {
-                                                 weakSelf.webCallBack(result);
+                                                 NSDictionary *dic = @{@"result":result};
+                                                 weakSelf.webCallBack(dic);
                                              }
                                          };
                                          dispatch_async(dispatch_get_main_queue(), ^{

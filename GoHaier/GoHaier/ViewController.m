@@ -32,6 +32,7 @@
     [btn setTitle:@"跳到mintui" forState:UIControlStateNormal];
     [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [btn addTarget:self action:@selector(showContent) forControlEvents:UIControlEventTouchUpInside];
+    //self.view.backgroundColor = [UIColor greenColor];
    // [[VersionController sharedInstance] autoUpateApp:@"hwork"];
 }
 

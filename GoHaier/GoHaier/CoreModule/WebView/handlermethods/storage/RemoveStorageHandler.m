@@ -29,6 +29,7 @@ static RemoveStorageHandler *sharedInstance;
         if (removeKey && removeKey.length > 0 && [[NSUserDefaults standardUserDefaults] objectForKey:removeKey]) {
             [[NSUserDefaults standardUserDefaults] removeObjectForKey:removeKey];
             [[NSUserDefaults standardUserDefaults] synchronize];
+            [self respondToWeb:@{}];
         }
     });
 }

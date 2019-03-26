@@ -29,7 +29,7 @@ static LocationHandler* sharedInstance = nil;
 }
 - (NSString *)handlerKey
 {
-    return @"ghaier_accessLocation";
+    return @"ghaier_getLocation";
 }
 
 

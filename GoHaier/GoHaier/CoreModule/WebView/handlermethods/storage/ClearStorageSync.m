@@ -27,5 +27,6 @@ static ClearStorageSync *sharedInstance;
     NSString *appDomain = [[NSBundle mainBundle] bundleIdentifier];
     [[NSUserDefaults standardUserDefaults] removePersistentDomainForName:appDomain];
     [[NSUserDefaults standardUserDefaults] synchronize];
+    [self respondToWeb:@{}];
 }
 @end

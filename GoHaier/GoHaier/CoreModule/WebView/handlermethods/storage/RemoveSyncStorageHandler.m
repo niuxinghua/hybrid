@@ -19,7 +19,7 @@ static RemoveSyncStorageHandler *sharedInstance;
 }
 - (NSString *)handlerKey
 {
-    return @"ghaier_removeStorage";
+    return @"ghaier_removeStorageSync";
 }
 - (void)handlerMethod:(id)data
 {
@@ -28,6 +28,7 @@ static RemoveSyncStorageHandler *sharedInstance;
     if (removeKey && removeKey.length > 0 && [[NSUserDefaults standardUserDefaults] objectForKey:removeKey]) {
         [[NSUserDefaults standardUserDefaults] removeObjectForKey:removeKey];
         [[NSUserDefaults standardUserDefaults] synchronize];
+        [self respondToWeb:@{}];
     }
 }
 

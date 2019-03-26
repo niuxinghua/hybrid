@@ -23,6 +23,23 @@
 #import "PageGoBackHandler.h"
 #import "ContactsHandler.h"
 #import "SetSyncStorageHandler.h"
+#import "VibrateHandler.h"
+#import "VibrateShortHandler.h"
+#import "MakeCallHandler.h"
+#import "FileSaveHandler.h"
+#import "RemoveSavedFileHandler.h"
+#import "FileInfoHandler.h"
+#import "SetSyncStorageHandler.h"
+#import "SetStorageHandler.h"
+#import "RemoveSyncStorageHandler.h"
+#import "RemoveStorageHandler.h"
+#import "SyncGetStorageHandler.h"
+#import "SyncGetStorageInfo.h"
+#import "GetStorageInfo.h"
+#import "ClearStorageSync.h"
+#import "ClearStorage.h"
+
+
 @interface HaierH5ViewController ()
 @property(nonatomic,copy)NSString *appName;
 @end
@@ -174,6 +191,28 @@
     [_webView registerNativeHandlers:[ContactsHandler sharedInstance]];
     
     [_webView registerNativeHandlers:[SetSyncStorageHandler sharedInstance]];
+    [_webView registerNativeHandlers:[VibrateHandler sharedInstance]];
+    [_webView registerNativeHandlers:[VibrateShortHandler sharedInstance]];
+    [_webView registerNativeHandlers:[MakeCallHandler sharedInstance]];
+    [_webView registerNativeHandlers:[FileSaveHandler sharedInstance]];
+    [_webView registerNativeHandlers:[[RemoveSavedFileHandler alloc] init]];
+    [_webView registerNativeHandlers:[[FileInfoHandler alloc] init]];
+
+    [_webView registerNativeHandlers:[[GetStorageInfo alloc] init]];
+    [_webView registerNativeHandlers:[[SetSyncStorageHandler alloc] init]];
+    [_webView registerNativeHandlers:[[SetStorageHandler alloc] init]];
+    [_webView registerNativeHandlers:[[RemoveStorageHandler alloc] init]];
+    [_webView registerNativeHandlers:[[RemoveSyncStorageHandler alloc] init]];
+    [_webView registerNativeHandlers:[SyncGetStorageHandler sharedInstance]];
+    [_webView registerNativeHandlers:[[GetStorageInfo alloc] init]];
+    [_webView registerNativeHandlers:[[ClearStorage alloc] init]];
+    [_webView registerNativeHandlers:[[ClearStorageSync alloc] init]];
+    [_webView registerNativeHandlers:[[SyncGetStorageInfo alloc] init]];
+//    [_webView registerNativeHandlers:[[RemoveSyncStorageHandler alloc] init]];
+
+
+
+
     
 }
 

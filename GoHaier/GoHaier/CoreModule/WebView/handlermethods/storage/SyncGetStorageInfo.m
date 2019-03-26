@@ -28,6 +28,9 @@ static SyncGetStorageInfo *sharedInstance;
         NSArray *keys = [[[NSUserDefaults standardUserDefaults]dictionaryRepresentation].allKeys copy];
         NSDictionary *res = @{@"keys":keys};
         [self respondToWeb:res];
+    }else{
+        NSDictionary *res = @{@"keys":@[]};
+        [self respondToWeb:res];
     }
     
 }

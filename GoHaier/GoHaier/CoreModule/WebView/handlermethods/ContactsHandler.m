@@ -84,7 +84,16 @@ static ContactsHandler *sharedInstance;
         NSString * phoneNumber = phoneValue.stringValue;
         [phoneNumbers addObject:phoneNumber];
     }
-    [self respondToWeb:@{@"phoneNumbers":phoneNumbers}];
+    NSMutableDictionary *data = [NSMutableDictionary new];
+    NSMutableString *name = @"".mutableCopy;
+    [name appendString:contact.givenName];
+    [name appendString:contact.middleName];
+    [name appendString:contact.familyName];
+
+
+    [data setObject:phoneNumbers forKey:@"phoneNumbers"];
+    [data setObject:name forKey:@"name"];
+    [self respondToWeb:data];
 }
 - (void)contactPicker:(CNContactPickerViewController *)picker didSelectContactProperty:(CNContactProperty *)contactProperty
 {

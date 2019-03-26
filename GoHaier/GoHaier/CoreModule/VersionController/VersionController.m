@@ -35,6 +35,12 @@ NSString *const DiffsUrl = @"http://mobilebackend.qdct-lsb.haier.net/api/v1/diff
 }
 - (BOOL)innerVersionCopyToOutside:(NSString *)appName
 {
+    //先获取内置版本的版本好，这个是脚本修改plist后打包在info.plist里面的WidgetVersion字段
+    NSString *bundlePath = [[NSBundle mainBundle] pathForResource:@"Info" ofType:@"plist"];
+    NSMutableDictionary *infoDict = [NSMutableDictionary dictionaryWithContentsOfFile:bundlePath];
+    NSString *widgetVersion = [infoDict objectForKey:@"WidgetVersion"];
+    NSLog(@"widgetversion ==== %@",widgetVersion);
+  
     NSString *path = [[NSBundle mainBundle] pathForResource:appName ofType:@"zip"];
     if (!path) {
         return NO;

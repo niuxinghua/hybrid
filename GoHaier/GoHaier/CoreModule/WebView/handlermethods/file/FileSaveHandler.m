@@ -26,16 +26,18 @@ static FileSaveHandler *sharedInstance;
 {
     NSLog(@"handler key %@ method called",[self handlerKey]);
     NSString *fileName = [TimeUtils currenttimeStaps];
-    NSDictionary *dic = (NSDictionary *)data;
-    NSString *fileurl = [dic objectForKey:@"tempFilePath"];
+    NSString *fileurl = (NSString *)data;
     if (fileurl && fileurl.length > 0) {
         NSString *sandboxPath = NSHomeDirectory();
         NSString *path = [sandboxPath  stringByAppendingPathComponent:@"Documents"];//将Documents
         NSString *filePath = [path stringByAppendingPathComponent:@"GoHaier"];
         filePath = [filePath stringByAppendingPathComponent:@"files"];
-        NSString *newPath = [filePath stringByAppendingString:[NSString stringWithFormat:@"/%@",fileName]];
         NSFileManager *fileManager = [NSFileManager defaultManager];
         NSError *error;
+        if (![fileManager fileExistsAtPath:filePath]) {
+            [fileManager createDirectoryAtPath:filePath withIntermediateDirectories:YES attributes:nil error:&error];
+        }
+        NSString *newPath = [filePath stringByAppendingString:[NSString stringWithFormat:@"/%@",fileName]];
         [fileManager copyItemAtPath:fileurl toPath:newPath error:&error];
         if (!error) {
             [self respondToWeb:@{@"savedFilePath":newPath}];

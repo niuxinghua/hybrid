@@ -109,7 +109,6 @@
 - (void)webView:(WebView *)webView didFinishLoadForFrame:(WebFrame *)frame
 {
     if (webView != _webView) { return; }
-    [_webView ]
     if (![[webView stringByEvaluatingJavaScriptFromString:[_base webViewJavascriptCheckCommand]] isEqualToString:@"true"]) {
         [_base injectJavascriptFile:YES];
     }

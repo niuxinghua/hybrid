@@ -8,8 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		32E67C479746212551C850A5 /* libPods-GoHaier.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A98A894C959BAD7EB3B9720D /* libPods-GoHaier.a */; };
-		8B0D9D609964DD93AA714A63 /* hwork.zip in Resources */ = {isa = PBXBuildFile; fileRef = FF09E78AAB7ACFF4DA9C8BC2 /* hwork.zip */; };
 		E029015821DF8D0C00D5259C /* HaierH5ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E029015721DF8D0C00D5259C /* HaierH5ViewController.m */; };
+		E0432EA22243B6B30073D384 /* JSPatch.js in Resources */ = {isa = PBXBuildFile; fileRef = E0432E9F2243B6B20073D384 /* JSPatch.js */; };
+		E0432EA32243B6B30073D384 /* JPEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = E0432EA02243B6B30073D384 /* JPEngine.m */; };
 		E04A30C521E4708300F7EF5D /* PPNetworkHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = E04A30C121E4708300F7EF5D /* PPNetworkHelper.m */; };
 		E04A30C621E4708300F7EF5D /* PPNetworkCache.m in Sources */ = {isa = PBXBuildFile; fileRef = E04A30C421E4708300F7EF5D /* PPNetworkCache.m */; };
 		E04FBE2121AEA87600D2EAD3 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E04FBE1F21AEA85A00D2EAD3 /* JavaScriptCore.framework */; };
@@ -38,11 +39,11 @@
 		E080EEDF21AAE3A8006F2080 /* BarCodeRecongnizerHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = E080EEDE21AAE3A8006F2080 /* BarCodeRecongnizerHandler.m */; };
 		E080EEE321AAE55B006F2080 /* HaierQRScanView.m in Sources */ = {isa = PBXBuildFile; fileRef = E080EEE121AAE55B006F2080 /* HaierQRScanView.m */; };
 		E080EEE721AAE69D006F2080 /* HaierQRScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E080EEE521AAE69D006F2080 /* HaierQRScanViewController.m */; };
+		E08F172E22448A23002F0B64 /* HotFixManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E08F172D22448A23002F0B64 /* HotFixManager.m */; };
 		E0A9D1A121A7EC9A00FEA58D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E0A9D1A021A7EC9A00FEA58D /* AppDelegate.m */; };
 		E0A9D1A421A7EC9A00FEA58D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0A9D1A321A7EC9A00FEA58D /* ViewController.m */; };
 		E0A9D1A721A7EC9A00FEA58D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0A9D1A521A7EC9A00FEA58D /* Main.storyboard */; };
 		E0A9D1A921A7EC9D00FEA58D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0A9D1A821A7EC9D00FEA58D /* Assets.xcassets */; };
-		E0A9D1AC21A7EC9D00FEA58D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0A9D1AA21A7EC9D00FEA58D /* LaunchScreen.storyboard */; };
 		E0A9D1AF21A7EC9D00FEA58D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E0A9D1AE21A7EC9D00FEA58D /* main.m */; };
 		E0A9D1B921A7EC9D00FEA58D /* GoHaierTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E0A9D1B821A7EC9D00FEA58D /* GoHaierTests.m */; };
 		E0A9D1C421A7EC9D00FEA58D /* GoHaierUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = E0A9D1C321A7EC9D00FEA58D /* GoHaierUITests.m */; };
@@ -88,6 +89,7 @@
 		E0C160BA221FE08D00C5D3E6 /* NSDictionary+Safe.m in Sources */ = {isa = PBXBuildFile; fileRef = E0C160B5221FE08D00C5D3E6 /* NSDictionary+Safe.m */; };
 		E0C160BB221FE08D00C5D3E6 /* NSArray+Safe.m in Sources */ = {isa = PBXBuildFile; fileRef = E0C160B6221FE08D00C5D3E6 /* NSArray+Safe.m */; };
 		E0C160BC221FE08D00C5D3E6 /* NSObject+ImpChangeTool.m in Sources */ = {isa = PBXBuildFile; fileRef = E0C160B7221FE08D00C5D3E6 /* NSObject+ImpChangeTool.m */; };
+		E0D316282249B2000056260C /* hwork.zip in Resources */ = {isa = PBXBuildFile; fileRef = E0D316272249B1FF0056260C /* hwork.zip */; };
 		E0D3503D221A78BC0099E454 /* PageGoBackHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = E0D3503C221A78BC0099E454 /* PageGoBackHandler.m */; };
 		E0E8EFE821E2ECE300BF0434 /* UIBarButtonItem+UC.m in Sources */ = {isa = PBXBuildFile; fileRef = E0E8EFE621E2ECE200BF0434 /* UIBarButtonItem+UC.m */; };
 		E0E8EFEB21E2ED3900BF0434 /* UIColor+UC.m in Sources */ = {isa = PBXBuildFile; fileRef = E0E8EFEA21E2ED3900BF0434 /* UIColor+UC.m */; };
@@ -127,6 +129,9 @@
 		A98A894C959BAD7EB3B9720D /* libPods-GoHaier.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GoHaier.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E029015621DF8D0C00D5259C /* HaierH5ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HaierH5ViewController.h; sourceTree = "<group>"; };
 		E029015721DF8D0C00D5259C /* HaierH5ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HaierH5ViewController.m; sourceTree = "<group>"; };
+		E0432E9F2243B6B20073D384 /* JSPatch.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = JSPatch.js; sourceTree = "<group>"; };
+		E0432EA02243B6B30073D384 /* JPEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPEngine.m; sourceTree = "<group>"; };
+		E0432EA12243B6B30073D384 /* JPEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPEngine.h; sourceTree = "<group>"; };
 		E04A30C121E4708300F7EF5D /* PPNetworkHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPNetworkHelper.m; sourceTree = "<group>"; };
 		E04A30C221E4708300F7EF5D /* PPNetworkCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPNetworkCache.h; sourceTree = "<group>"; };
 		E04A30C321E4708300F7EF5D /* PPNetworkHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPNetworkHelper.h; sourceTree = "<group>"; };
@@ -181,6 +186,8 @@
 		E080EEE221AAE55B006F2080 /* HaierQRScanView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HaierQRScanView.h; sourceTree = "<group>"; };
 		E080EEE521AAE69D006F2080 /* HaierQRScanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HaierQRScanViewController.m; sourceTree = "<group>"; };
 		E080EEE621AAE69D006F2080 /* HaierQRScanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HaierQRScanViewController.h; sourceTree = "<group>"; };
+		E08F172C22448A23002F0B64 /* HotFixManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HotFixManager.h; sourceTree = "<group>"; };
+		E08F172D22448A23002F0B64 /* HotFixManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HotFixManager.m; sourceTree = "<group>"; };
 		E0A9D19C21A7EC9A00FEA58D /* GoHaier.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoHaier.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0A9D19F21A7EC9A00FEA58D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E0A9D1A021A7EC9A00FEA58D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -188,7 +195,6 @@
 		E0A9D1A321A7EC9A00FEA58D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		E0A9D1A621A7EC9A00FEA58D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E0A9D1A821A7EC9D00FEA58D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		E0A9D1AB21A7EC9D00FEA58D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E0A9D1AD21A7EC9D00FEA58D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E0A9D1AE21A7EC9D00FEA58D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E0A9D1B421A7EC9D00FEA58D /* GoHaierTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoHaierTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -273,6 +279,7 @@
 		E0C160B5221FE08D00C5D3E6 /* NSDictionary+Safe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Safe.m"; sourceTree = "<group>"; };
 		E0C160B6221FE08D00C5D3E6 /* NSArray+Safe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Safe.m"; sourceTree = "<group>"; };
 		E0C160B7221FE08D00C5D3E6 /* NSObject+ImpChangeTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+ImpChangeTool.m"; sourceTree = "<group>"; };
+		E0D316272249B1FF0056260C /* hwork.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; name = hwork.zip; path = H5/hwork.zip; sourceTree = SOURCE_ROOT; };
 		E0D3503B221A78BC0099E454 /* PageGoBackHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PageGoBackHandler.h; sourceTree = "<group>"; };
 		E0D3503C221A78BC0099E454 /* PageGoBackHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PageGoBackHandler.m; sourceTree = "<group>"; };
 		E0E8EFE621E2ECE200BF0434 /* UIBarButtonItem+UC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+UC.m"; sourceTree = "<group>"; };
@@ -301,7 +308,6 @@
 		E0FC615F21AAD2030018AA61 /* ViewControllerUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewControllerUtil.m; sourceTree = "<group>"; };
 		E0FC616421AADB350018AA61 /* PhotoTakerHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoTakerHandler.h; sourceTree = "<group>"; };
 		E0FC616521AADB350018AA61 /* PhotoTakerHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotoTakerHandler.m; sourceTree = "<group>"; };
-		FF09E78AAB7ACFF4DA9C8BC2 /* hwork.zip */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.zip; path = hwork.zip; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -334,7 +340,7 @@
 		08E56BCFD77A69A895C0FA0D /* H5 */ = {
 			isa = PBXGroup;
 			children = (
-				FF09E78AAB7ACFF4DA9C8BC2 /* hwork.zip */,
+				E0D316272249B1FF0056260C /* hwork.zip */,
 			);
 			name = H5;
 			path = ./H5;
@@ -347,6 +353,16 @@
 				4ADB11AD7ED6A8317D47B73E /* Pods-GoHaier.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		E0432E9E2243B6A30073D384 /* JsPatch */ = {
+			isa = PBXGroup;
+			children = (
+				E0432EA12243B6B30073D384 /* JPEngine.h */,
+				E0432EA02243B6B30073D384 /* JPEngine.m */,
+				E0432E9F2243B6B20073D384 /* JSPatch.js */,
+			);
+			path = JsPatch;
 			sourceTree = "<group>";
 		};
 		E04A30C021E4708300F7EF5D /* PPNetworkHelper */ = {
@@ -480,6 +496,7 @@
 		E0A9D19E21A7EC9A00FEA58D /* GoHaier */ = {
 			isa = PBXGroup;
 			children = (
+				E0432E9E2243B6A30073D384 /* JsPatch */,
 				E0FC615D21AAD1DE0018AA61 /* CoreUtil */,
 				E0FC615621AAC92B0018AA61 /* Const */,
 				E0FC615221AABE030018AA61 /* CoreModule */,
@@ -491,7 +508,6 @@
 				E0A9D1A321A7EC9A00FEA58D /* ViewController.m */,
 				E0A9D1A521A7EC9A00FEA58D /* Main.storyboard */,
 				E0A9D1A821A7EC9D00FEA58D /* Assets.xcassets */,
-				E0A9D1AA21A7EC9D00FEA58D /* LaunchScreen.storyboard */,
 				E0A9D1AD21A7EC9D00FEA58D /* Info.plist */,
 				E0A9D1AE21A7EC9D00FEA58D /* main.m */,
 			);
@@ -738,6 +754,8 @@
 				E0FC615421AABE1E0018AA61 /* HaierCoreWebView.m */,
 				E029015621DF8D0C00D5259C /* HaierH5ViewController.h */,
 				E029015721DF8D0C00D5259C /* HaierH5ViewController.m */,
+				E08F172C22448A23002F0B64 /* HotFixManager.h */,
+				E08F172D22448A23002F0B64 /* HotFixManager.m */,
 			);
 			path = WebView;
 			sourceTree = "<group>";
@@ -801,7 +819,6 @@
 				E0A9D19821A7EC9A00FEA58D /* Sources */,
 				E0A9D19921A7EC9A00FEA58D /* Frameworks */,
 				E0A9D19A21A7EC9A00FEA58D /* Resources */,
-				F4634F7621C23B40CF81D015 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -895,12 +912,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0432EA22243B6B30073D384 /* JSPatch.js in Resources */,
+				E0D316282249B2000056260C /* hwork.zip in Resources */,
 				E0FC614D21AABBD10018AA61 /* WebViewJavascriptBridge.js.txt in Resources */,
-				E0A9D1AC21A7EC9D00FEA58D /* LaunchScreen.storyboard in Resources */,
 				E0A9D1A921A7EC9D00FEA58D /* Assets.xcassets in Resources */,
 				E0588095221E4D130030CBA5 /* KDPermission.bundle in Resources */,
 				E0A9D1A721A7EC9A00FEA58D /* Main.storyboard in Resources */,
-				8B0D9D609964DD93AA714A63 /* hwork.zip in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -939,24 +956,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F4634F7621C23B40CF81D015 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-GoHaier/Pods-GoHaier-resources.sh",
-				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GoHaier/Pods-GoHaier-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -989,6 +988,7 @@
 				E0B8C99921BF8C16004CD6CC /* LocationHandler.m in Sources */,
 				E0573FC7222637C40010FE8F /* MakeCallHandler.m in Sources */,
 				E04A30C621E4708300F7EF5D /* PPNetworkCache.m in Sources */,
+				E0432EA32243B6B30073D384 /* JPEngine.m in Sources */,
 				E079618F21D378B500564F83 /* VersionController.m in Sources */,
 				E0FC615521AABE1E0018AA61 /* HaierCoreWebView.m in Sources */,
 				E080EEE721AAE69D006F2080 /* HaierQRScanViewController.m in Sources */,
@@ -1005,6 +1005,7 @@
 				E0573FC4222634CA0010FE8F /* ClearStorage.m in Sources */,
 				E0B8C9B021BFA736004CD6CC /* compress.c in Sources */,
 				E0C160BA221FE08D00C5D3E6 /* NSDictionary+Safe.m in Sources */,
+				E08F172E22448A23002F0B64 /* HotFixManager.m in Sources */,
 				E0B8C98521BF5DB7004CD6CC /* ioapi.c in Sources */,
 				E0FC616021AAD2030018AA61 /* ViewControllerUtil.m in Sources */,
 				E0573FC12226342E0010FE8F /* ClearStorageSync.m in Sources */,
@@ -1090,14 +1091,6 @@
 				E0A9D1A621A7EC9A00FEA58D /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		E0A9D1AA21A7EC9D00FEA58D /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E0A9D1AB21A7EC9D00FEA58D /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -1218,19 +1211,20 @@
 			baseConfigurationReference = 97CA5734BC39FAD7AEB74024 /* Pods-GoHaier.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: moreccommunity@foxmail.com (95K27JU97C)";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 6MFHUAAY76;
 				INFOPLIST_FILE = GoHaier/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.haier.imapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.morec.fisher;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "95bff849-f2ef-4999-93d1-6401b9d53cbf";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = morec.fisher;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1240,7 +1234,8 @@
 			baseConfigurationReference = 4ADB11AD7ED6A8317D47B73E /* Pods-GoHaier.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: moreccommunity@foxmail.com (95K27JU97C)";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = GoHaier/Info.plist;
@@ -1249,7 +1244,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.haier.imapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.morec.fisher;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "95bff849-f2ef-4999-93d1-6401b9d53cbf";
 				PROVISIONING_PROFILE_SPECIFIER = "";

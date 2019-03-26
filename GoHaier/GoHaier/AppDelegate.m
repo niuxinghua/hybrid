@@ -9,6 +9,8 @@
 #import "AppDelegate.h"
 #import "PAirSandbox.h"
 #import "VersionController.h"
+#import <UMCommon/UMCommon.h>
+#import "HotFixManager.h"
 @interface AppDelegate ()
 
 @end
@@ -23,7 +25,16 @@
         [[PAirSandbox sharedInstance] enableSwipe];
     });
 #endif
+//    NSArray *arr = @[];
+//    NSString *f = [arr objectAtIndex:1];
     [[VersionController sharedInstance] updataAll];
+    
+    //初始化友盟统计sdk,这里面的appkey得在打包的时候动态打进来
+    
+    [UMConfigure initWithAppkey:@"5c85d1bb61f5649846000565" channel:nil];
+
+    [[HotFixManager sharedManager] setUp];
+    
     return YES;
 }
 

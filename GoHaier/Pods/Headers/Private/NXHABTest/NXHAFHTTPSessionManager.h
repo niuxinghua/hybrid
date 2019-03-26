@@ -1,1 +1,0 @@
-../../../NXHABTest/source/NXHAFHTTPSessionManager.h

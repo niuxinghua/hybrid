@@ -24,8 +24,7 @@ static RemoveSavedFileHandler *sharedInstance;
 - (void)handlerMethod:(id)data
 {
     NSLog(@"handler key %@ method called",[self handlerKey]);
-    NSDictionary *dic = (NSDictionary *)data;
-    NSString *fileurl = [dic objectForKey:@"filePath"];
+    NSString *fileurl = (NSString *)data;
     if (fileurl && fileurl.length > 0) {
         NSFileManager *fileManager = [NSFileManager defaultManager];
         NSError *error;

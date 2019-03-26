@@ -27,9 +27,15 @@ static SetStorageHandler *sharedInstance;
     NSDictionary *syncDic = (NSDictionary *)data;
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         if (syncDic && syncDic.allKeys.count > 0) {
-            NSString *key = syncDic.allKeys.firstObject;
-            [[NSUserDefaults standardUserDefaults] setObject:[syncDic objectForKey:key] forKey:key];
-            [[NSUserDefaults standardUserDefaults] synchronize];
+            if([syncDic.allKeys containsObject:@"key"] && [syncDic.allKeys containsObject:@"value"])
+            {
+                NSString *key = [syncDic objectForKey:@"key"];
+                NSString *value = [syncDic objectForKey:@"value"];
+                [[NSUserDefaults standardUserDefaults] setObject:value forKey:key];
+                [[NSUserDefaults standardUserDefaults] synchronize];
+                [self respondToWeb:@{}];
+
+        }
         }
     });
     

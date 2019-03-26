@@ -1,7 +1,7 @@
 # 获取描述文件的uuid并将描述文件copy到系统，前提将系统解锁
+basepath=$(cd `dirname $0`; pwd)
 rm -rf build
 rm -f GoHaierProvision.plist
-basedir=`cd $(dirname $0); pwd -P`
 #获取输入变量
 #macmini的password  5324nxh050622
 ruby projectreference.ruby
@@ -13,20 +13,35 @@ p12Name=$2
 P12_Path="p12file/${p12Name}.p12"
 echo "${P12_Path}"
 
+p12Password=$3
+echo "${p12Password}"
 #provision文件的名字 #COSMOIM
-mobileprovisionName=$3
+mobileprovisionName=$4
 echo "${mobileprovisionName}"
 
 # BundleID com.haier.imapp
-mobileBundleId=$4
+mobileBundleId=$5
 echo "${mobileBundleId}"
+
+bundleName=$6
+echo "${bundleName}"
+
+bundleVersion=$7
+echo "${bundleVersion}"
+
+isRelease=$8
+echo "${isRelease}"
+
+widgetVersion=$9
+echo "${widgetVersion}"
+
 
 #provisionfile 文件
 mobileprovision_file="provisionfile/${mobileprovisionName}.mobileprovision"
 echo "${mobileprovision_file}"
-
 security unlock-keychain -p ${macPassword}     ~/Library/Keychains/login.keychain
-security import ${P12_Path} -k ~/Library/Keychains/login.keychain -P haierios -T /usr/bin/codesign
+security import ${P12_Path} -k ~/Library/Keychains/login.keychain -P ${p12Password} -T /usr/bin/codesign
+security set-key-partition-list -S apple-tool:,apple:,codesign: -s -k ${macPassword} ~/Library/Keychains/login.keychain-db
 
 
 
@@ -46,8 +61,300 @@ echo "${code_sign}"
 
 cp ${mobileprovision_file} ~/Library/MobileDevice/Provisioning\ Profiles/$provision_UUID.mobileprovision
 
+
+#修改安装后显示的名字
+infoplist="${basepath}/GoHaier/Info.plist"
+
+
+sudo -S /usr/libexec/PlistBuddy -c "Set 'CFBundleName' $bundleName" $infoplist <<EOF
+${macPassword}
+EOF
+
+sudo -S /usr/libexec/PlistBuddy -c "Set 'CFBundleShortVersionString' $bundleVersion" $infoplist <<EOF
+${macPassword}
+EOF
+
+echo "${infoplist}"
+
+sudo -S /usr/libexec/PlistBuddy -c "Set 'WidgetVersion' $widgetVersion" $infoplist <<EOF
+${macPassword}
+EOF
+
+echo "${widgetVersion}"
+
+
+#需要将icon进行替换
+# 输出icon的目录
+
+icon_path="${basepath}/appIcons"
+# 1024 icon 特别处理
+icon_1024_path="${icon_path}/icon-1024.png"
+
+icon_asset_path="${basepath}/GoHaier/Assets.xcassets/AppIcon.appiconset"
+
+echo "${icon_1024_path}"
+if [ ! -f "$icon_1024_path" ]; then
+echo"icon不存在"
+else
+sips -s format png ${image_path} --out ${icon_1024_path} > /dev/null 2>&1
+[ $? -eq 0 ] && echo -e "info:\tresize copy 1024 successfully." || echo -e "info:\tresize copy 1024 failed."
+
+sips -z 1024 1024 ${icon_1024_path} > /dev/null 2>&1
+[ $? -eq 0 ] && echo -e "info:\tresize 1024 successfully." || echo -e "info:\tresize 1024 failed."
+
+prev_size_path=${icon_1024_path} #用于复制小图，减少内存消耗
+# 需要生成的图标尺寸
+icons=(180 167 152 120 87 80 60 58 40)
+for size in ${icons[@]}
+do
+size_path="${icon_path}/icon-${size}.png"
+cp ${prev_size_path} ${size_path}
+prev_size_path=${size_path}
+sips -Z $size ${size_path} > /dev/null 2>&1
+[ $? -eq 0 ] && echo -e "info:\tresize ${size} successfully." || echo -e "info:\tresize ${size} failed."
+done
+
+
+contents_json_path="${icon_path}/Contents.json"
+# 生成图标对应的配置文件
+echo '{
+"images" : [
+{
+"size" : "20x20",
+"idiom" : "iphone",
+"filename" : "icon-40.png",
+"scale" : "2x"
+},
+{
+"size" : "20x20",
+"idiom" : "iphone",
+"filename" : "icon-60.png",
+"scale" : "3x"
+},
+{
+"size" : "29x29",
+"idiom" : "iphone",
+"filename" : "icon-58.png",
+"scale" : "2x"
+},
+{
+"size" : "29x29",
+"idiom" : "iphone",
+"filename" : "icon-87.png",
+"scale" : "3x"
+},
+{
+"size" : "40x40",
+"idiom" : "iphone",
+"filename" : "icon-80.png",
+"scale" : "2x"
+},
+{
+"size" : "40x40",
+"idiom" : "iphone",
+"filename" : "icon-120.png",
+"scale" : "3x"
+},
+{
+"size" : "60x60",
+"idiom" : "iphone",
+"filename" : "icon-120.png",
+"scale" : "2x"
+},
+{
+"size" : "60x60",
+"idiom" : "iphone",
+"filename" : "icon-180.png",
+"scale" : "3x"
+},
+{
+"idiom" : "ipad",
+"size" : "20x20",
+"scale" : "1x"
+},
+{
+"size" : "20x20",
+"idiom" : "ipad",
+"filename" : "icon-40.png",
+"scale" : "2x"
+},
+{
+"idiom" : "ipad",
+"size" : "29x29",
+"scale" : "1x"
+},
+{
+"size" : "29x29",
+"idiom" : "ipad",
+"filename" : "icon-58.png",
+"scale" : "2x"
+},
+{
+"idiom" : "ipad",
+"size" : "40x40",
+"scale" : "1x"
+},
+{
+"size" : "40x40",
+"idiom" : "ipad",
+"filename" : "icon-80.png",
+"scale" : "2x"
+},
+{
+"idiom" : "ipad",
+"size" : "76x76",
+"scale" : "1x"
+},
+{
+"size" : "76x76",
+"idiom" : "ipad",
+"filename" : "icon-152.png",
+"scale" : "2x"
+},
+{
+"size" : "83.5x83.5",
+"idiom" : "ipad",
+"filename" : "icon-167.png",
+"scale" : "2x"
+},
+{
+"size" : "1024x1024",
+"idiom" : "ios-marketing",
+"filename" : "icon-1024.png",
+"scale" : "1x"
+}
+],
+"info" : {
+"version" : 1,
+"author" : "xcode"
+}
+}' > ${contents_json_path}
+
+
+#将所有的文件copy到xcassets目录下
+echo $icon_asset_path
+sudo -S rm -rf $icon_asset_path <<EOF
+${macPassword}
+EOF
+sudo -S cp -r $icon_path $icon_asset_path <<EOF
+${macPassword}
+EOF
+#echo "${macPassword}"|sudo rm -rf $icon_asset_path
+#echo "${macPassword}"|sudo cp -r $icon_path $icon_asset_path
+
+fi
+
+
+#设置launchimage
+launch_path="${basepath}/launchImages"
+# 1024 icon 特别处理
+launchimage_path="${launch_path}/launch.png"
+
+launch_asset_path="${basepath}/GoHaier/Assets.xcassets/LaunchImage.launchimage"
+
+if [ ! -f "$launchimage_path" ]; then
+echo"launchimage不存在"
+else
+#launchs=(LaunchImage-700-568h@2x.png LaunchImage-800-667h@2x.png LaunchImage-1200-Portrait-1792h@2x.png LaunchImage-1100-Portrait-2436h@3x.png LaunchImage-800-Portrait-736h@3x.png LaunchImage-1200-Portrait-2688h@3x.png)
+
+sips -z 960 640 launchImages/launch.png --out launchImages/Default@2x.png
+sips -z 1136 640 launchImages/launch.png --out launchImages/Default-568h@2x.png
+sips -z 1334 750 launchImages/launch.png --out launchImages/LaunchImage-800-667h@2x.png
+sips -z 1792 828 launchImages/launch.png --out launchImages/LaunchImage_1792x828.png
+sips -z 2208 1242 launchImages/launch.png --out launchImages/LaunchImage-800-Portrait-736h@3x.png
+sips -z 2436 1125 launchImages/launch.png --out launchImages/LaunchImage_2436x1125.png
+sips -z 2688 1242 launchImages/launch.png --out launchImages/LaunchImage_2688x1242.png
+launchimage_json_path="${launch_path}/Contents.json"
+# 生成图标对应的配置文件
+echo '{
+"images" : [
+{
+"extent" : "full-screen",
+"idiom" : "iphone",
+"subtype" : "2688h",
+"filename" : "LaunchImage_2688x1242.png",
+"minimum-system-version" : "12.0",
+"orientation" : "portrait",
+"scale" : "3x"
+},
+{
+"extent" : "full-screen",
+"idiom" : "iphone",
+"subtype" : "1792h",
+"filename" : "LaunchImage_1792x828.png",
+"minimum-system-version" : "12.0",
+"orientation" : "portrait",
+"scale" : "2x"
+},
+{
+"extent" : "full-screen",
+"idiom" : "iphone",
+"subtype" : "2436h",
+"filename" : "LaunchImage_2436x1125.png",
+"minimum-system-version" : "11.0",
+"orientation" : "portrait",
+"scale" : "3x"
+},
+{
+"extent" : "full-screen",
+"idiom" : "iphone",
+"subtype" : "736h",
+"filename" : "LaunchImage-800-Portrait-736h@3x.png",
+"minimum-system-version" : "8.0",
+"orientation" : "portrait",
+"scale" : "3x"
+},
+
+{
+"extent" : "full-screen",
+"idiom" : "iphone",
+"subtype" : "667h",
+"filename" : "LaunchImage-800-667h@2x.png",
+"minimum-system-version" : "8.0",
+"orientation" : "portrait",
+"scale" : "2x"
+},
+{
+"orientation" : "portrait",
+"idiom" : "iphone",
+"filename" : "Default@2x.png",
+"extent" : "full-screen",
+"minimum-system-version" : "7.0",
+"scale" : "2x"
+},
+{
+"extent" : "full-screen",
+"idiom" : "iphone",
+"subtype" : "retina4",
+"filename" : "Default-568h@2x.png",
+"minimum-system-version" : "7.0",
+"orientation" : "portrait",
+"scale" : "2x"
+}
+],
+"info" : {
+"version" : 1,
+"author" : "xcode"
+}
+}' > ${launchimage_json_path}
+
+#将所有的文件copy到xcassets目录下
+sudo -S rm -rf $launch_asset_path <<EOF
+${macPassword}
+EOF
+sudo -S cp -r $launch_path $launch_asset_path <<EOF
+${macPassword}
+EOF
+
+fi
+
+
+
+
+
+
 #开始编译打包
-xcodebuild -workspace "GoHaier.xcworkspace" -scheme "GoHaier" -configuration Release -archivePath build/GoHaier.xcarchive clean archive build CODE_SIGN_IDENTITY="${code_sign}" PROVISIONING_PROFILE="${provision_UUID}" PRODUCT_BUNDLE_IDENTIFIER="${mobileBundleId}"
+xcodebuild -workspace "GoHaier.xcworkspace" -scheme "GoHaier" -configuration Release -archivePath build/GoHaier.xcarchive clean archive build CODE_SIGN_IDENTITY="${code_sign}" PROVISIONING_PROFILE="${provision_UUID}" PRODUCT_BUNDLE_IDENTIFIER="${mobileBundleId}" -quiet
 echo "${buildResult}"
 
 
@@ -58,14 +365,14 @@ echo "${buildResult}"
 /usr/libexec/PlistBuddy -c "Delete:provisioningProfiles" Export.plist
 /usr/libexec/PlistBuddy -c "Add provisioningProfiles:${mobileBundleId} string ${provision_name}" Export.plist
 #默认是先走企业版的证书(集团内大多数应用走这个发版)
+if [ "$isRelease"x = "release"x ];then
+echo "release"
 /usr/libexec/PlistBuddy -c "Set method enterprise" Export.plist
-
-
 #导出ipa
 xcodebuild  -exportArchive \
 -archivePath build/GoHaier.xcarchive \
 -exportPath build/GoHaier.ipa \
--exportOptionsPlist  Export.plist\
+-exportOptionsPlist  Export.plist \
 
 #没打出包来可能是证书不是企业版那么 再d导出一个个人版本的
 if [ ! -d build/GoHaier.ipa ];
@@ -76,6 +383,18 @@ echo "打包appstore版本"
 xcodebuild  -exportArchive \
 -archivePath build/GoHaier.xcarchive \
 -exportPath build/GoHaier.ipa \
--exportOptionsPlist  Export.plist\
+-exportOptionsPlist  Export.plist \
 
 fi
+else
+#测试版本
+echo "打包个人版的adhoc版本"
+/usr/libexec/PlistBuddy -c "Set method ad-hoc" Export.plist
+
+xcodebuild  -exportArchive \
+-archivePath build/GoHaier.xcarchive \
+-exportPath build/GoHaier.ipa \
+-exportOptionsPlist  Export.plist \
+
+fi
+
