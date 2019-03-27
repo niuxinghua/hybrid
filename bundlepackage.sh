@@ -23,32 +23,6 @@ zip -r dist.zip ./*
 mv dist.zip ../../
 cd ..
 cd ..
-#upload zip to oss
-#host="oss-cn-qingdao.aliyuncs.com"
-#bucket="haier-app"
-#Id="LTAI64QvASkwjtZ5"
-#Key="BsmKXwL6ftZexfS3BLsTTFL5NfyA6s"
-#method="PUT"
-#source=dist.zip
-#dest=hwork/dist.zip
-#osshost=$bucket.$host
-#
-#resource="${dest}"
-#contentType="application/x-zip-compressed"
-#dateValue="`TZ=GMT env LANG=en_US.UTF-8 date +'%a, %d %b %Y %H:%M:%S GMT'`"
-#echo "${dateValue}"
-#stringToSign="${method}\n\n${contentType}\n${dateValue}\n${resource}"
-#echo "${stringToSign}"
-#
-#signature=`echo -en ${stringToSign} | openssl sha1 -hmac ${Key} -binary | base64`
-#url=http://${host}/${resource}
-#echo "upload ${source} to ${url}"
-#curl -i -q -X PUT -T "${source}" \
-#-H "Host: ${osshost}" \
-#-H "Date: ${dateValue}" \
-#-H "Content-Type: ${contentType}" \
-#-H "Authorization: OSS ${Id}:${signature}" \
-#${url}
 s=`python3 upload.py "dist.zip" "hwork" "dist.zip"`
 #python3 upload.py "hwork" "dist.zip"
 echo "${s}"
