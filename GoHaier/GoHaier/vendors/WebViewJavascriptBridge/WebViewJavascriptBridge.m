@@ -8,6 +8,9 @@
 
 #import "WebViewJavascriptBridge.h"
 #import "HaierCoreWebView.h"
+#import <UMAnalytics/MobClick.h>
+#import "UMAnalyticsModule.h"
+#import "SingleWebviewViewController.h"
 #if __has_feature(objc_arc_weak)
     #define WVJB_WEAK __weak
 #else
@@ -218,6 +221,29 @@
     if (webView != _webView) { return YES; }
     [_webView weblogToNative:[request.URL absoluteString]];
 
+    
+    //处理内部链接等
+    if (([[[request URL] scheme] isEqualToString: @"http"] || [[[request URL] scheme] isEqualToString:@"https"])
+        && (navigationType == UIWebViewNavigationTypeLinkClicked)) {
+   
+        if ([SingleWebviewViewController showSelfWith:[request URL].absoluteString]) {
+            return NO;
+        }
+        
+    }
+    
+    
+    
+    
+    //友盟埋点方法
+    NSString * murl = [[request URL] absoluteString];
+    NSString *parameters = [murl stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    if ([UMAnalyticsModule execute:parameters webView:webView]) {
+        return NO;
+    }
+    
+    
+    
     NSURL *url = [request URL];
     __strong WVJB_WEBVIEW_DELEGATE_TYPE* strongDelegate = _webViewDelegate;
     if ([_base isCorrectProcotocolScheme:url]) {

@@ -15,6 +15,7 @@
 #import "SSZipArchive.h"
 #import "HaierH5ViewController.h"
 #import "VersionController.h"
+#import <UMAnalytics/MobClick.h>
 @interface ViewController ()<UIWebViewDelegate>
 @property(nonatomic,strong)HaierCoreWebView *webView;
 @property(nonatomic,copy)NSString * patchUrl;
@@ -38,6 +39,7 @@
 
 - (void)showContent
 {
+    [MobClick event:@"mintUI"];
     [HaierH5ViewController showContentWithAPPName:@"hwork" navigationMode:NO fullScreenMode:YES animated:YES titleName:@"hwork" rootController:self pageName:@"index.html"];
 }
 

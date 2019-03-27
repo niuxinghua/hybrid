@@ -10,7 +10,9 @@
 #import "PAirSandbox.h"
 #import "VersionController.h"
 #import <UMCommon/UMCommon.h>
+#import <UMAnalytics/MobClick.h>
 #import "HotFixManager.h"
+#import "UMCommonModule.h"
 @interface AppDelegate ()
 
 @end
@@ -31,8 +33,14 @@
     
     //初始化友盟统计sdk,这里面的appkey得在打包的时候动态打进来
     
-    [UMConfigure initWithAppkey:@"5c85d1bb61f5649846000565" channel:nil];
+   // [UMConfigure initWithAppkey:@"5c85d1bb61f5649846000565" channel:nil];
 
+    //以下是配成友盟hybrid模式
+    [UMConfigure setLogEnabled:YES]; // 开发调试时可在console查看友盟 志显示,发布产
+    [MobClick setScenarioType:E_UM_NORMAL];
+    [UMCommonModule initWithAppkey:@"5c85d1bb61f5649846000565" channel:nil];
+    
+    
     [[HotFixManager sharedManager] setUp];
     
     return YES;

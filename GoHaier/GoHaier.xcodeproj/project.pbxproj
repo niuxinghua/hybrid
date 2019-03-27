@@ -39,6 +39,9 @@
 		E080EEDF21AAE3A8006F2080 /* BarCodeRecongnizerHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = E080EEDE21AAE3A8006F2080 /* BarCodeRecongnizerHandler.m */; };
 		E080EEE321AAE55B006F2080 /* HaierQRScanView.m in Sources */ = {isa = PBXBuildFile; fileRef = E080EEE121AAE55B006F2080 /* HaierQRScanView.m */; };
 		E080EEE721AAE69D006F2080 /* HaierQRScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E080EEE521AAE69D006F2080 /* HaierQRScanViewController.m */; };
+		E08CB159224A62CE00E3390E /* UMCommonModule.m in Sources */ = {isa = PBXBuildFile; fileRef = E08CB157224A62CE00E3390E /* UMCommonModule.m */; };
+		E08CB15A224A62CE00E3390E /* UMAnalyticsModule.m in Sources */ = {isa = PBXBuildFile; fileRef = E08CB158224A62CE00E3390E /* UMAnalyticsModule.m */; };
+		E08CB15C224A636600E3390E /* UMAnalytics.js in Resources */ = {isa = PBXBuildFile; fileRef = E08CB15B224A636600E3390E /* UMAnalytics.js */; };
 		E08F172E22448A23002F0B64 /* HotFixManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E08F172D22448A23002F0B64 /* HotFixManager.m */; };
 		E0A9D1A121A7EC9A00FEA58D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E0A9D1A021A7EC9A00FEA58D /* AppDelegate.m */; };
 		E0A9D1A421A7EC9A00FEA58D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0A9D1A321A7EC9A00FEA58D /* ViewController.m */; };
@@ -89,11 +92,11 @@
 		E0C160BA221FE08D00C5D3E6 /* NSDictionary+Safe.m in Sources */ = {isa = PBXBuildFile; fileRef = E0C160B5221FE08D00C5D3E6 /* NSDictionary+Safe.m */; };
 		E0C160BB221FE08D00C5D3E6 /* NSArray+Safe.m in Sources */ = {isa = PBXBuildFile; fileRef = E0C160B6221FE08D00C5D3E6 /* NSArray+Safe.m */; };
 		E0C160BC221FE08D00C5D3E6 /* NSObject+ImpChangeTool.m in Sources */ = {isa = PBXBuildFile; fileRef = E0C160B7221FE08D00C5D3E6 /* NSObject+ImpChangeTool.m */; };
-		E0D316282249B2000056260C /* hwork.zip in Resources */ = {isa = PBXBuildFile; fileRef = E0D316272249B1FF0056260C /* hwork.zip */; };
 		E0D3503D221A78BC0099E454 /* PageGoBackHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = E0D3503C221A78BC0099E454 /* PageGoBackHandler.m */; };
 		E0E8EFE821E2ECE300BF0434 /* UIBarButtonItem+UC.m in Sources */ = {isa = PBXBuildFile; fileRef = E0E8EFE621E2ECE200BF0434 /* UIBarButtonItem+UC.m */; };
 		E0E8EFEB21E2ED3900BF0434 /* UIColor+UC.m in Sources */ = {isa = PBXBuildFile; fileRef = E0E8EFEA21E2ED3900BF0434 /* UIColor+UC.m */; };
 		E0F425B021EDCED20021D742 /* PageMangementHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = E0F425AF21EDCED20021D742 /* PageMangementHandler.m */; };
+		E0F58656224B5593001F62E9 /* SingleWebviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0F58655224B5593001F62E9 /* SingleWebviewViewController.m */; };
 		E0F6C53121AB9EA2008AF5C0 /* BaseHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = E0F6C53021AB9EA2008AF5C0 /* BaseHandler.m */; };
 		E0FC614A21AABBD10018AA61 /* WebViewJavascriptBridgeBase.m in Sources */ = {isa = PBXBuildFile; fileRef = E0FC614321AABBD10018AA61 /* WebViewJavascriptBridgeBase.m */; };
 		E0FC614B21AABBD10018AA61 /* WKWebViewJavascriptBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = E0FC614421AABBD10018AA61 /* WKWebViewJavascriptBridge.m */; };
@@ -104,6 +107,7 @@
 		E0FC615C21AACFB00018AA61 /* ImagePickerHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = E0FC615B21AACFB00018AA61 /* ImagePickerHandler.m */; };
 		E0FC616021AAD2030018AA61 /* ViewControllerUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = E0FC615F21AAD2030018AA61 /* ViewControllerUtil.m */; };
 		E0FC616621AADB350018AA61 /* PhotoTakerHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = E0FC616521AADB350018AA61 /* PhotoTakerHandler.m */; };
+		F89E559DFA63C29688923D2F /* hwork.zip in Resources */ = {isa = PBXBuildFile; fileRef = 78CC0AE353F3FD434CBD7754 /* hwork.zip */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -125,6 +129,7 @@
 
 /* Begin PBXFileReference section */
 		4ADB11AD7ED6A8317D47B73E /* Pods-GoHaier.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoHaier.release.xcconfig"; path = "Pods/Target Support Files/Pods-GoHaier/Pods-GoHaier.release.xcconfig"; sourceTree = "<group>"; };
+		78CC0AE353F3FD434CBD7754 /* hwork.zip */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.zip; path = hwork.zip; sourceTree = "<group>"; };
 		97CA5734BC39FAD7AEB74024 /* Pods-GoHaier.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoHaier.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GoHaier/Pods-GoHaier.debug.xcconfig"; sourceTree = "<group>"; };
 		A98A894C959BAD7EB3B9720D /* libPods-GoHaier.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GoHaier.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E029015621DF8D0C00D5259C /* HaierH5ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HaierH5ViewController.h; sourceTree = "<group>"; };
@@ -186,6 +191,11 @@
 		E080EEE221AAE55B006F2080 /* HaierQRScanView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HaierQRScanView.h; sourceTree = "<group>"; };
 		E080EEE521AAE69D006F2080 /* HaierQRScanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HaierQRScanViewController.m; sourceTree = "<group>"; };
 		E080EEE621AAE69D006F2080 /* HaierQRScanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HaierQRScanViewController.h; sourceTree = "<group>"; };
+		E08CB155224A62CE00E3390E /* UMAnalyticsModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMAnalyticsModule.h; sourceTree = "<group>"; };
+		E08CB156224A62CE00E3390E /* UMCommonModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMCommonModule.h; sourceTree = "<group>"; };
+		E08CB157224A62CE00E3390E /* UMCommonModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UMCommonModule.m; sourceTree = "<group>"; };
+		E08CB158224A62CE00E3390E /* UMAnalyticsModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UMAnalyticsModule.m; sourceTree = "<group>"; };
+		E08CB15B224A636600E3390E /* UMAnalytics.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = UMAnalytics.js; sourceTree = "<group>"; };
 		E08F172C22448A23002F0B64 /* HotFixManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HotFixManager.h; sourceTree = "<group>"; };
 		E08F172D22448A23002F0B64 /* HotFixManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HotFixManager.m; sourceTree = "<group>"; };
 		E0A9D19C21A7EC9A00FEA58D /* GoHaier.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoHaier.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -279,7 +289,6 @@
 		E0C160B5221FE08D00C5D3E6 /* NSDictionary+Safe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Safe.m"; sourceTree = "<group>"; };
 		E0C160B6221FE08D00C5D3E6 /* NSArray+Safe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Safe.m"; sourceTree = "<group>"; };
 		E0C160B7221FE08D00C5D3E6 /* NSObject+ImpChangeTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+ImpChangeTool.m"; sourceTree = "<group>"; };
-		E0D316272249B1FF0056260C /* hwork.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; name = hwork.zip; path = H5/hwork.zip; sourceTree = SOURCE_ROOT; };
 		E0D3503B221A78BC0099E454 /* PageGoBackHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PageGoBackHandler.h; sourceTree = "<group>"; };
 		E0D3503C221A78BC0099E454 /* PageGoBackHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PageGoBackHandler.m; sourceTree = "<group>"; };
 		E0E8EFE621E2ECE200BF0434 /* UIBarButtonItem+UC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+UC.m"; sourceTree = "<group>"; };
@@ -288,6 +297,9 @@
 		E0E8EFEA21E2ED3900BF0434 /* UIColor+UC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+UC.m"; sourceTree = "<group>"; };
 		E0F425AE21EDCED20021D742 /* PageMangementHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PageMangementHandler.h; sourceTree = "<group>"; };
 		E0F425AF21EDCED20021D742 /* PageMangementHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PageMangementHandler.m; sourceTree = "<group>"; };
+		E0F58652224B1AE7001F62E9 /* GoHaier.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GoHaier.entitlements; sourceTree = "<group>"; };
+		E0F58654224B5593001F62E9 /* SingleWebviewViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SingleWebviewViewController.h; sourceTree = "<group>"; };
+		E0F58655224B5593001F62E9 /* SingleWebviewViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SingleWebviewViewController.m; sourceTree = "<group>"; };
 		E0F6C52F21AB9EA2008AF5C0 /* BaseHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseHandler.h; sourceTree = "<group>"; };
 		E0F6C53021AB9EA2008AF5C0 /* BaseHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseHandler.m; sourceTree = "<group>"; };
 		E0FC614321AABBD10018AA61 /* WebViewJavascriptBridgeBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewJavascriptBridgeBase.m; sourceTree = "<group>"; };
@@ -340,7 +352,7 @@
 		08E56BCFD77A69A895C0FA0D /* H5 */ = {
 			isa = PBXGroup;
 			children = (
-				E0D316272249B1FF0056260C /* hwork.zip */,
+				78CC0AE353F3FD434CBD7754 /* hwork.zip */,
 			);
 			name = H5;
 			path = ./H5;
@@ -470,6 +482,18 @@
 			path = controllers;
 			sourceTree = "<group>";
 		};
+		E08CB154224A62B000E3390E /* UMAnalytics */ = {
+			isa = PBXGroup;
+			children = (
+				E08CB15B224A636600E3390E /* UMAnalytics.js */,
+				E08CB155224A62CE00E3390E /* UMAnalyticsModule.h */,
+				E08CB158224A62CE00E3390E /* UMAnalyticsModule.m */,
+				E08CB156224A62CE00E3390E /* UMCommonModule.h */,
+				E08CB157224A62CE00E3390E /* UMCommonModule.m */,
+			);
+			path = UMAnalytics;
+			sourceTree = "<group>";
+		};
 		E0A9D19321A7EC9A00FEA58D = {
 			isa = PBXGroup;
 			children = (
@@ -496,6 +520,8 @@
 		E0A9D19E21A7EC9A00FEA58D /* GoHaier */ = {
 			isa = PBXGroup;
 			children = (
+				E0F58652224B1AE7001F62E9 /* GoHaier.entitlements */,
+				E08CB154224A62B000E3390E /* UMAnalytics */,
 				E0432E9E2243B6A30073D384 /* JsPatch */,
 				E0FC615D21AAD1DE0018AA61 /* CoreUtil */,
 				E0FC615621AAC92B0018AA61 /* Const */,
@@ -756,6 +782,8 @@
 				E029015721DF8D0C00D5259C /* HaierH5ViewController.m */,
 				E08F172C22448A23002F0B64 /* HotFixManager.h */,
 				E08F172D22448A23002F0B64 /* HotFixManager.m */,
+				E0F58654224B5593001F62E9 /* SingleWebviewViewController.h */,
+				E0F58655224B5593001F62E9 /* SingleWebviewViewController.m */,
 			);
 			path = WebView;
 			sourceTree = "<group>";
@@ -876,6 +904,11 @@
 				TargetAttributes = {
 					E0A9D19B21A7EC9A00FEA58D = {
 						CreatedOnToolsVersion = 9.4.1;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					E0A9D1B321A7EC9D00FEA58D = {
 						CreatedOnToolsVersion = 9.4.1;
@@ -913,11 +946,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				E0432EA22243B6B30073D384 /* JSPatch.js in Resources */,
-				E0D316282249B2000056260C /* hwork.zip in Resources */,
 				E0FC614D21AABBD10018AA61 /* WebViewJavascriptBridge.js.txt in Resources */,
 				E0A9D1A921A7EC9D00FEA58D /* Assets.xcassets in Resources */,
+				E08CB15C224A636600E3390E /* UMAnalytics.js in Resources */,
 				E0588095221E4D130030CBA5 /* KDPermission.bundle in Resources */,
 				E0A9D1A721A7EC9A00FEA58D /* Main.storyboard in Resources */,
+				F89E559DFA63C29688923D2F /* hwork.zip in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1020,12 +1054,14 @@
 				E0FC614B21AABBD10018AA61 /* WKWebViewJavascriptBridge.m in Sources */,
 				E0B8C99221BF5DB7004CD6CC /* SSZipArchive.m in Sources */,
 				E0B8C9BA21BFA736004CD6CC /* bzip2.c in Sources */,
+				E08CB15A224A62CE00E3390E /* UMAnalyticsModule.m in Sources */,
 				E0B8C98921BF5DB7004CD6CC /* aeskey.c in Sources */,
 				E0B8C9B121BFA736004CD6CC /* decompress.c in Sources */,
 				E0D3503D221A78BC0099E454 /* PageGoBackHandler.m in Sources */,
 				E0573FCA222639780010FE8F /* VibrateHandler.m in Sources */,
 				E0573FB8222630C70010FE8F /* GetStorageHandler.m in Sources */,
 				E080EEDF21AAE3A8006F2080 /* BarCodeRecongnizerHandler.m in Sources */,
+				E0F58656224B5593001F62E9 /* SingleWebviewViewController.m in Sources */,
 				E0B8C99121BF5DB7004CD6CC /* aestab.c in Sources */,
 				E0FC616621AADB350018AA61 /* PhotoTakerHandler.m in Sources */,
 				E0573FAF22262CF90010FE8F /* SetStorageHandler.m in Sources */,
@@ -1047,6 +1083,7 @@
 				E0588094221E4D130030CBA5 /* KDPermission.m in Sources */,
 				E0588098221E72B10030CBA5 /* ContactsHandler.m in Sources */,
 				E0573FCD22263B480010FE8F /* VibrateShortHandler.m in Sources */,
+				E08CB159224A62CE00E3390E /* UMCommonModule.m in Sources */,
 				E0A9D1A121A7EC9A00FEA58D /* AppDelegate.m in Sources */,
 				E0B8C9B621BFA736004CD6CC /* bzip2recover.c in Sources */,
 				E0C160B9221FE08D00C5D3E6 /* NSMutableDictionary+Safe.m in Sources */,

@@ -107,7 +107,7 @@
 		_fetchQueue: _fetchQueue,
 		_handleMessageFromObjC: _handleMessageFromObjC
 	}
-
+    window.isMobile = true;
 	var doc = document
 	_createQueueReadyIframe(doc)
 	var readyEvent = doc.createEvent('Events')

@@ -8,8 +8,8 @@
 	<string>enterprise</string>
 	<key>provisioningProfiles</key>
 	<dict>
-		<key>com.haier.imapp</key>
-		<string>COSMOIM</string>
+		<key>com.haier.cxf</key>
+		<string>cxf</string>
 	</dict>
 	<key>signingCertificate</key>
 	<string>iPhone Distribution</string>

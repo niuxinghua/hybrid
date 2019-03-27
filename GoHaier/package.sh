@@ -1,10 +1,8 @@
-# 获取描述文件的uuid并将描述文件copy到系统，前提将系统解锁
 basepath=$(cd `dirname $0`; pwd)
 rm -rf build
 rm -f GoHaierProvision.plist
 #获取输入变量
 #macmini的password  5324nxh050622
-ruby projectreference.ruby
 macPassword=$1
 echo "${macPassword}"
 
@@ -34,6 +32,15 @@ echo "${isRelease}"
 
 widgetVersion=$9
 echo "${widgetVersion}"
+
+containerVersion=${10}
+echo "${containerVersion}"
+
+#需要传入是否需要push功能 0不需要 1需要
+hasPush=${11}
+
+ruby projectreference.ruby "${hasPush}"
+
 
 
 #provisionfile 文件
@@ -80,7 +87,11 @@ sudo -S /usr/libexec/PlistBuddy -c "Set 'WidgetVersion' $widgetVersion" $infopli
 ${macPassword}
 EOF
 
-echo "${widgetVersion}"
+sudo -S /usr/libexec/PlistBuddy -c "Set 'ContainerVersion' $containerVersion" $infoplist <<EOF
+${macPassword}
+EOF
+
+
 
 
 #需要将icon进行替换
@@ -367,6 +378,9 @@ echo "${buildResult}"
 #默认是先走企业版的证书(集团内大多数应用走这个发版)
 if [ "$isRelease"x = "release"x ];then
 echo "release"
+sudo -S /usr/libexec/PlistBuddy -c "Set Mode release" $infoplist <<EOF
+${macPassword}
+EOF
 /usr/libexec/PlistBuddy -c "Set method enterprise" Export.plist
 #导出ipa
 xcodebuild  -exportArchive \
@@ -388,13 +402,28 @@ xcodebuild  -exportArchive \
 fi
 else
 #测试版本
-echo "打包个人版的adhoc版本"
+sudo -S /usr/libexec/PlistBuddy -c "Set Mode debug" $infoplist <<EOF
+${macPassword}
+EOF
+echo "打enterprise的测试版本"
+/usr/libexec/PlistBuddy -c "Set method enterprise" Export.plist
+#导出ipa
+xcodebuild  -exportArchive \
+-archivePath build/GoHaier.xcarchive \
+-exportPath build/GoHaier.ipa \
+-exportOptionsPlist  Export.plist \
+
+#没打出包来可能是证书不是企业版那么 再d导出一个个人版本的
+if [ ! -d build/GoHaier.ipa ];
+then
+echo "打包appstore adhoc版本"
+
 /usr/libexec/PlistBuddy -c "Set method ad-hoc" Export.plist
 
 xcodebuild  -exportArchive \
 -archivePath build/GoHaier.xcarchive \
 -exportPath build/GoHaier.ipa \
 -exportOptionsPlist  Export.plist \
-
 fi
-
+fi
+fi

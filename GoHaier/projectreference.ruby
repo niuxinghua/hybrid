@@ -43,6 +43,14 @@ end
 
 addFilesToGroup(project.targets.first, mapiGroup)
 
-puts "重组目录结构..."
 
+hasPush = ARGV[0]
+if hasPush == "1"
+        project.root_object.attributes["TargetAttributes"][project.targets.first.uuid]["SystemCapabilities"]["com.apple.Push"]["enabled"] = 1
+        puts "设置了push功能"
+    else
+        project.root_object.attributes["TargetAttributes"][project.targets.first.uuid]["SystemCapabilities"]["com.apple.Push"]["enabled"] = 0
+        puts "没有设置push功能"
+    end
+puts "重组目录结构..."
 project.save

@@ -7,7 +7,7 @@
 		<key>ApplicationPath</key>
 		<string>Applications/GoHaier.app</string>
 		<key>CFBundleIdentifier</key>
-		<string>com.haier.imapp</string>
+		<string>com.haier.cxf</string>
 		<key>CFBundleShortVersionString</key>
 		<string>8.1</string>
 		<key>CFBundleVersion</key>
@@ -20,7 +20,7 @@
 	<key>ArchiveVersion</key>
 	<integer>2</integer>
 	<key>CreationDate</key>
-	<date>2019-03-16T07:50:13Z</date>
+	<date>2019-03-27T09:04:25Z</date>
 	<key>Name</key>
 	<string>GoHaier</string>
 	<key>SchemeName</key>

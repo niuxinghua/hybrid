@@ -3,13 +3,13 @@
 <plist version="1.0">
 <dict>
 	<key>AppIDName</key>
-	<string>COSMOIM</string>
+	<string>cxf</string>
 	<key>ApplicationIdentifierPrefix</key>
 	<array>
 	<string>5YMLXQ5HEE</string>
 	</array>
 	<key>CreationDate</key>
-	<date>2018-05-14T06:49:56Z</date>
+	<date>2018-04-19T05:08:41Z</date>
 	<key>Platform</key>
 	<array>
 		<string>iOS</string>
@@ -29,14 +29,16 @@
 		<key>get-task-allow</key>
 		<false/>
 		<key>application-identifier</key>
-		<string>5YMLXQ5HEE.com.haier.imapp</string>
+		<string>5YMLXQ5HEE.com.haier.cxf</string>
 		<key>com.apple.developer.team-identifier</key>
 		<string>5YMLXQ5HEE</string>
+		<key>aps-environment</key>
+		<string>production</string>
 	</dict>
 	<key>ExpirationDate</key>
-	<date>2019-05-14T06:49:56Z</date>
+	<date>2019-04-19T05:08:41Z</date>
 	<key>Name</key>
-	<string>COSMOIM</string>
+	<string>cxf</string>
 	<key>ProvisionsAllDevices</key>
 	<true/>
 	<key>TeamIdentifier</key>
@@ -48,7 +50,7 @@
 	<key>TimeToLive</key>
 	<integer>365</integer>
 	<key>UUID</key>
-	<string>95bff849-f2ef-4999-93d1-6401b9d53cbf</string>
+	<string>51b4cfae-68de-41d6-8aa1-977622b65f1f</string>
 	<key>Version</key>
 	<integer>1</integer>
 </dict>
